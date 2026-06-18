@@ -63,20 +63,21 @@ const App = () => {
     <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans text-zinc-900 dark:text-zinc-100 pb-12 transition-colors duration-300">
       {showWipModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-md z-[100] flex items-center justify-center p-4 animate-in fade-in duration-300">
-          <div className="bg-white/85 dark:bg-zinc-900/85 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/20 dark:border-zinc-800/50 p-8 max-w-md w-full text-center transform animate-in fade-in zoom-in-95 duration-300">
-            <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100 mb-2">
-              WIP
+          <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg rounded-2xl shadow-2xl border border-zinc-200/50 dark:border-zinc-800/50 p-8 max-w-md w-full text-center transform animate-in fade-in zoom-in-95 duration-300">
+            <h2 className="text-xl font-extrabold text-zinc-900 dark:text-zinc-100 mb-3 tracking-tight">
+              Disclaimer & Instructions
             </h2>
-            <p className="text-zinc-650 dark:text-zinc-400 mb-6 text-sm">
-              This project is a work in progress! Right now there is no content
-              and only the basic functionality as a proof of concept is
-              available.
+            <p className="text-zinc-600 dark:text-zinc-400 mb-6 text-sm leading-relaxed">
+              This application provides educational strength training suggestions for minor muscle tightness or fatigue. It is <strong>not</strong> a substitute for professional medical advice. If you experience acute, sharp, sudden pain, or cannot bear weight, please consult a physician immediately.
+            </p>
+            <p className="text-zinc-550 dark:text-zinc-450 mb-6 text-xs italic">
+              Instructions: Click on the interactive anatomy map (Front or Back view) to select your target zone and explore recovery programs.
             </p>
             <button
               onClick={() => setShowWipModal(false)}
-              className="w-full bg-blue-600 hover:bg-blue-500 dark:bg-blue-600 dark:hover:bg-blue-500 text-white px-6 py-2.5 rounded-xl font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="w-full bg-blue-600 hover:bg-blue-500 dark:bg-blue-600 dark:hover:bg-blue-500 text-white px-6 py-2.5 rounded-xl font-semibold transition-all shadow-md shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
-              Continue
+              I Understand & Acknowledge
             </button>
           </div>
         </div>
