@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Planning & specification files
+AGENT.md
+BRAINSTORM.md
+ENHANCEMENTS.md
+FEATURES.md
+ISSUES.md
+CODESTYLE.md
+PLAN.md
+PLAND.md
