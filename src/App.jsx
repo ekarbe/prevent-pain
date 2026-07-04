@@ -14,6 +14,7 @@ import { bodyData } from "./data/content";
 import Logo from "./components/Logo";
 import ImageMap from "./components/ImageMap";
 import ExerciseCard from "./components/ExerciseCard";
+import TiltCard from "./components/TiltCard";
 
 const App = () => {
   const [selectedPart, setSelectedPart] = useState(null);
@@ -60,22 +61,23 @@ const App = () => {
       : null;
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans text-zinc-900 dark:text-zinc-100 pb-12 transition-colors duration-300">
+    <div className="min-h-screen relative font-sans pb-12 transition-colors duration-300">
+      <div className="mesh-bg"></div>
       {showWipModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-md z-[100] flex items-center justify-center p-4 animate-in fade-in duration-300">
-          <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg rounded-2xl shadow-2xl border border-zinc-200/50 dark:border-zinc-800/50 p-8 max-w-md w-full text-center transform animate-in fade-in zoom-in-95 duration-300">
-            <h2 className="text-xl font-extrabold text-zinc-900 dark:text-zinc-100 mb-3 tracking-tight">
+          <div className="glass-panel rounded-bento p-10 max-w-md w-full text-center transform animate-in fade-in zoom-in-95 duration-300">
+            <h3 className="mb-3">
               Disclaimer & Instructions
-            </h2>
-            <p className="text-zinc-600 dark:text-zinc-400 mb-6 text-sm leading-relaxed">
+            </h3>
+            <p className="mb-6">
               This application provides educational strength training suggestions for minor muscle tightness or fatigue. It is <strong>not</strong> a substitute for professional medical advice. If you experience acute, sharp, sudden pain, or cannot bear weight, please consult a physician immediately.
             </p>
-            <p className="text-zinc-550 dark:text-zinc-450 mb-6 text-xs italic">
+            <p className="mb-6 text-sm italic opacity-80">
               Instructions: Click on the interactive anatomy map (Front or Back view) to select your target zone and explore recovery programs.
             </p>
             <button
               onClick={() => setShowWipModal(false)}
-              className="w-full bg-blue-600 hover:bg-blue-500 dark:bg-blue-600 dark:hover:bg-blue-500 text-white px-6 py-2.5 rounded-xl font-semibold transition-all shadow-md shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="w-full bg-blue-600 hover:bg-blue-500 text-white px-[1.75rem] py-[0.85rem] rounded-full font-semibold transition-all shadow-md shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               I Understand & Acknowledge
             </button>
@@ -83,7 +85,7 @@ const App = () => {
         </div>
       )}
 
-      <header className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 sticky top-0 z-50 transition-colors duration-300">
+      <header className="glass-panel rounded-none border-x-0 border-t-0 sticky top-0 z-50 transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <Logo />
           <div className="flex items-center gap-4">
@@ -113,13 +115,13 @@ const App = () => {
       <main className="max-w-6xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
           <div className="flex flex-col gap-6">
-            <div className="bg-white/80 dark:bg-zinc-900/40 backdrop-blur-md p-6 rounded-2xl shadow-sm border border-zinc-200/50 dark:border-zinc-800/50 min-h-[600px] flex flex-col transition-colors duration-300">
+            <div className="glass-panel rounded-bento p-10 min-h-[600px] flex flex-col transition-colors duration-300">
               <div className="mb-4">
-                <h2 className="text-lg font-semibold text-zinc-850 dark:text-zinc-100 mb-1 flex items-center gap-2">
-                  <Activity className="w-5 h-5 text-blue-600 dark:text-blue-500" />
+                <h3 className="mb-2 flex items-center gap-2">
+                  <Activity className="w-6 h-6 text-blue-600 dark:text-blue-500" />
                   Locate the Pain
-                </h2>
-                <p className="text-zinc-500 dark:text-zinc-400 text-sm">
+                </h3>
+                <p>
                   Click the exact spot on the anatomy map.
                 </p>
               </div>
@@ -137,7 +139,7 @@ const App = () => {
               </div>
             </div>
 
-            <div className="bg-blue-500/5 dark:bg-blue-500/10 border border-blue-500/20 dark:border-blue-500/30 p-4 rounded-2xl flex items-start gap-3 shadow-sm transition-colors duration-300">
+            <div className="glass-panel rounded-bento p-6 flex items-start gap-3 shadow-sm transition-colors duration-300 border-blue-500/20 dark:border-blue-500/30 bg-blue-500/5 dark:bg-blue-500/10">
               <Info className="w-5 h-5 text-blue-600 dark:text-blue-500 shrink-0 mt-0.5" />
               <p className="text-sm text-blue-800 dark:text-blue-300 leading-relaxed">
                 <strong>Note:</strong> This app provides strength training
@@ -149,12 +151,12 @@ const App = () => {
 
           <div id="control-panel" className="flex flex-col gap-6 h-full">
             {!selectedPart && (
-              <div className="h-full flex flex-col items-center justify-center text-center p-8 bg-zinc-50/50 dark:bg-zinc-900/20 backdrop-blur-md rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-800 text-zinc-400 dark:text-zinc-500 min-h-[300px]">
-                <Activity className="w-12 h-12 mb-4 opacity-20 text-zinc-650 dark:text-zinc-400" />
-                <p className="text-lg font-medium text-zinc-600 dark:text-zinc-400">
+              <div className="h-full flex flex-col items-center justify-center text-center p-10 glass-panel rounded-bento border-dashed min-h-[300px]">
+                <Activity className="w-12 h-12 mb-4 opacity-20 text-apple-secondaryTextLight dark:text-apple-secondaryTextDark" />
+                <h3 className="mb-2">
                   Click on the image to begin diagnosis
-                </p>
-                <p className="text-sm opacity-60 mt-2">
+                </h3>
+                <p className="text-sm opacity-60">
                   Try clicking the hips or knees
                 </p>
               </div>
@@ -166,39 +168,40 @@ const App = () => {
                   <span className="bg-blue-500/10 dark:bg-blue-500/15 text-blue-600 dark:text-blue-400 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider">
                     STEP 1
                   </span>
-                  <h2 className="text-2xl font-bold text-zinc-850 dark:text-zinc-150">
+                  <h2 className="mb-0">
                     {currentPartData.label}
                   </h2>
                 </div>
 
-                <p className="text-zinc-650 dark:text-zinc-400 mb-6 leading-relaxed">
+                <p className="mb-8">
                   {currentPartData.description}
                 </p>
 
-                <h3 className="text-xs font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-3">
+                <h3 className="text-xs font-bold text-apple-secondaryTextLight dark:text-apple-secondaryTextDark uppercase tracking-widest mb-4">
                   Select Possible Cause
                 </h3>
 
                 <div className="space-y-3">
                   {currentPartData.causes.map((cause) => (
-                    <button
+                    <TiltCard
                       key={cause.id}
-                      onClick={() => handleCauseSelect(cause.id)}
-                      className="w-full text-left p-5 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white/70 dark:bg-zinc-900/40 backdrop-blur-md hover:border-blue-500/50 hover:shadow-md transition-all group relative overflow-hidden"
+                      className="w-full text-left p-6 group relative overflow-hidden"
                     >
-                      <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <h4 className="font-bold text-zinc-800 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            {cause.title}
-                          </h4>
-                          <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                            {cause.description}
-                          </p>
+                      <button onClick={() => handleCauseSelect(cause.id)} className="w-full h-full text-left outline-none cursor-pointer">
+                        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="flex justify-between items-center">
+                          <div>
+                            <h4 className="font-bold text-lg text-apple-primaryTextLight dark:text-apple-primaryTextDark group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                              {cause.title}
+                            </h4>
+                            <p className="text-sm mt-1">
+                              {cause.description}
+                            </p>
+                          </div>
+                          <ChevronRight className="w-5 h-5 text-apple-secondaryTextLight dark:text-apple-secondaryTextDark group-hover:text-blue-500 dark:group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
                         </div>
-                        <ChevronRight className="w-5 h-5 text-zinc-400 dark:text-zinc-500 group-hover:text-blue-500 dark:group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
-                      </div>
-                    </button>
+                      </button>
+                    </TiltCard>
                   ))}
                 </div>
               </div>
@@ -208,28 +211,29 @@ const App = () => {
               <div className="animate-in fade-in slide-in-from-right-4 duration-300 h-full flex flex-col">
                 <button
                   onClick={() => setSelectedCauseId(null)}
-                  className="self-start text-sm text-zinc-500 hover:text-zinc-850 dark:text-zinc-450 dark:hover:text-zinc-100 flex items-center gap-1 mb-4 transition-colors"
+                  className="self-start text-sm text-apple-secondaryTextLight hover:text-apple-primaryTextLight dark:text-apple-secondaryTextDark dark:hover:text-apple-primaryTextDark flex items-center gap-1 mb-6 transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" /> Back to causes
                 </button>
 
-                <div className="bg-zinc-950/90 dark:bg-zinc-900/95 text-white p-6 rounded-t-2xl border-t border-x border-zinc-200/50 dark:border-zinc-800/50 backdrop-blur-md">
-                  <div className="flex items-start justify-between">
+                <div className="glass-panel !bg-apple-primaryTextLight dark:!bg-apple-cardDark text-apple-lightBg p-8 rounded-t-bento border-b-0 border-apple-borderLight dark:border-apple-borderDark relative overflow-hidden">
+                  <div className="absolute inset-0 bg-black/10 dark:bg-white/5"></div>
+                  <div className="relative flex items-start justify-between">
                     <div>
-                      <span className="text-blue-400 dark:text-blue-450 text-xs font-bold tracking-widest uppercase mb-1 block">
+                      <span className="text-blue-400 text-xs font-bold tracking-widest uppercase mb-2 block">
                         Rehab Plan
                       </span>
-                      <h2 className="text-2xl font-bold">
+                      <h2 className="!text-apple-lightBg dark:!text-apple-primaryTextDark">
                         {currentCauseData.title}
                       </h2>
                     </div>
-                    <CheckCircle2 className="w-8 h-8 text-blue-500 dark:text-blue-400 opacity-90" />
+                    <CheckCircle2 className="w-8 h-8 text-blue-500 opacity-90" />
                   </div>
                 </div>
 
-                <div className="bg-white/80 dark:bg-zinc-900/40 backdrop-blur-md border-x border-b border-zinc-200/50 dark:border-zinc-800/50 p-6 rounded-b-2xl flex-grow shadow-sm transition-colors duration-300">
+                <div className="glass-panel p-8 rounded-b-bento rounded-t-none flex-grow border-t-0">
                   <div className="mb-6">
-                    <h3 className="text-xs font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-4">
+                    <h3 className="text-xs font-bold text-apple-secondaryTextLight dark:text-apple-secondaryTextDark uppercase tracking-widest mb-4">
                       Recommended Exercises
                     </h3>
                     <div className="space-y-4">
@@ -239,9 +243,9 @@ const App = () => {
                     </div>
                   </div>
 
-                  <div className="bg-amber-500/5 dark:bg-amber-500/10 border border-amber-500/20 dark:border-amber-500/30 p-4 rounded-xl flex items-start gap-3 text-sm text-amber-800 dark:text-amber-300 shadow-sm transition-colors duration-300">
-                    <AlertCircle className="w-5 h-5 text-amber-500 shrink-0" />
-                    <p className="leading-relaxed">
+                  <div className="glass-panel rounded-bento p-6 flex items-start gap-3 mt-8 border-amber-500/20 bg-amber-500/5 dark:bg-amber-500/10">
+                    <AlertCircle className="w-5 h-5 text-amber-500 shrink-0 mt-1" />
+                    <p className="text-sm text-amber-800 dark:text-amber-300 leading-relaxed">
                       Perform these exercises 2-3 times per week. If pain
                       increases during the exercise, stop immediately and
                       regress to an easier variation.

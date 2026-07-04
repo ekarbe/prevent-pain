@@ -1,3 +1,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-apple-lightBg text-apple-primaryTextLight transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-apple-darkBg text-apple-primaryTextDark;
+  }
+
+  h1 {
+    @apply text-[3.5rem] font-extrabold tracking-[-0.03em] leading-tight;
+  }
+
+  h2 {
+    @apply text-[2.25rem] font-bold tracking-[-0.02em] leading-snug;
+  }
+
+  h3 {
+    @apply text-[1.5rem] font-bold leading-snug;
+  }
+
+  p {
+    @apply text-base leading-relaxed text-apple-secondaryTextLight;
+  }
+
+  .dark p {
+    @apply text-apple-secondaryTextDark;
+  }
+}
+
+@layer utilities {
+  .mesh-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background: radial-gradient(at 40% 20%, hsla(220,100%,70%,0.2) 0, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(189,100%,56%,0.2) 0, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(340,100%,76%,0.2) 0, transparent 50%);
+    animation: mesh-pulse 15s ease-in-out infinite alternate;
+  }
+
+  .dark .mesh-bg {
+    background: radial-gradient(at 40% 20%, hsla(228,100%,20%,1) 0, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(189,100%,20%,1) 0, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(340,100%,20%,1) 0, transparent 50%);
+  }
+
+  .glass-panel {
+    @apply bg-apple-cardLight backdrop-blur-[24px] saturate-[180%] shadow-apple border border-apple-borderLight transition-all duration-300;
+  }
+
+  .dark .glass-panel {
+    @apply bg-apple-cardDark border-apple-borderDark;
+  }
+}
