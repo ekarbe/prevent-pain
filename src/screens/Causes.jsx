@@ -23,40 +23,42 @@ export default function Causes({ route, go }) {
       <p className="lead">{t.causesLead}</p>
       {warning ? <Note tone={warning.level}>{pick(warning, lang)}</Note> : null}
       <div className="flex flex-col gap-2.5">
-        {spot.causes.map((id) => {
-          const cause = causes[id];
-          const c = pick(cause, lang);
-          return (
-            <button
-              key={id}
-              type="button"
-              onClick={() => go({ screen: "plan", cause: id })}
-              className="card relative flex w-full flex-col gap-1.5 border border-transparent py-4 pr-11 pl-4 text-left hover:border-accent"
-            >
-              {cause.kind === "refer" ? (
-                <span className="self-start rounded-full bg-stop-soft px-2 py-0.5 text-xs font-bold text-stop">
-                  {t.referBadge}
+        {spot.causes
+          .filter((id) => causes[id])
+          .map((id) => {
+            const cause = causes[id];
+            const c = pick(cause, lang);
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() => go({ screen: "plan", cause: id })}
+                className="card relative flex w-full flex-col gap-1.5 border border-transparent py-4 pr-11 pl-4 text-left hover:border-accent"
+              >
+                {cause.kind === "refer" ? (
+                  <span className="self-start rounded-full bg-stop-soft px-2 py-0.5 text-xs font-bold text-stop">
+                    {t.referBadge}
+                  </span>
+                ) : null}
+                <span className="font-display text-[19px] leading-tight">
+                  {c.title}
                 </span>
-              ) : null}
-              <span className="font-display text-[19px] leading-tight">
-                {c.title}
-              </span>
-              <span className="text-[15px] leading-snug text-ink-2">
-                {c.desc}
-              </span>
-              <span className="text-[13px] text-ink-2">
-                <span className="mr-1 font-bold tracking-[0.03em]">
-                  {t.medName}
+                <span className="text-[15px] leading-snug text-ink-2">
+                  {c.desc}
                 </span>
-                {c.name}
-              </span>
-              <ChevronRight
-                className="absolute top-1/2 right-3.5 size-5 -translate-y-1/2 text-accent"
-                aria-hidden="true"
-              />
-            </button>
-          );
-        })}
+                <span className="text-[13px] text-ink-2">
+                  <span className="mr-1 font-bold tracking-[0.03em]">
+                    {t.medName}
+                  </span>
+                  {c.name}
+                </span>
+                <ChevronRight
+                  className="absolute top-1/2 right-3.5 size-5 -translate-y-1/2 text-accent"
+                  aria-hidden="true"
+                />
+              </button>
+            );
+          })}
         <button
           type="button"
           aria-expanded={noneOpen}

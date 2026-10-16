@@ -27,7 +27,9 @@ function VideoEmbed({ video, name }) {
             allowFullScreen
           />
         </div>
-        <figcaption className="fine">{t.videoBy(v.channel)}</figcaption>
+        <figcaption className="fine">
+          {t.videoBy(v.channel || v.title)}
+        </figcaption>
       </figure>
     );
   }

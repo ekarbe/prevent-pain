@@ -166,7 +166,7 @@ export default function Plan({ route, go, notify }) {
         <ChainStrip
           chain={cause.chain}
           regionId={region.id}
-          regionName={regionName}
+          regionLabel={pick(region, lang).short}
           results={results}
         />
         {ranked.map((item, i) => (
@@ -175,6 +175,7 @@ export default function Plan({ route, go, notify }) {
             item={item}
             rank={i + 1}
             onAnswer={answer}
+            local={cause.local}
           />
         ))}
       </section>

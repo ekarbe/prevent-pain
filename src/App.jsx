@@ -8,6 +8,7 @@ import { preferredLang, saveLang } from "./lib/prefs.js";
 import AppBar from "./components/AppBar.jsx";
 import StepHeader from "./components/StepHeader.jsx";
 import Toast from "./components/Toast.jsx";
+import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import Start from "./screens/Start.jsx";
 import Stop from "./screens/Stop.jsx";
 import Regions from "./screens/Regions.jsx";
@@ -120,7 +121,12 @@ export default function App() {
           className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-4 pt-1 pb-10"
         >
           {step ? <StepHeader step={step} onBack={back} /> : null}
-          {screen}
+          <ErrorBoundary
+            key={pageKey}
+            fallback={{ ...ui[lang].broken, href: `#/${lang}/where` }}
+          >
+            {screen}
+          </ErrorBoundary>
         </main>
         <footer className="mx-auto w-full max-w-3xl border-t border-line py-5 text-[13px] leading-normal text-ink-2">
           <p className="max-w-xl">{ui[lang].footer}</p>
@@ -133,7 +139,7 @@ export default function App() {
             </a>
           </p>
         </footer>
-        {toast ? <Toast key={toast.at} message={toast.msg} /> : null}
+        <Toast message={toast?.msg} />
       </div>
     </LangContext.Provider>
   );

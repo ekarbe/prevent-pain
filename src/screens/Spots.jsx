@@ -5,23 +5,29 @@ import { closeups } from "../figures/closeups/index.js";
 import { pick, useLang, useT } from "../i18n/lang.js";
 import { CloseupFigure } from "../components/Figures.jsx";
 
+// The spot picked last per region, so going back from the cause cards keeps it selected.
+const lastSpot = {};
+
+function firstViewWith(figure, spotId) {
+  return figure?.views.find((v) => figure[v].spots[spotId]) ?? figure?.views[0];
+}
+
 export default function Spots({ route, go }) {
   const t = useT();
   const lang = useLang();
   const region = regionById[route.region];
   const figure = closeups[region.id];
-  const [view, setView] = useState(figure?.views[0]);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(lastSpot[region.id] ?? null);
+  const [view, setView] = useState(() => firstViewWith(figure, selected));
   const names = Object.fromEntries(
     region.spots.map((s) => [s.id, pick(s, lang).name]),
   );
 
   const select = (spotId) => {
+    lastSpot[region.id] = spotId;
     setSelected(spotId);
-    if (figure && !figure[view].spots[spotId]) {
-      const other = figure.views.find((v) => figure[v].spots[spotId]);
-      if (other) setView(other);
-    }
+    if (figure && !figure[view].spots[spotId])
+      setView(firstViewWith(figure, spotId));
   };
 
   return (

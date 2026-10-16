@@ -100,6 +100,7 @@ export const ui = {
     test: "Self-test",
     pos: (n) =>
       `Likely a weak link · ${n} exercise${n === 1 ? "" : "s"} added to your week`,
+    posNone: "Likely a weak link · its exercises are already in your week",
     neg: "Looks fine for now",
     redo: "Redo",
     legend: { none: "Not tested", pos: "Weak link", neg: "Fine", pain: "Pain" },
@@ -132,6 +133,12 @@ export const ui = {
       "This description fits something that exercise tips shouldn't handle on their own.",
     meanwhile: "Until then",
     referBack: "Pick a different description",
+
+    broken: {
+      title: "This page didn't load",
+      body: "Something in its content is broken. Pick the area again, and if it keeps happening, please report it on GitHub.",
+      action: "Back to the body map",
+    },
 
     titles: {
       start: "Before we start",
@@ -240,6 +247,8 @@ export const ui = {
     test: "Selbsttest",
     pos: (n) =>
       `Wahrscheinlich ein schwaches Glied · ${n} ${n === 1 ? "Übung" : "Übungen"} in deiner Woche ergänzt`,
+    posNone:
+      "Wahrscheinlich ein schwaches Glied · die passenden Übungen sind schon in deiner Woche",
     neg: "Sieht vorerst gut aus",
     redo: "Neu testen",
     legend: {
@@ -278,6 +287,12 @@ export const ui = {
       "Diese Beschreibung passt zu etwas, das Trainingstipps nicht allein lösen sollten.",
     meanwhile: "Bis dahin",
     referBack: "Andere Beschreibung wählen",
+
+    broken: {
+      title: "Diese Seite hat nicht geladen",
+      body: "In ihrem Inhalt ist etwas kaputt. Wähle den Bereich noch einmal, und wenn es wieder passiert, melde es bitte auf GitHub.",
+      action: "Zurück zur Körperkarte",
+    },
 
     titles: {
       start: "Bevor es losgeht",

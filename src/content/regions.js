@@ -4,8 +4,8 @@
 export const regions = [
   {
     id: "lower-back",
-    en: { name: "Lower back" },
-    de: { name: "Unterer Rücken" },
+    en: { name: "Lower back", short: "Back" },
+    de: { name: "Unterer Rücken", short: "Rücken" },
     spots: [
       {
         id: "center",
@@ -36,8 +36,8 @@ export const regions = [
   },
   {
     id: "hip",
-    en: { name: "Hip & glute" },
-    de: { name: "Hüfte & Gesäß" },
+    en: { name: "Hip & glute", short: "Hip" },
+    de: { name: "Hüfte & Gesäß", short: "Hüfte" },
     spots: [
       {
         id: "groin",
@@ -67,8 +67,8 @@ export const regions = [
   },
   {
     id: "thigh",
-    en: { name: "Thigh" },
-    de: { name: "Oberschenkel" },
+    en: { name: "Thigh", short: "Thigh" },
+    de: { name: "Oberschenkel", short: "Ober­schenkel" },
     spots: [
       {
         id: "front-thigh",
@@ -99,8 +99,8 @@ export const regions = [
   },
   {
     id: "knee",
-    en: { name: "Knee" },
-    de: { name: "Knie" },
+    en: { name: "Knee", short: "Knee" },
+    de: { name: "Knie", short: "Knie" },
     spots: [
       {
         id: "above-kneecap",
@@ -144,8 +144,8 @@ export const regions = [
   },
   {
     id: "shin-calf",
-    en: { name: "Shin & calf" },
-    de: { name: "Schienbein & Wade" },
+    en: { name: "Shin & calf", short: "Shin" },
+    de: { name: "Schienbein & Wade", short: "Schien­bein" },
     spots: [
       {
         id: "inner-shin",
@@ -170,8 +170,8 @@ export const regions = [
   },
   {
     id: "ankle-foot",
-    en: { name: "Ankle & foot" },
-    de: { name: "Sprunggelenk & Fuß" },
+    en: { name: "Ankle & foot", short: "Foot" },
+    de: { name: "Sprunggelenk & Fuß", short: "Fuß" },
     spots: [
       {
         id: "achilles",

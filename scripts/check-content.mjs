@@ -44,7 +44,7 @@ for (const region of regions) {
   const where = `region ${region.id}`;
   if (seenRegions.has(region.id)) err(where, "duplicate region id");
   seenRegions.add(region.id);
-  needText(where, region, ["name"]);
+  needText(where, region, ["name", "short"]);
   if (!region.spots?.length) err(where, "has no spots");
   const seenSpots = new Set();
   for (const spot of region.spots ?? []) {
@@ -177,8 +177,7 @@ for (const [id, ex] of Object.entries(exercises)) {
         err(where, `video for unknown language "${lang}"`);
       if (!/^[A-Za-z0-9_-]{11}$/.test(v?.id ?? ""))
         err(where, `video.${lang}.id is not a YouTube id`);
-      if (!text(v?.channel) || !text(v?.title))
-        err(where, `video.${lang} needs title and channel`);
+      if (!text(v?.title)) err(where, `video.${lang} needs a title`);
     }
     if (!ex.video.en) err(where, "video needs at least an English entry");
     withVideo++;

@@ -2,7 +2,7 @@ import { links, regionAt, tests } from "../content/index.js";
 import { pick, useLang, useT } from "../i18n/lang.js";
 
 // The chain at a glance: the pain in place among its weak links, in body order.
-export function ChainStrip({ chain, regionId, regionName, results }) {
+export function ChainStrip({ chain, regionId, regionLabel, results }) {
   const t = useT();
   const lang = useLang();
   const nodes = chain
@@ -16,7 +16,7 @@ export function ChainStrip({ chain, regionId, regionName, results }) {
       id: "pain",
       at: regionAt[regionId],
       state: "pain",
-      label: regionName,
+      label: regionLabel,
     })
     .sort((a, b) => a.at - b.at);
   const summary = nodes
@@ -35,15 +35,15 @@ export function ChainStrip({ chain, regionId, regionName, results }) {
             {i ? (
               <span
                 aria-hidden="true"
-                className={`mt-[9px] h-0.5 min-w-1.5 flex-1 ${n.state === "pain" || nodes[i - 1].state === "pain" ? "bg-ink-2" : "bg-line"}`}
+                className={`mt-[9px] h-0.5 min-w-1 flex-[1_1_8px] ${n.state === "pain" || nodes[i - 1].state === "pain" ? "bg-ink-2" : "bg-line"}`}
               />
             ) : null}
             <span
               aria-hidden="true"
-              className={`chain-node is-${n.state} flex w-14 flex-none flex-col items-center gap-1.5`}
+              className={`chain-node is-${n.state} flex min-w-0 flex-[0_1_4.25rem] flex-col items-center gap-1.5`}
             >
               <span className="chain-node-dot" />
-              <span className="chain-node-label text-center text-xs leading-tight font-bold text-ink-2">
+              <span className="chain-node-label w-full text-center text-xs leading-tight font-bold [overflow-wrap:anywhere] text-ink-2">
                 {n.label}
               </span>
             </span>
@@ -122,13 +122,14 @@ export function TestAnswer({ testId, result, onAnswer, posText, negText }) {
   );
 }
 
-export function SuspectCard({ item, rank, onAnswer }) {
+export function SuspectCard({ item, rank, onAnswer, local }) {
   const t = useT();
   const lang = useLang();
   const link = links[item.id];
   const x = pick(link, lang);
   const why = item.why ? pick(item.why, lang) : x.why;
   const state = item.result;
+  const added = link.exercises.filter((id) => !local.includes(id)).length;
 
   return (
     <article
@@ -172,7 +173,7 @@ export function SuspectCard({ item, rank, onAnswer }) {
         testId={link.test}
         result={state === "none" ? null : state}
         onAnswer={onAnswer}
-        posText={t.pos(link.exercises.length)}
+        posText={added ? t.pos(added) : t.posNone}
         negText={t.neg}
       />
     </article>
