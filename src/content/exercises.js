@@ -97,7 +97,13 @@ export const exercises = {
   },
   "side-plank": {
     min: 4,
-    video: null,
+    video: {
+      en: {
+        id: "TZ9VFSpS1LM",
+        title: "Why you should be doing the side plank",
+        channel: "The MSK Physio",
+      },
+    },
     en: {
       name: "Side plank",
       dose: "3 × 20–40 s per side",
@@ -171,7 +177,13 @@ export const exercises = {
   },
   "bent-knee-raise": {
     min: 4,
-    video: null,
+    video: {
+      en: {
+        id: "yTbIDDgYjAQ",
+        title: "How to Perform Soleous Raises (single leg) POGO Physio",
+        channel: "POGO Physio",
+      },
+    },
     en: {
       name: "Bent-knee calf raise",
       dose: "3 × 15 per side",
@@ -259,6 +271,11 @@ export const exercises = {
         title: "NUHS Physiotherapy - Bird Dog",
         channel: "NUHS Physiotherapy",
       },
+      de: {
+        id: "qh48UejslYQ",
+        title: "Birddog — tolle Übung für Deinen Rücken",
+        channel: "",
+      },
     },
     en: {
       name: "Bird dog",
@@ -327,7 +344,13 @@ export const exercises = {
   },
   "single-leg-rdl": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "v11cxXtmIx8",
+        title: "How to do a single leg Romanian Dead Lift: POGO Physio",
+        channel: "POGO Physio",
+      },
+    },
     en: {
       name: "Single-leg Romanian deadlift",
       dose: "3 × 8–10 per leg",
@@ -442,7 +465,13 @@ export const exercises = {
   },
   "toe-up-heel-raise": {
     min: 8,
-    video: null,
+    video: {
+      en: {
+        id: "PkMHAzaipVg",
+        title: "Towel Raises for Plantar Fasciitis Both Legs",
+        channel: "Rehab My Patient",
+      },
+    },
     en: {
       name: "Heel raise with a towel under the toes",
       dose: "3 × 12 → 5 × 8 over 4 weeks · every 2nd day",
@@ -651,7 +680,13 @@ export const exercises = {
   },
   "banded-knee-drive": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "-wSTNPVgF0Q",
+        title: "Standing Hip Flexion with Resistive Band - Ask Doctor Jo",
+        channel: "Ask Doctor Jo",
+      },
+    },
     en: {
       name: "Standing banded knee drive",
       dose: "3 × 10–15 per side",
@@ -665,7 +700,13 @@ export const exercises = {
   },
   "hip-abduction-hold": {
     min: 7,
-    video: null,
+    video: {
+      en: {
+        id: "iJrkTJG0vtU",
+        title: "Isometric Hip Abduction in Hooklying - Ask Doctor Jo",
+        channel: "Ask Doctor Jo",
+      },
+    },
     en: {
       name: "Lying hip abduction hold",
       dose: "5 × 30–45 s · 1 min rest",
@@ -759,6 +800,11 @@ export const exercises = {
         title: "Calf raises two legs",
         channel: "Rehab My Patient",
       },
+      de: {
+        id: "J19gTip5DCQ",
+        title: "Das ViDia Physio Team zeigt die Übung Zehenstand",
+        channel: "ViDia Physio Team",
+      },
     },
     en: {
       name: "Two-leg calf raise",
@@ -847,7 +893,13 @@ export const exercises = {
   },
   "hamstring-glider": {
     min: 3,
-    video: null,
+    video: {
+      en: {
+        id: "_7yPvqVtxb0",
+        title: "Glider Hamstring : Physiotherapy Drogheda",
+        channel: "Physiotherapy Drogheda",
+      },
+    },
     en: {
       name: "Hamstring glider",
       dose: "3 × 4 · every 3rd day",
@@ -880,6 +932,11 @@ export const exercises = {
         id: "XudFwCwxOUg",
         title: "NUH Physiotherapy - Bridging",
         channel: "NUH Physiotherapy",
+      },
+      de: {
+        id: "d91kQICCI8U",
+        title: "Das Bridging als Übung für die tiefe Rückenmuskulatur",
+        channel: "",
       },
     },
     en: {
