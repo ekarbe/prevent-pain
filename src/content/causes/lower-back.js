@@ -113,6 +113,6 @@ export default [
       meanwhile:
         "Bleib in Bewegung: Spazierengehen und leichte Aktivität helfen meist mehr als Bettruhe, und unterbrich langes Sitzen. Verzichte bis zur Untersuchung auf Laufen und schweres Heben, wenn Schmerz oder Kribbeln dadurch weiter ins Bein ziehen oder sich das Bein schwach anfühlt. Bei zunehmender Schwäche in Bein oder Fuß, Beschwerden in beiden Beinen, Taubheit im Schritt- oder Gesäßbereich oder neuen Problemen mit Blase oder Darm: sofort in die Notaufnahme.",
     },
-    sources: ["martin2015", "hopayian2018"],
+    sources: ["jensen2019", "martin2015", "hopayian2018"],
   },
 ];

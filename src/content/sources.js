@@ -1,4 +1,5 @@
-// Citations. `url` points at the paper where one was verified; otherwise links go to a PubMed search for the exact title.
+// Citations, each verified by web search. `url` is a direct link (PubMed, PMC or DOI) where one was found;
+// otherwise the link goes to a PubMed search for the exact title.
 export const sources = {
   willy2019: {
     who: "Willy RW et al.",
@@ -6,13 +7,15 @@ export const sources = {
     title:
       "Patellofemoral pain: clinical practice guidelines linked to the international classification of functioning, disability and health",
     where: "J Orthop Sports Phys Ther 49(9):CPG1–CPG95",
+    url: "https://pubmed.ncbi.nlm.nih.gov/31475628",
   },
   crossley2016: {
     who: "Crossley KM et al.",
     year: 2016,
     title:
-      "2016 Patellofemoral pain consensus statement from the 4th International Patellofemoral Pain Research Retreat, Manchester. Part 2",
+      "2016 Patellofemoral pain consensus statement from the 4th International Patellofemoral Pain Research Retreat, Manchester. Part 2: recommended physical interventions (exercise, taping, bracing, foot orthoses and combined interventions)",
     where: "Br J Sports Med 50(14):844–852",
+    url: "https://doi.org/10.1136/bjsports-2016-096268",
   },
   powers2010: {
     who: "Powers CM",
@@ -20,6 +23,7 @@ export const sources = {
     title:
       "The influence of abnormal hip mechanics on knee injury: a biomechanical perspective",
     where: "J Orthop Sports Phys Ther 40(2):42–51",
+    url: "https://doi.org/10.2519/jospt.2010.3337",
   },
   silbernagel2007: {
     who: "Silbernagel KG et al.",
@@ -27,6 +31,7 @@ export const sources = {
     title:
       "Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy: a randomized controlled study",
     where: "Am J Sports Med 35(6):897–906",
+    url: "https://pubmed.ncbi.nlm.nih.gov/17307888",
   },
   malliaras2015: {
     who: "Malliaras P et al.",
@@ -34,6 +39,7 @@ export const sources = {
     title:
       "Patellar tendinopathy: clinical diagnosis, load management, and advice for challenging case presentations",
     where: "J Orthop Sports Phys Ther 45(11):887–898",
+    url: "https://doi.org/10.2519/jospt.2015.5987",
   },
   rio2015: {
     who: "Rio E et al.",
@@ -41,6 +47,7 @@ export const sources = {
     title:
       "Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy",
     where: "Br J Sports Med 49(19):1277–1283",
+    url: "https://pubmed.ncbi.nlm.nih.gov/25979840",
   },
   kongsgaard2009: {
     who: "Kongsgaard M et al.",
@@ -48,6 +55,7 @@ export const sources = {
     title:
       "Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy",
     where: "Scand J Med Sci Sports 19(6):790–802",
+    url: "https://pubmed.ncbi.nlm.nih.gov/19793213",
   },
   backman2011: {
     who: "Backman LJ, Danielson P",
@@ -55,6 +63,7 @@ export const sources = {
     title:
       "Low range of ankle dorsiflexion predisposes for patellar tendinopathy in junior elite basketball players: a 1-year prospective study",
     where: "Am J Sports Med 39(12):2626–2633",
+    url: "https://doi.org/10.1177/0363546511420552",
   },
   fredericson2000: {
     who: "Fredericson M et al.",
@@ -62,6 +71,7 @@ export const sources = {
     title:
       "Hip abductor weakness in distance runners with iliotibial band syndrome",
     where: "Clin J Sport Med 10(3):169–175",
+    url: "https://doi.org/10.1097/00042752-200007000-00004",
   },
   heiderscheit2011: {
     who: "Heiderscheit BC et al.",
@@ -69,12 +79,14 @@ export const sources = {
     title:
       "Effects of step rate manipulation on joint mechanics during running",
     where: "Med Sci Sports Exerc 43(2):296–302",
+    url: "https://pubmed.ncbi.nlm.nih.gov/20581720",
   },
   nielsen2012: {
     who: "Nielsen RO et al.",
     year: 2012,
     title: "Training errors and running related injuries: a systematic review",
     where: "Int J Sports Phys Ther 7(1):58–75",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3290924",
   },
   chimenti2024: {
     who: "Chimenti RL et al.",
@@ -82,6 +94,7 @@ export const sources = {
     title:
       "Achilles Pain, Stiffness, and Muscle Power Deficits: Midportion Achilles Tendinopathy Revision 2024",
     where: "J Orthop Sports Phys Ther 54(12):CPG1–CPG32",
+    url: "https://doi.org/10.2519/jospt.2024.0302",
   },
   beyer2015: {
     who: "Beyer R et al.",
@@ -96,6 +109,7 @@ export const sources = {
     title:
       "Clinical risk factors for Achilles tendinopathy: a systematic review",
     where: "Br J Sports Med 53(21):1352–1361",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6837257",
   },
   franettovichsmith2014: {
     who: "Franettovich Smith MM et al.",
@@ -103,6 +117,7 @@ export const sources = {
     title:
       "Neuromotor control of gluteal muscles in runners with achilles tendinopathy",
     where: "Med Sci Sports Exerc 46(3):594–599",
+    url: "https://doi.org/10.1249/MSS.0000000000000133",
   },
   chimenti2017: {
     who: "Chimenti RL et al.",
@@ -131,7 +146,7 @@ export const sources = {
     year: 2023,
     title: "Heel Pain - Plantar Fasciitis: Revision 2023",
     where: "J Orthop Sports Phys Ther 53(12):CPG1–CPG39",
-    url: "https://pubmed.ncbi.nlm.nih.gov/38037331/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/38037331",
   },
   morrissey2021: {
     who: "Morrissey D et al.",
@@ -147,12 +162,14 @@ export const sources = {
     title:
       "High-load strength training improves outcome in patients with plantar fasciitis: A randomized controlled trial with 12-month follow-up",
     where: "Scand J Med Sci Sports 25(3):e292–e300",
+    url: "https://doi.org/10.1111/sms.12313",
   },
   riddle2003: {
     who: "Riddle DL et al.",
     year: 2003,
     title: "Risk factors for Plantar fasciitis: a matched case-control study",
     where: "J Bone Joint Surg Am 85(5):872–877",
+    url: "https://pubmed.ncbi.nlm.nih.gov/12728038",
   },
   osborne2019: {
     who: "Osborne JWA et al.",
@@ -167,6 +184,7 @@ export const sources = {
     title:
       "Exercise for posterior tibial tendon dysfunction: a systematic review of randomised clinical trials and clinical guidelines",
     where: "BMJ Open Sport Exerc Med 4(1):e000430",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6157513",
   },
   kulig2009: {
     who: "Kulig K et al.",
@@ -174,7 +192,7 @@ export const sources = {
     title:
       "Nonsurgical management of posterior tibial tendon dysfunction with orthoses and resistive exercise: a randomized controlled trial",
     where: "Phys Ther 89(1):26–37",
-    url: "https://pubmed.ncbi.nlm.nih.gov/19022863/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/19022863",
   },
   ross2021: {
     who: "Ross MH et al.",
@@ -182,6 +200,7 @@ export const sources = {
     title:
       "Clinical Tests of Tibialis Posterior Tendinopathy: Are They Reliable, and How Well Are They Reflected in Structural Changes on Imaging?",
     where: "J Orthop Sports Phys Ther 51(5):253–260",
+    url: "https://doi.org/10.2519/jospt.2021.9707",
   },
   kulig2011: {
     who: "Kulig K et al.",
@@ -196,6 +215,7 @@ export const sources = {
     title:
       "Ankle stability and movement coordination impairments: lateral ankle ligament sprains revision 2021",
     where: "J Orthop Sports Phys Ther 51(4):CPG1–CPG80",
+    url: "https://doi.org/10.2519/jospt.2021.0302",
   },
   kosik2017: {
     who: "Kosik KB et al.",
@@ -203,6 +223,7 @@ export const sources = {
     title:
       "Therapeutic interventions for improving self-reported function in patients with chronic ankle instability: a systematic review",
     where: "Br J Sports Med 51(2):105–112",
+    url: "https://pubmed.ncbi.nlm.nih.gov/27806951",
   },
   mckeon2008: {
     who: "McKeon PO et al.",
@@ -210,6 +231,7 @@ export const sources = {
     title:
       "Balance training improves function and postural control in those with chronic ankle instability",
     where: "Med Sci Sports Exerc 40(10):1810–1819",
+    url: "https://pubmed.ncbi.nlm.nih.gov/18799992",
   },
   hupperets2009: {
     who: "Hupperets MD et al.",
@@ -217,6 +239,7 @@ export const sources = {
     title:
       "Effect of unsupervised home based proprioceptive training on recurrences of ankle sprain: randomised controlled trial",
     where: "BMJ 339:b2684",
+    url: "https://doi.org/10.1136/bmj.b2684",
   },
   thompson2018: {
     who: "Thompson C et al.",
@@ -224,12 +247,14 @@ export const sources = {
     title:
       "Factors contributing to chronic ankle instability: a systematic review and meta-analysis of systematic reviews",
     where: "Sports Med 48(1):189–205",
+    url: "https://pubmed.ncbi.nlm.nih.gov/28887759",
   },
   davda2017: {
     who: "Davda K et al.",
     year: 2017,
     title: "Peroneal tendon disorders",
     where: "EFORT Open Rev 2(6):281–292",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5508858",
   },
   deu2022: {
     who: "Deu RS, Coslick AM, Dreher G",
@@ -243,19 +268,21 @@ export const sources = {
     title:
       "Tendon disorders of the foot and ankle, part 1: peroneal tendon disorders",
     where: "Am J Sports Med 37(3):614–625",
-    url: "https://pubmed.ncbi.nlm.nih.gov/19251687/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/19251687",
   },
   besse2017: {
     who: "Besse JL",
     year: 2017,
     title: "Metatarsalgia",
     where: "Orthop Traumatol Surg Res 103(1S):S29–S39",
+    url: "https://pubmed.ncbi.nlm.nih.gov/28109624",
   },
   digiovanni2002: {
     who: "DiGiovanni CW et al.",
     year: 2002,
     title: "Isolated gastrocnemius tightness",
     where: "J Bone Joint Surg Am 84(6):962–970",
+    url: "https://doi.org/10.2106/00004623-200206000-00010",
   },
   weist2004: {
     who: "Weist R, Eils E, Rosenbaum D",
@@ -263,6 +290,7 @@ export const sources = {
     title:
       "The influence of muscle fatigue on electromyogram and plantar pressure patterns as an explanation for the incidence of metatarsal stress fractures",
     where: "Am J Sports Med 32(8):1893–1898",
+    url: "https://pubmed.ncbi.nlm.nih.gov/15572318",
   },
   wellenkotter2014: {
     who: "Wellenkotter J et al.",
@@ -270,6 +298,7 @@ export const sources = {
     title:
       "The effects of running cadence manipulation on plantar loading in healthy runners",
     where: "Int J Sports Med 35(9):779–784",
+    url: "https://pubmed.ncbi.nlm.nih.gov/24595812",
   },
   warden2014: {
     who: "Warden SJ, Davis IS, Fredericson M",
@@ -277,13 +306,14 @@ export const sources = {
     title:
       "Management and prevention of bone stress injuries in long-distance runners",
     where: "J Orthop Sports Phys Ther 44(10):749–765",
+    url: "https://pubmed.ncbi.nlm.nih.gov/25103133",
   },
   hoenig2022: {
     who: "Hoenig T et al.",
     year: 2022,
     title: "Bone stress injuries",
     where: "Nat Rev Dis Primers 8:26",
-    url: "https://pubmed.ncbi.nlm.nih.gov/35484131/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/35484131",
   },
   patel2011: {
     who: "Patel DS, Roth M, Kapil N",
@@ -297,7 +327,7 @@ export const sources = {
     title:
       "Foot bone marrow edema after a 10-wk transition to minimalist running shoes",
     where: "Med Sci Sports Exerc 45(7):1363–1368",
-    url: "https://pubmed.ncbi.nlm.nih.gov/23439417/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/23439417",
   },
   hagen2010: {
     who: "Hagen M et al.",
@@ -305,12 +335,14 @@ export const sources = {
     title:
       "Effects of different shoe-lacing patterns on dorsal pressure distribution during running and perceived comfort",
     where: "Res Sports Med 18(3):176–187",
+    url: "https://pubmed.ncbi.nlm.nih.gov/20623434",
   },
   millar2021: {
     who: "Millar NL et al.",
     year: 2021,
     title: "Tendinopathy",
     where: "Nat Rev Dis Primers 7(1):1",
+    url: "https://doi.org/10.1038/s41572-020-00234-1",
   },
   weir2015: {
     who: "Weir A et al.",
@@ -318,6 +350,7 @@ export const sources = {
     title:
       "Doha agreement meeting on terminology and definitions in groin pain in athletes",
     where: "Br J Sports Med 49(12):768–774",
+    url: "https://doi.org/10.1136/bjsports-2015-094869",
   },
   tyler2014: {
     who: "Tyler TF et al.",
@@ -339,6 +372,7 @@ export const sources = {
     title:
       "The Warwick Agreement on femoroacetabular impingement syndrome (FAI syndrome): an international consensus statement",
     where: "Br J Sports Med 50(19):1169–1176",
+    url: "https://doi.org/10.1136/bjsports-2016-096743",
   },
   kemp2020: {
     who: "Kemp JL et al.",
@@ -346,6 +380,7 @@ export const sources = {
     title:
       "Physiotherapist-led treatment for young to middle-aged active adults with hip-related pain: consensus recommendations from the International Hip-related Pain Research Network, Zurich 2018",
     where: "Br J Sports Med 54(9):504–511",
+    url: "https://pubmed.ncbi.nlm.nih.gov/31732651",
   },
   enseki2023: {
     who: "Enseki KR et al.",
@@ -353,7 +388,7 @@ export const sources = {
     title:
       "Hip pain and movement dysfunction associated with nonarthritic hip joint pain: a revision",
     where: "J Orthop Sports Phys Ther 53(7):CPG1–CPG70",
-    url: "https://pubmed.ncbi.nlm.nih.gov/37383013/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/37383013",
   },
   robertson2017: {
     who: "Robertson GA, Wood AM",
@@ -368,6 +403,7 @@ export const sources = {
     title:
       "Return to sport following low-risk and high-risk bone stress injuries: a systematic review and meta-analysis",
     where: "Br J Sports Med 57(7):427–432",
+    url: "https://doi.org/10.1136/bjsports-2022-106328",
   },
   grimaldi2015: {
     who: "Grimaldi A et al.",
@@ -375,7 +411,7 @@ export const sources = {
     title:
       "Gluteal tendinopathy: a review of mechanisms, assessment and management",
     where: "Sports Med 45(8):1107–1119",
-    url: "https://pubmed.ncbi.nlm.nih.gov/25969366/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/25969366",
   },
   mellor2018: {
     who: "Mellor R et al.",
@@ -391,7 +427,7 @@ export const sources = {
     title:
       "Utility of clinical tests to diagnose MRI-confirmed gluteal tendinopathy in patients presenting with lateral hip pain",
     where: "Br J Sports Med 51(6):519–524",
-    url: "https://pubmed.ncbi.nlm.nih.gov/27633027/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/27633027",
   },
   hopayian2018: {
     who: "Hopayian K, Danielyan A",
@@ -405,7 +441,7 @@ export const sources = {
     year: 2015,
     title: "Deep gluteal syndrome",
     where: "J Hip Preserv Surg 2(2):99–107",
-    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4718497/",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4718497",
   },
   tonley2010: {
     who: "Tonley JC et al.",
@@ -413,7 +449,7 @@ export const sources = {
     title:
       "Treatment of an individual with piriformis syndrome focusing on hip muscle strengthening and movement reeducation: a case report",
     where: "J Orthop Sports Phys Ther 40(2):103–111",
-    url: "https://pubmed.ncbi.nlm.nih.gov/20118521/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/20118521",
   },
   goom2016: {
     who: "Goom TSH et al.",
@@ -421,6 +457,7 @@ export const sources = {
     title:
       "Proximal hamstring tendinopathy: clinical aspects of assessment and management",
     where: "J Orthop Sports Phys Ther 46(6):483–493",
+    url: "https://doi.org/10.2519/jospt.2016.5986",
   },
   nasser2021: {
     who: "Nasser AM et al.",
@@ -428,6 +465,7 @@ export const sources = {
     title:
       "Proximal hamstring tendinopathy: a systematic review of interventions",
     where: "Int J Sports Phys Ther 16(2):288–305",
+    url: "https://pubmed.ncbi.nlm.nih.gov/33842025",
   },
   fredericson2005: {
     who: "Fredericson M et al.",
@@ -443,6 +481,7 @@ export const sources = {
     title:
       "The diagnosis and management of medial tibial stress syndrome: An evidence update",
     where: "Unfallchirurg 123(Suppl 1):S15–S19",
+    url: "https://doi.org/10.1007/s00113-019-0667-z",
   },
   moen2012: {
     who: "Moen MH et al.",
@@ -450,15 +489,15 @@ export const sources = {
     title:
       "The treatment of medial tibial stress syndrome in athletes; a randomized clinical trial",
     where: "Sports Med Arthrosc Rehabil Ther Technol 4:12",
-    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3352296/",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3352296",
   },
   mattock2021: {
     who: "Mattock J, Steele JR, Mickle KJ",
     year: 2021,
     title:
       "Are Leg Muscle, Tendon and Functional Characteristics Associated with Medial Tibial Stress Syndrome? A Systematic Review",
-    where: "Sports Med Open 2021",
-    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8502183/",
+    where: "Sports Med Open 7(1):71",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8502183",
   },
   reinking2017: {
     who: "Reinking MF et al.",
@@ -466,7 +505,7 @@ export const sources = {
     title:
       "Medial Tibial Stress Syndrome in Active Individuals: A Systematic Review and Meta-analysis of Risk Factors",
     where: "Sports Health 9(3):252–261",
-    url: "https://pubmed.ncbi.nlm.nih.gov/27729482/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/27729482",
   },
   becker2018: {
     who: "Becker J, Nakajima M, Wu WFW",
@@ -474,7 +513,7 @@ export const sources = {
     title:
       "Factors Contributing to Medial Tibial Stress Syndrome in Runners: A Prospective Study",
     where: "Med Sci Sports Exerc 50(10):2092–2100",
-    url: "https://pubmed.ncbi.nlm.nih.gov/29787473/",
+    url: "https://doi.org/10.1249/MSS.0000000000001674",
   },
   edwards2009: {
     who: "Edwards WB et al.",
@@ -482,7 +521,7 @@ export const sources = {
     title:
       "Effects of stride length and running mileage on a probabilistic stress fracture model",
     where: "Med Sci Sports Exerc 41(12):2177–2184",
-    url: "https://pubmed.ncbi.nlm.nih.gov/19915501/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/19915501",
   },
   warden2021: {
     who: "Warden SJ, Edwards WB, Willy RW",
@@ -490,14 +529,14 @@ export const sources = {
     title:
       "Optimal Load for Managing Low-Risk Tibial and Metatarsal Bone Stress Injuries in Runners: The Science Behind the Clinical Reasoning",
     where: "J Orthop Sports Phys Ther 51(7):322–330",
-    url: "https://pubmed.ncbi.nlm.nih.gov/33962529/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/33962529",
   },
   milgrom2021: {
     who: "Milgrom C et al.",
     year: 2021,
     title: "Medial tibial stress fracture diagnosis and treatment guidelines",
     where: "J Sci Med Sport 24(6):526–530",
-    url: "https://pubmed.ncbi.nlm.nih.gov/33298373/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/33298373",
   },
   mountjoy2023: {
     who: "Mountjoy M et al.",
@@ -505,7 +544,7 @@ export const sources = {
     title:
       "2023 International Olympic Committee's (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs)",
     where: "Br J Sports Med 57(17):1073–1097",
-    url: "https://pubmed.ncbi.nlm.nih.gov/37752011/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/37752011",
   },
   brewer2012: {
     who: "Brewer RB, Gregory AJ",
@@ -520,6 +559,7 @@ export const sources = {
     year: 2017,
     title: "Biomechanics and Physiology of Uphill and Downhill Running",
     where: "Sports Med 47(4):615–629",
+    url: "https://doi.org/10.1007/s40279-016-0605-y",
   },
   valencia2023: {
     who: "Valencia O et al.",
@@ -527,6 +567,7 @@ export const sources = {
     title:
       "Temporal differences in the myoelectric activity of lower limb muscles during rearfoot and forefoot running: A statistical parametric mapping approach",
     where: "Eur J Sport Sci 23(6):983–991",
+    url: "https://pubmed.ncbi.nlm.nih.gov/35593659",
   },
   murley2009: {
     who: "Murley GS, Menz HB, Landorf KB",
@@ -534,6 +575,7 @@ export const sources = {
     title:
       "Foot posture influences the electromyographic activity of selected lower limb muscles during gait",
     where: "J Foot Ankle Res 2:35",
+    url: "https://doi.org/10.1186/1757-1146-2-35",
   },
   buerba2019: {
     who: "Buerba RA et al.",
@@ -549,14 +591,15 @@ export const sources = {
     title:
       "Nonoperative Management of Chronic Exertional Compartment Syndrome: A Systematic Review",
     where: "Curr Sports Med Rep 15(3):191–198",
+    url: "https://pubmed.ncbi.nlm.nih.gov/27172084",
   },
   diebal2012: {
     who: "Diebal AR et al.",
     year: 2012,
     title:
       "Forefoot running improves pain and disability associated with chronic exertional compartment syndrome",
-    where: "Am J Sports Med 2012",
-    url: "https://pubmed.ncbi.nlm.nih.gov/22427621/",
+    where: "Am J Sports Med 40(5):1060–1067",
+    url: "https://pubmed.ncbi.nlm.nih.gov/22427621",
   },
   helmhout2015: {
     who: "Helmhout PH et al.",
@@ -564,6 +607,7 @@ export const sources = {
     title:
       "The Effectiveness of a 6-Week Intervention Program Aimed at Modifying Running Style in Patients With Chronic Exertional Compartment Syndrome: Results From a Series of Case Studies",
     where: "Orthop J Sports Med 3(3):2325967115575691",
+    url: "https://pubmed.ncbi.nlm.nih.gov/26665032",
   },
   green2017: {
     who: "Green B, Pizzari T",
@@ -571,6 +615,7 @@ export const sources = {
     title:
       "Calf muscle strain injuries in sport: a systematic review of risk factors for injury",
     where: "Br J Sports Med 51(16):1189–1194",
+    url: "https://doi.org/10.1136/bjsports-2016-097177",
   },
   green2022: {
     who: "Green B et al.",
@@ -578,13 +623,14 @@ export const sources = {
     title:
       "The Assessment, Management and Prevention of Calf Muscle Strain Injuries: A Qualitative Study of the Practices and Perspectives of 20 Expert Sports Clinicians",
     where: "Sports Med Open 8:10",
-    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8761182/",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8761182",
   },
   bayer2017: {
     who: "Bayer ML, Magnusson SP, Kjaer M",
     year: 2017,
     title: "Early versus Delayed Rehabilitation after Acute Muscle Injury",
     where: "N Engl J Med 377:1300–1301",
+    url: "https://doi.org/10.1056/NEJMc1708134",
   },
   dixon2009: {
     who: "Dixon JB",
@@ -592,7 +638,7 @@ export const sources = {
     title:
       "Gastrocnemius vs. soleus strain: how to differentiate and deal with calf muscle injuries",
     where: "Curr Rev Musculoskelet Med 2(2):74–77",
-    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2697334/",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2697334",
   },
   martin2022: {
     who: "Martin RL et al.",
@@ -600,6 +646,7 @@ export const sources = {
     title:
       "Hamstring strain injury in athletes: clinical practice guidelines linked to the International Classification of Functioning, Disability and Health",
     where: "J Orthop Sports Phys Ther 52(3):CPG1–CPG44",
+    url: "https://doi.org/10.2519/jospt.2022.0301",
   },
   askling2013: {
     who: "Askling CM, Tengvar M, Thorstensson A",
@@ -607,7 +654,7 @@ export const sources = {
     title:
       "Acute hamstring injuries in Swedish elite football: a prospective randomised controlled clinical trial comparing two rehabilitation protocols",
     where: "Br J Sports Med 47(15):953–959",
-    url: "https://pubmed.ncbi.nlm.nih.gov/23536466/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/23536466",
   },
   askling2014: {
     who: "Askling CM et al.",
@@ -615,7 +662,7 @@ export const sources = {
     title:
       "Acute hamstring injuries in Swedish elite sprinters and jumpers: a prospective randomised controlled clinical trial comparing two rehabilitation protocols",
     where: "Br J Sports Med 48(7):532–539",
-    url: "https://pubmed.ncbi.nlm.nih.gov/24620041/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/24620041",
   },
   sherry2004: {
     who: "Sherry MA, Best TM",
@@ -623,6 +670,7 @@ export const sources = {
     title:
       "A comparison of 2 rehabilitation programs in the treatment of acute hamstring strains",
     where: "J Orthop Sports Phys Ther 34(3):116–125",
+    url: "https://pubmed.ncbi.nlm.nih.gov/15089024",
   },
   hickey2020: {
     who: "Hickey JT et al.",
@@ -630,7 +678,7 @@ export const sources = {
     title:
       "Pain-free versus pain-threshold rehabilitation following acute hamstring strain injury: a randomized controlled trial",
     where: "J Orthop Sports Phys Ther 50(2):91–103",
-    url: "https://pubmed.ncbi.nlm.nih.gov/32005093/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/32005093",
   },
   logerstedt2018: {
     who: "Logerstedt DS et al.",
@@ -638,6 +686,7 @@ export const sources = {
     title:
       "Knee Pain and Mobility Impairments: Meniscal and Articular Cartilage Lesions Revision 2018",
     where: "J Orthop Sports Phys Ther 48(2):A1–A50",
+    url: "https://pubmed.ncbi.nlm.nih.gov/29385940",
   },
   kise2016: {
     who: "Kise NJ et al.",
@@ -645,7 +694,14 @@ export const sources = {
     title:
       "Exercise therapy versus arthroscopic partial meniscectomy for degenerative meniscal tear in middle aged patients: randomised controlled superiority trial with two year follow-up",
     where: "BMJ 354:i3740",
-    url: "https://pubmed.ncbi.nlm.nih.gov/27440192/",
+    url: "https://pubmed.ncbi.nlm.nih.gov/27440192",
+  },
+  jensen2019: {
+    who: "Jensen RK et al.",
+    year: 2019,
+    title: "Diagnosis and treatment of sciatica",
+    where: "BMJ 367:l6273",
+    url: "https://pubmed.ncbi.nlm.nih.gov/31744805",
   },
 };
 
