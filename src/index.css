@@ -67,6 +67,8 @@
   html {
     -webkit-text-size-adjust: 100%;
     hyphens: auto;
+    /* Long German compounds break even where the browser has no hyphenation dictionary. */
+    overflow-wrap: break-word;
   }
   body {
     @apply bg-bg font-sans text-ink antialiased;
