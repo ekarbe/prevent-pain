@@ -1,9 +1,15 @@
 // Exercise library. `min` is a rough session time (0 = done during runs).
-// `video` is a YouTube demo, loaded only after a tap: { en: { id, start?, end?, title, channel }, de?: {…} }.
+// `video` is a YouTube demo per language, loaded only after a tap: { en: { id, start?, title, channel }, de?: {…} }.
 export const exercises = {
   "wall-sit": {
     min: 10,
-    video: null,
+    video: {
+      en: {
+        id: "EzA794cQHrY",
+        title: "Wall Sit Isometric",
+        channel: "The Irish Physios",
+      },
+    },
     en: {
       name: "Wall sit",
       dose: "5 × 30–45 s · 2 min rest",
@@ -17,7 +23,13 @@ export const exercises = {
   },
   "step-down": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "8DcIZ2HOvHE",
+        title: "Physio shows how to Regress and Progress Lateral Step Downs",
+        channel: "",
+      },
+    },
     en: {
       name: "Slow step-down",
       dose: "3 × 10 per leg",
@@ -31,7 +43,13 @@ export const exercises = {
   },
   "spanish-squat": {
     min: 10,
-    video: null,
+    video: {
+      en: {
+        id: "1CJ3hteGxo4",
+        title: "Patellar tendinopathy? Try a Spanish Squat",
+        channel: "",
+      },
+    },
     en: {
       name: "Spanish squat hold",
       dose: "5 × 45 s · 2 min rest",
@@ -59,7 +77,13 @@ export const exercises = {
   },
   "side-abduction": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "i2r_o6JRdyU",
+        title: "How to Perform Hip Abduction in Side-lying",
+        channel: "Equilibrium Physical Therapy",
+      },
+    },
     en: {
       name: "Side-lying leg raise",
       dose: "3 × 15 per side",
@@ -87,7 +111,13 @@ export const exercises = {
   },
   "single-leg-bridge": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "z_f9sw2VSSw",
+        title: "Single Leg Bridge - Nxt Generation Physio",
+        channel: "Nxt Generation PHYSIO - Clinique physiothérapie",
+      },
+    },
     en: {
       name: "Single-leg glute bridge",
       dose: "3 × 10–12 per side",
@@ -101,7 +131,13 @@ export const exercises = {
   },
   "step-up": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "2g6G_GpsBoc",
+        title: "Step Ups",
+        channel: "Physio Logic",
+      },
+    },
     en: {
       name: "Step-up",
       dose: "3 × 10 per leg",
@@ -115,7 +151,13 @@ export const exercises = {
   },
   "ktw-mob": {
     min: 3,
-    video: null,
+    video: {
+      en: {
+        id: "CRgmHELYh3A",
+        title: "Knee to Wall Ankle Mobilization",
+        channel: "",
+      },
+    },
     en: {
       name: "Knee-to-wall mobilisation",
       dose: "2 × 15 per side · daily",
@@ -143,7 +185,13 @@ export const exercises = {
   },
   "calf-raise": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "3g5Mb3Y9sFU",
+        title: "Single leg calf raise on a step - Achilles Tendinopathy",
+        channel: "Perfect Balance Clinic",
+      },
+    },
     en: {
       name: "Single-leg calf raise",
       dose: "3 × 12–20 per side",
@@ -157,7 +205,13 @@ export const exercises = {
   },
   "short-foot": {
     min: 3,
-    video: null,
+    video: {
+      en: {
+        id: "QnnsoOIAFm0",
+        title: "Foot - short foot intrinsic muscle strengthening",
+        channel: "Physical Therapy First",
+      },
+    },
     en: {
       name: "Short foot",
       dose: "3 × 10 · 5 s holds",
@@ -199,7 +253,13 @@ export const exercises = {
   },
   "bird-dog": {
     min: 4,
-    video: null,
+    video: {
+      en: {
+        id: "SlNTXO1fD9c",
+        title: "NUHS Physiotherapy - Bird Dog",
+        channel: "NUHS Physiotherapy",
+      },
+    },
     en: {
       name: "Bird dog",
       dose: "3 × 8 per side · 5 s holds",
@@ -213,7 +273,13 @@ export const exercises = {
   },
   "dead-bug": {
     min: 4,
-    video: null,
+    video: {
+      en: {
+        id: "7a6dkBwr0j4",
+        title: "Physio Clinical Pilates Dead Bug",
+        channel: "Complete Wellness Physiotherapy",
+      },
+    },
     en: {
       name: "Dead bug",
       dose: "3 × 8 per side",
@@ -227,7 +293,13 @@ export const exercises = {
   },
   "couch-stretch": {
     min: 4,
-    video: null,
+    video: {
+      en: {
+        id: "q_dyy6tzoh4",
+        title: "Couch Stretch for Knee Pain - Tips from a Physical Therapist",
+        channel: "",
+      },
+    },
     en: {
       name: "Couch stretch",
       dose: "3 × 45 s per side",
@@ -269,7 +341,13 @@ export const exercises = {
   },
   "hamstring-bridge": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "L8mMpbP9bDw",
+        title: "Single leg hamstring bridge",
+        channel: "The MSK Physio",
+      },
+    },
     en: {
       name: "Heel-on-step hamstring bridge",
       dose: "3 × 10 per side",
@@ -283,7 +361,14 @@ export const exercises = {
   },
   "calf-hold": {
     min: 10,
-    video: null,
+    video: {
+      en: {
+        id: "MYehmaMlKSs",
+        title:
+          "Episode 2- Achilles tendinopathy Stage 1: Isometric calf raise exercises",
+        channel: "",
+      },
+    },
     en: {
       name: "Calf raise hold",
       dose: "5 × 30–45 s · 2 min rest",
@@ -297,7 +382,13 @@ export const exercises = {
   },
   "heavy-calf-raise": {
     min: 10,
-    video: null,
+    video: {
+      en: {
+        id: "iwkeoXrKXdk",
+        title: "Heavy Slow Resistance Heel Raise in Standing",
+        channel: "",
+      },
+    },
     en: {
       name: "Heavy slow calf raise",
       dose: "3 × 15 → 4 × 6 over 12 weeks · 3 times a week",
@@ -311,7 +402,13 @@ export const exercises = {
   },
   "pogo-hop": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "tnTlWfkbCv4",
+        title: "Double Leg Pogos with Chris Bramah",
+        channel: "",
+      },
+    },
     en: {
       name: "Pogo hops",
       dose: "3 × 20 · 1 min rest",
@@ -325,7 +422,13 @@ export const exercises = {
   },
   "fascia-stretch": {
     min: 3,
-    video: null,
+    video: {
+      en: {
+        id: "JVS4MzeIBVI",
+        title: "NUHS Physiotherapy - Seated Plantar Fascia Stretch",
+        channel: "NUHS Physiotherapy",
+      },
+    },
     en: {
       name: "Plantar fascia stretch",
       dose: "3 × 30 s · 2–3 times a day",
@@ -353,7 +456,13 @@ export const exercises = {
   },
   "band-foot-turn-in": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "7bb-edQvrzU",
+        title: "Ankle Inversion (Tibialis Posterior) Exercise",
+        channel: "Endurance Physio",
+      },
+    },
     en: {
       name: "Banded foot turn-in",
       dose: "3 × 15 · daily",
@@ -367,7 +476,13 @@ export const exercises = {
   },
   "arch-heel-raise": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "IjoSXiL-dO0",
+        title: "Heel Raise With Ball Squeeze - For Posterior Tib Activation",
+        channel: "",
+      },
+    },
     en: {
       name: "Heel raise with arch lift",
       dose: "3 × 15 on both legs → 3 × 10 on one",
@@ -381,7 +496,13 @@ export const exercises = {
   },
   "band-eversion": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "xfrncpP5ONQ",
+        title: "Ankle Eversion with Resistive Band - Ask Doctor Jo",
+        channel: "Ask Doctor Jo",
+      },
+    },
     en: {
       name: "Banded ankle eversion",
       dose: "3 × 15 per side · 3 s return",
@@ -395,7 +516,13 @@ export const exercises = {
   },
   "eversion-hold": {
     min: 8,
-    video: null,
+    video: {
+      en: {
+        id: "1VfBKWXVquE",
+        title: "Seated isometric ankle eversion resisted with wall",
+        channel: "Perfect Balance Clinic",
+      },
+    },
     en: {
       name: "Eversion hold",
       dose: "5 × 30–45 s · 1 min rest",
@@ -409,7 +536,14 @@ export const exercises = {
   },
   "hop-stick": {
     min: 4,
-    video: null,
+    video: {
+      en: {
+        id: "I9FuUUPT0vE",
+        title:
+          "Exercises with an Athletic Trainer: Single Leg Hop Diagonal Hop and Stick",
+        channel: "Children's Hospital Colorado",
+      },
+    },
     en: {
       name: "Hop and stick",
       dose: "3 × 8 per side",
@@ -423,7 +557,13 @@ export const exercises = {
   },
   "wall-calf-stretch": {
     min: 3,
-    video: null,
+    video: {
+      en: {
+        id: "3de1AjRqpfA",
+        title: "NUHS Physiotherapy - Gastrocnemius Stretch",
+        channel: "NUHS Physiotherapy",
+      },
+    },
     en: {
       name: "Straight-knee calf stretch",
       dose: "3 × 30 s per side · daily",
@@ -451,7 +591,13 @@ export const exercises = {
   },
   "toe-lift-hold": {
     min: 6,
-    video: null,
+    video: {
+      en: {
+        id: "yZ8IeoIxXJQ",
+        title: "Isometric Ankle Dorsiflexion Hand Resistance",
+        channel: "",
+      },
+    },
     en: {
       name: "Toe lift hold",
       dose: "5 × 30–45 s · 1 min rest",
@@ -465,7 +611,13 @@ export const exercises = {
   },
   "wall-toe-raise": {
     min: 4,
-    video: null,
+    video: {
+      en: {
+        id: "UmHbtN0iFMg",
+        title: "How To Do a Tibialis Anterior Wall Raise",
+        channel: "",
+      },
+    },
     en: {
       name: "Wall toe raise",
       dose: "3 × 15 · 3 s down",
@@ -479,7 +631,13 @@ export const exercises = {
   },
   "hip-flexor-hold": {
     min: 6,
-    video: null,
+    video: {
+      en: {
+        id: "LOxkaeCcpNQ",
+        title: "Hip flexor sitting isometric strengthening",
+        channel: "",
+      },
+    },
     en: {
       name: "Seated hip flexor hold",
       dose: "5 × 30 s per side",
@@ -521,7 +679,13 @@ export const exercises = {
   },
   "banded-side-step": {
     min: 4,
-    video: null,
+    video: {
+      en: {
+        id: "kTPW2LiibXo",
+        title: "Lateral Walks",
+        channel: "Physio Logic",
+      },
+    },
     en: {
       name: "Banded side step",
       dose: "3 × 10 steps each way",
@@ -535,7 +699,13 @@ export const exercises = {
   },
   clamshell: {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "hQupQ9mJZFw",
+        title: "How to Guide: Banded Clamshell",
+        channel: "",
+      },
+    },
     en: {
       name: "Banded clamshell",
       dose: "3 × 12–15 per side",
@@ -549,7 +719,13 @@ export const exercises = {
   },
   "hamstring-bridge-hold": {
     min: 7,
-    video: null,
+    video: {
+      en: {
+        id: "10FzCesw6Rs",
+        title: "Hamstring bridge — isometric hold",
+        channel: "",
+      },
+    },
     en: {
       name: "Hamstring bridge hold",
       dose: "5 × 30–45 s · 1 min rest",
@@ -577,7 +753,13 @@ export const exercises = {
   },
   "two-leg-calf-raise": {
     min: 4,
-    video: null,
+    video: {
+      en: {
+        id: "cqDMYUaIXvw",
+        title: "Calf raises two legs",
+        channel: "Rehab My Patient",
+      },
+    },
     en: {
       name: "Two-leg calf raise",
       dose: "3 × 15 · 3 s down · daily",
@@ -605,7 +787,13 @@ export const exercises = {
   },
   "adductor-squeeze": {
     min: 6,
-    video: null,
+    video: {
+      en: {
+        id: "Hz1mzJksXJY",
+        title: "Module 1: Adductor Squeeze 45 degrees",
+        channel: "",
+      },
+    },
     en: {
       name: "Adductor squeeze hold",
       dose: "5 × 30 s · 1 min rest",
@@ -619,7 +807,13 @@ export const exercises = {
   },
   "copenhagen-adduction": {
     min: 5,
-    video: null,
+    video: {
+      en: {
+        id: "nhGK-DxiGBE",
+        title: "Short Lever Adductor Copenhagen Plank",
+        channel: "",
+      },
+    },
     en: {
       name: "Copenhagen adduction (knee supported)",
       dose: "2–3 × 5–10 per side · 3 times a week",
@@ -633,7 +827,13 @@ export const exercises = {
   },
   "hamstring-extender": {
     min: 4,
-    video: null,
+    video: {
+      en: {
+        id: "n8KAMzi2gCk",
+        title: "Hamstring Rehab exercise 1",
+        channel: "",
+      },
+    },
     en: {
       name: "Hamstring extender",
       dose: "3 × 12 · twice a day",
@@ -675,7 +875,13 @@ export const exercises = {
   },
   "glute-bridge": {
     min: 4,
-    video: null,
+    video: {
+      en: {
+        id: "XudFwCwxOUg",
+        title: "NUH Physiotherapy - Bridging",
+        channel: "NUH Physiotherapy",
+      },
+    },
     en: {
       name: "Glute bridge",
       dose: "3 × 12 · 3 s holds",
