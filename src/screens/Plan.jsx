@@ -49,7 +49,6 @@ function Sources({ ids }) {
           );
         })}
       </ol>
-      <p className="fine">{t.startFine}</p>
     </section>
   );
 }
@@ -152,9 +151,10 @@ export default function Plan({ route, go, notify }) {
       <section className="sec">
         <SectionTitle n={1}>{t.calm}</SectionTitle>
         <div className="card flex flex-col gap-2.5 p-3.5 text-[15px]">
-          <p>
-            <span className="label">{t.painRule}</span> {t.ruleText}
-          </p>
+          <div>
+            <p className="label">{t.painRule}</p>
+            <p>{t.ruleText}</p>
+          </div>
           <PainScale />
           <p className="text-ink-2">{c.load}</p>
         </div>

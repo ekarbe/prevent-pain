@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import * as content from "./content/index.js";
 import { LangContext, pick } from "./i18n/lang.js";
 import { ui } from "./i18n/ui.js";
+import { site } from "./site.js";
 import { formatHash, validate } from "./lib/router.js";
 import { canGoBack, navigate, useRoute } from "./lib/useRoute.js";
 import { preferredLang, saveLang } from "./lib/prefs.js";
@@ -17,6 +18,7 @@ import Causes from "./screens/Causes.jsx";
 import Plan from "./screens/Plan.jsx";
 
 const STEP = { region: 1, spot: 2, causes: 3, plan: 4 };
+const YEAR = new Date().getFullYear();
 const PARENT = {
   stop: "start",
   region: "start",
@@ -142,14 +144,25 @@ export default function App() {
         </main>
         <footer className="mx-auto w-full max-w-3xl border-t border-line py-5 text-[13px] leading-normal text-ink-2">
           <p className="max-w-xl">{ui[lang].footer}</p>
-          <p className="mt-1">
-            <a
-              className="underline underline-offset-2"
-              href="https://github.com/ekarbe/prevent-pain"
-            >
-              {ui[lang].source}
-            </a>
+          <p className="mt-3">
+            © {YEAR} {site.author}
           </p>
+          <nav aria-label={ui[lang].links} className="flex flex-wrap gap-x-5">
+            {[
+              [site.homepage, site.homepage.replace("https://", "")],
+              [site.github, "GitHub"],
+              [site.linkedin, "LinkedIn"],
+              [site.repo, ui[lang].source],
+            ].map(([href, label]) => (
+              <a
+                key={href}
+                href={href}
+                className="inline-flex min-h-11 items-center underline underline-offset-2"
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
         </footer>
         <Toast message={toast?.msg} />
       </div>

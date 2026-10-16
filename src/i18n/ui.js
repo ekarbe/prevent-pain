@@ -12,6 +12,7 @@ export const ui = {
     footer:
       "Training tips for running aches, not medical advice. Drafted from published research and not reviewed by a clinician.",
     source: "Source code",
+    links: "About the author",
 
     startTitle: "Before we start",
     startLead:
@@ -167,6 +168,7 @@ export const ui = {
     footer:
       "Trainingstipps bei Laufbeschwerden, keine medizinische Beratung. Basiert auf veröffentlichter Forschung, nicht von medizinischem Fachpersonal geprüft.",
     source: "Quellcode",
+    links: "Über den Autor",
 
     startTitle: "Bevor es losgeht",
     startLead:
