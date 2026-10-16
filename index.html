@@ -2,18 +2,50 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/prevent-pain.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prevent Pain</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
+    <title>Prevent Pain</title>
+    <meta
+      name="description"
+      content="Tap where running hurts, check the weak links in your chain with 30-second self-tests, and get a strength plan. In English and German."
+    />
+    <link rel="icon" type="image/svg+xml" href="/prevent-pain.svg" />
+    <meta name="theme-color" content="#f1f5f1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Prevent Pain" />
+    <meta
+      property="og:description"
+      content="Tap where running hurts, find the weak links in your chain and get a strength plan."
+    />
+    <meta property="og:url" content="https://ekarbe.github.io/prevent-pain/" />
+    <meta
+      property="og:image"
+      content="https://ekarbe.github.io/prevent-pain/og.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // Apply the saved or system colour scheme before first paint, so dark mode doesn't flash.
+      // Storage can be blocked; the system setting still applies then.
+      var saved = null;
+      try {
+        saved = localStorage.getItem("theme");
+      } catch (e) {}
+      var dark = saved
+        ? saved === "dark"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (dark) {
+        document.documentElement.classList.add("dark");
+        document
+          .querySelector('meta[name="theme-color"]')
+          .setAttribute("content", "#0f1715");
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>Prevent Pain needs JavaScript to run.</noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

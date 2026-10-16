@@ -1,63 +1,326 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "@fontsource/young-serif/400.css";
+@import "@fontsource-variable/atkinson-hyperlegible-next/wght.css";
+
+/* Physio studio: a bright, quiet treatment room.
+   Sage-white ground, clinic teal for actions, raspberry only where it hurts. */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Young Serif", "Iowan Old Style", Georgia, serif;
+  --font-sans:
+    "Atkinson Hyperlegible Next Variable", "Atkinson Hyperlegible", system-ui,
+    sans-serif;
+
+  --color-bg: #f1f5f1;
+  --color-surface: #ffffff;
+  --color-surface-2: #e5ece6;
+  --color-ink: #17302a;
+  --color-ink-2: #536862;
+  --color-line: #d3ded6;
+  --color-accent: #1d6b5b;
+  --color-accent-ink: #ffffff;
+  --color-accent-soft: #d5e9e1;
+  --color-pain: #c22f61;
+  --color-pain-soft: #f8dbe5;
+  --color-body: #dde6df;
+  --color-body-line: #b0c2b7;
+  --color-ok: #2d7046;
+  --color-ok-soft: #dcefe2;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #f7ead1;
+  --color-stop: #b02f43;
+  --color-stop-soft: #f6dade;
+
+  --radius-card: 18px;
+  --radius-inner: 12px;
+  --shadow-card:
+    0 1px 2px rgb(23 48 42 / 0.06), 0 6px 18px rgb(23 48 42 / 0.07);
+}
 
 @layer base {
+  .dark {
+    --color-bg: #0f1715;
+    --color-surface: #172220;
+    --color-surface-2: #1d2a27;
+    --color-ink: #e4eee9;
+    --color-ink-2: #9aafa7;
+    --color-line: #2a3934;
+    --color-accent: #62c1a5;
+    --color-accent-ink: #0b1513;
+    --color-accent-soft: #1b3830;
+    --color-pain: #f06c98;
+    --color-pain-soft: #3b1c28;
+    --color-body: #22312d;
+    --color-body-line: #3e524b;
+    --color-ok: #6cc98c;
+    --color-ok-soft: #1c3326;
+    --color-warn: #e5b04f;
+    --color-warn-soft: #3a2f17;
+    --color-stop: #f37f8e;
+    --color-stop-soft: #3d1f25;
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3);
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    hyphens: auto;
+    /* Long German compounds break even where the browser has no hyphenation dictionary. */
+    overflow-wrap: break-word;
+    /* Keyboard focus scrolls clear of the sticky Continue button. */
+    scroll-padding-bottom: 5.5rem;
+  }
   body {
-    @apply bg-apple-lightBg text-apple-primaryTextLight transition-colors duration-300;
+    @apply bg-bg font-sans text-ink antialiased;
+    font-size: 16px;
+    line-height: 1.5;
   }
-  
-  .dark body {
-    @apply bg-apple-darkBg text-apple-primaryTextDark;
-  }
-
-  h1 {
-    @apply text-[3.5rem] font-extrabold tracking-[-0.03em] leading-tight;
-  }
-
-  h2 {
-    @apply text-[2.25rem] font-bold tracking-[-0.02em] leading-snug;
-  }
-
+  h1,
+  h2,
   h3 {
-    @apply text-[1.5rem] font-bold leading-snug;
+    text-wrap: balance;
   }
-
-  p {
-    @apply text-base leading-relaxed text-apple-secondaryTextLight;
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
   }
-
-  .dark p {
-    @apply text-apple-secondaryTextDark;
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: default;
   }
 }
 
-@layer utilities {
-  .mesh-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    overflow: hidden;
-    background: radial-gradient(at 40% 20%, hsla(220,100%,70%,0.2) 0, transparent 50%),
-                radial-gradient(at 80% 0%, hsla(189,100%,56%,0.2) 0, transparent 50%),
-                radial-gradient(at 0% 50%, hsla(340,100%,76%,0.2) 0, transparent 50%);
-    animation: mesh-pulse 15s ease-in-out infinite alternate;
+@layer components {
+  .page-title {
+    @apply font-display text-[29px] leading-[1.12] tracking-[-0.01em] focus:outline-none sm:text-[34px];
+  }
+  .lead {
+    @apply text-ink-2;
+  }
+  .eyebrow {
+    @apply -mb-2 text-[13px] tracking-[0.04em] text-accent;
+  }
+  .fine {
+    @apply text-[13px] leading-[1.45] text-ink-2;
+  }
+  .label {
+    @apply text-[13px] font-bold tracking-[0.03em] text-ink;
+  }
+  .card {
+    @apply rounded-[var(--radius-card)] bg-surface shadow-[var(--shadow-card)];
   }
 
-  .dark .mesh-bg {
-    background: radial-gradient(at 40% 20%, hsla(228,100%,20%,1) 0, transparent 50%),
-                radial-gradient(at 80% 0%, hsla(189,100%,20%,1) 0, transparent 50%),
-                radial-gradient(at 0% 50%, hsla(340,100%,20%,1) 0, transparent 50%);
+  .btn {
+    @apply inline-flex min-h-[50px] w-full items-center justify-center gap-1.5 rounded-full border border-accent bg-accent px-[18px] py-2.5 text-center text-base leading-tight font-bold text-accent-ink;
+  }
+  .btn:disabled {
+    @apply border-line bg-surface-2 text-ink-2;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-accent;
+  }
+  .btn-stop {
+    @apply border-stop bg-stop text-accent-ink;
+  }
+  .dark .btn-stop {
+    @apply text-bg;
+  }
+  .sticky-cta {
+    @apply sticky bottom-3 z-10;
+  }
+  .sticky-cta .btn {
+    box-shadow: 0 8px 24px -8px rgb(0 0 0 / 0.35);
   }
 
-  .glass-panel {
-    @apply bg-apple-cardLight backdrop-blur-[24px] saturate-[180%] shadow-apple border border-apple-borderLight transition-all duration-300;
+  .chip {
+    @apply inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-surface py-1.5 pr-3.5 pl-1.5 text-left text-[15px];
+  }
+  .chip[aria-pressed="true"] {
+    @apply border-accent bg-accent-soft;
+  }
+  .chip .key {
+    @apply inline-grid size-7 flex-none place-items-center rounded-full bg-surface-2 text-[13px] font-bold;
+  }
+  .chip[aria-pressed="true"] .key {
+    @apply bg-accent text-accent-ink;
   }
 
-  .dark .glass-panel {
-    @apply bg-apple-cardDark border-apple-borderDark;
+  .seg {
+    @apply flex rounded-full bg-surface-2 p-[3px];
+  }
+  .seg button {
+    @apply min-h-11 flex-1 rounded-full px-2 text-sm font-bold text-ink-2;
+  }
+  .seg button[aria-pressed="true"] {
+    @apply bg-surface text-ink shadow-[var(--shadow-card)];
+  }
+
+  .note {
+    @apply flex items-start gap-2.5 rounded-[var(--radius-inner)] bg-surface-2 px-3.5 py-3 text-[15px] leading-[1.45];
+  }
+  .note > svg {
+    @apply mt-px size-5 flex-none;
+  }
+  .note-warn {
+    @apply bg-warn-soft;
+  }
+  .note-warn > svg {
+    @apply text-warn;
+  }
+  .note-stop {
+    @apply bg-stop-soft;
+  }
+  .note-stop > svg {
+    @apply text-stop;
+  }
+
+  .sec {
+    @apply flex flex-col gap-3 border-t border-line pt-[18px];
+  }
+  .sec-title {
+    @apply flex items-center gap-2.5 font-display text-[22px] leading-tight;
+  }
+  .sec-num {
+    @apply inline-grid size-[30px] flex-none place-items-center rounded-full bg-accent font-sans text-[15px] font-bold text-accent-ink;
+  }
+
+  /* figures */
+  .fig-sil {
+    fill: var(--color-body);
+  }
+  .fig-outline {
+    pointer-events: none;
+    fill: none;
+    stroke: var(--color-body-line);
+    stroke-width: 1.2;
+  }
+  .fig-detail {
+    pointer-events: none;
+    fill: none;
+    stroke: var(--color-body-line);
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    opacity: 0.85;
+  }
+  .fig-sep {
+    pointer-events: none;
+    stroke: var(--color-bg);
+    stroke-width: 1.5;
+  }
+  .fig-band {
+    fill: transparent;
+    cursor: pointer;
+    transition: fill 0.15s;
+  }
+  .fig-band:hover {
+    fill: var(--color-accent-soft);
+  }
+  .fig-band.is-on {
+    fill: var(--color-accent);
+    fill-opacity: 0.35;
+  }
+  .fig-edge {
+    font-size: 12px;
+    fill: var(--color-ink-2);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .fig-spot {
+    cursor: pointer;
+  }
+  .fig-spot-hit {
+    fill: transparent;
+  }
+  .fig-spot-ring {
+    fill: var(--color-accent);
+    fill-opacity: 0;
+  }
+  .fig-spot-dot {
+    fill: var(--color-surface);
+    stroke: var(--color-accent);
+    stroke-width: 2.5;
+  }
+  .fig-spot:hover .fig-spot-ring {
+    fill-opacity: 0.18;
+  }
+  .fig-spot.is-on .fig-spot-dot {
+    fill: var(--color-pain);
+    stroke: var(--color-surface);
+    stroke-width: 2;
+  }
+  .fig-spot.is-on .fig-spot-ring {
+    fill: var(--color-pain);
+    fill-opacity: 0.22;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: spot-pulse 1.8s ease-out infinite;
+  }
+
+  /* pain scale */
+  .scale-bar {
+    @apply grid grid-cols-11 gap-0.5;
+  }
+  .scale-bar span {
+    @apply grid h-7 place-items-center text-[13px] font-bold tabular-nums;
+  }
+  .scale-bar span:first-child {
+    @apply rounded-l-[var(--radius-inner)];
+  }
+  .scale-bar span:last-child {
+    @apply rounded-r-[var(--radius-inner)];
+  }
+  .z-ok {
+    @apply bg-ok-soft text-ok;
+  }
+  .z-warn {
+    @apply bg-warn-soft text-warn;
+  }
+  .z-stop {
+    @apply bg-stop-soft text-stop;
+  }
+
+  /* chain strip */
+  .chain-node-dot {
+    @apply size-5 rounded-full border-2 border-ink-2 bg-bg;
+  }
+  .chain-node.is-pain .chain-node-dot {
+    @apply -mt-[3px] size-[26px] border-pain bg-pain;
+    box-shadow: 0 0 0 5px var(--color-pain-soft);
+  }
+  .chain-node.is-pos .chain-node-dot {
+    @apply border-accent bg-accent;
+  }
+  .chain-node.is-neg .chain-node-dot {
+    @apply border-dashed opacity-55;
+  }
+  .chain-node.is-pain .chain-node-label {
+    @apply text-pain;
+  }
+  .chain-node.is-pos .chain-node-label {
+    @apply text-ink;
+  }
+}
+
+@keyframes spot-pulse {
+  from {
+    transform: scale(0.7);
+    fill-opacity: 0.35;
+  }
+  to {
+    transform: scale(1.5);
+    fill-opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fig-spot.is-on .fig-spot-ring {
+    animation: none;
+  }
+  .fig-band {
+    transition: none;
   }
 }
