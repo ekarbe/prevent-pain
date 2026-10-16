@@ -108,6 +108,9 @@ export const ui = {
     weekLead: (m) => `Every 2–3 days, about ${m} minutes:`,
     weekEmpty: "Do the self-tests above to add exercises for your weak links.",
     duringRuns: "during runs",
+    later: "Later",
+    laterNote:
+      "Start this once the pain has settled. The reason is in your chain above.",
     min: "min",
     physioTitle: "See a physio if",
     physio: [
@@ -262,6 +265,9 @@ export const ui = {
     weekEmpty:
       "Mach die Selbsttests oben, um Übungen für deine schwachen Glieder zu ergänzen.",
     duringRuns: "beim Laufen",
+    later: "Später",
+    laterNote:
+      "Beginne damit erst, wenn sich der Schmerz beruhigt hat. Den Grund findest du oben in deiner Kette.",
     min: "Min.",
     physioTitle: "Geh zur Physiotherapie, wenn",
     physio: [

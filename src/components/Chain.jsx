@@ -122,14 +122,14 @@ export function TestAnswer({ testId, result, onAnswer, posText, negText }) {
   );
 }
 
-export function SuspectCard({ item, rank, onAnswer, local }) {
+export function SuspectCard({ item, rank, onAnswer, cause }) {
   const t = useT();
   const lang = useLang();
   const link = links[item.id];
   const x = pick(link, lang);
   const why = item.why ? pick(item.why, lang) : x.why;
   const state = item.result;
-  const added = link.exercises.filter((id) => !local.includes(id)).length;
+  const added = link.exercises.filter((id) => !cause.local.includes(id)).length;
 
   return (
     <article

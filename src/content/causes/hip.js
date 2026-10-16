@@ -39,6 +39,7 @@ export default [
       ],
       ["stride", 1],
     ],
+    later: ["couch-stretch"],
     sources: ["weir2015", "tyler2014", "mendiguchia2013"],
   },
   {
@@ -131,6 +132,7 @@ export default [
       ],
       ["trunk", 1],
     ],
+    later: ["side-abduction"],
     sources: ["grimaldi2015", "mellor2018", "grimaldi2017", "heiderscheit2011"],
   },
   {

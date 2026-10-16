@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Play } from "lucide-react";
 import { exercises } from "../content/index.js";
 import { pick, useLang, useT } from "../i18n/lang.js";
+import Note from "./Note.jsx";
 
 // Nothing is requested from YouTube until the runner taps, and then only from the no-cookie domain.
 function VideoEmbed({ video, name }) {
@@ -55,7 +56,8 @@ function VideoEmbed({ video, name }) {
   );
 }
 
-export default function ExerciseCard({ id }) {
+export default function ExerciseCard({ id, later = false }) {
+  const t = useT();
   const lang = useLang();
   const exercise = exercises[id];
   const x = pick(exercise, lang);
@@ -69,6 +71,7 @@ export default function ExerciseCard({ id }) {
           {x.dose}
         </span>
       </header>
+      {later ? <Note tone="warn">{t.laterNote}</Note> : null}
       <p>{x.how}</p>
       <VideoEmbed video={exercise.video} name={x.name} />
     </article>

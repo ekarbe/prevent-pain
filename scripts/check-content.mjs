@@ -134,6 +134,16 @@ for (const cause of causeList) {
     usedExercises.add(id);
     if (!exercises[id]) err(where, `unknown exercise "${id}"`);
   }
+  const reachable = new Set([
+    ...(cause.local ?? []),
+    ...(cause.chain ?? []).flatMap(([id]) => links[id]?.exercises ?? []),
+  ]);
+  for (const id of cause.later ?? [])
+    if (!reachable.has(id))
+      err(
+        where,
+        `later lists "${id}", which is neither local nor added by a chain link`,
+      );
   if ((cause.chain?.length ?? 0) < 2)
     err(where, "chain needs at least 2 weak links");
   const seenLinks = new Set();

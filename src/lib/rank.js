@@ -18,12 +18,20 @@ export function rankChain(chain, tests, links) {
 }
 
 // The week: the cause's local exercises, then exercises from every link that tested weak. No repeats.
+// Exercises the cause lists under `later` (e.g. stretching a freshly strained muscle) are marked to
+// start once the pain has settled.
 export function weekPlan(cause, tests, links) {
-  const items = (cause.local || []).map((id) => ({ id, from: null }));
+  const later = new Set(cause.later || []);
+  const items = (cause.local || []).map((id) => ({
+    id,
+    from: null,
+    later: later.has(id),
+  }));
   for (const [linkId] of cause.chain || []) {
     const link = links[linkId];
     if (tests[link.test] === "pos")
-      for (const id of link.exercises) items.push({ id, from: linkId });
+      for (const id of link.exercises)
+        items.push({ id, from: linkId, later: later.has(id) });
   }
   const seen = new Set();
   return items.filter((it) => (seen.has(it.id) ? false : seen.add(it.id)));

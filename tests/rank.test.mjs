@@ -40,11 +40,21 @@ test("a weak result lifts a link and a fine result drops it", () => {
 
 test("the week adds exercises only from weak links, without repeats", () => {
   assert.deepEqual(weekPlan(cause, {}, links), [
-    { id: "local-1", from: null },
-    { id: "shared", from: null },
+    { id: "local-1", from: null, later: false },
+    { id: "shared", from: null, later: false },
   ]);
   assert.deepEqual(
     weekPlan(cause, { ta: "pos", tc: "pos" }, links).map((x) => x.id),
     ["local-1", "shared", "ex-a"],
   );
+});
+
+test("exercises a cause lists under later are marked, not dropped", () => {
+  const withLater = { ...cause, later: ["ex-a"] };
+  const week = weekPlan(withLater, { ta: "pos" }, links);
+  assert.deepEqual(
+    week.find((x) => x.id === "ex-a"),
+    { id: "ex-a", from: "a", later: true },
+  );
+  assert.equal(week.find((x) => x.id === "local-1").later, false);
 });

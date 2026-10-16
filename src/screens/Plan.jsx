@@ -112,7 +112,9 @@ export default function Plan({ route, go, notify }) {
   };
   const ranked = rankChain(cause.chain, results, links);
   const week = weekPlan(cause, results, links);
-  const minutes = week.reduce((sum, it) => sum + exercises[it.id].min, 0);
+  const minutes = week
+    .filter((it) => !it.later)
+    .reduce((sum, it) => sum + exercises[it.id].min, 0);
   const anyWeak = cause.chain.some(([id]) => results[links[id].test] === "pos");
 
   const share = async () => {
@@ -154,7 +156,13 @@ export default function Plan({ route, go, notify }) {
           negText={t.loadNo}
         />
         {cause.local.length ? (
-          cause.local.map((id) => <ExerciseCard key={id} id={id} />)
+          cause.local.map((id) => (
+            <ExerciseCard
+              key={id}
+              id={id}
+              later={(cause.later || []).includes(id)}
+            />
+          ))
         ) : (
           <Note>{t.noLocal}</Note>
         )}
@@ -175,7 +183,7 @@ export default function Plan({ route, go, notify }) {
             item={item}
             rank={i + 1}
             onAnswer={answer}
-            local={cause.local}
+            cause={cause}
           />
         ))}
       </section>
@@ -196,9 +204,11 @@ export default function Plan({ route, go, notify }) {
                     {it.from ? pick(links[it.from], lang).short : regionName}
                   </span>
                   <span className="min-w-[3.5em] text-right text-[13px] text-ink-2 tabular-nums">
-                    {exercises[it.id].min
-                      ? `${exercises[it.id].min} ${t.min}`
-                      : t.duringRuns}
+                    {it.later
+                      ? t.later
+                      : exercises[it.id].min
+                        ? `${exercises[it.id].min} ${t.min}`
+                        : t.duringRuns}
                   </span>
                 </li>
               ))}
@@ -209,7 +219,7 @@ export default function Plan({ route, go, notify }) {
         {week
           .filter((it) => it.from)
           .map((it) => (
-            <ExerciseCard key={it.id} id={it.id} />
+            <ExerciseCard key={it.id} id={it.id} later={it.later} />
           ))}
         <button type="button" className="btn btn-ghost" onClick={share}>
           <Share2 className="size-[18px]" aria-hidden="true" />
