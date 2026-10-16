@@ -8,7 +8,7 @@ export default [
       desc: "Builds up over long or hilly runs, feels stiff after sitting or first thing in the morning, and eases once you get moving. It's a broad ache across the low back or beside the spine, with no pain, numbness or tingling in the leg (if there is, pick the spot for pain spreading into the leg instead).",
       name: "Non-specific low back pain",
       about:
-        "Your back is taking more load than it's used to, often after longer or hillier runs or long days of sitting, and usually no single damaged structure is to blame. Backs are strong, running even seems to be good for your discs, and staying active with some trunk and hip strength work often settles this kind of ache within a few weeks. Get it checked if it never lets up, even at rest or at night, if you feel unwell or are losing weight without trying, or if morning stiffness of more than 30 minutes has crept up over months.",
+        "Your back is taking more load than it's used to, often after longer or hillier runs or long days of sitting, and usually no single damaged structure is to blame. Backs are strong, running even seems to be good for your discs, and staying active with some trunk and hip strength work often settles this kind of ache within a few weeks. Get it checked if it never lets up, even at rest or at night, if you feel unwell or are losing weight without trying, or if morning stiffness of more than 30 minutes has crept up over months. If you're under about 20 and arching backwards or standing on one leg brings on one-sided low-back pain, stop running and get it checked, as it can be a stress injury in the spine.",
       load: "Keep running within the pain rule and keep moving on other days too, because easy runs and walks usually do your back good. If long or hilly runs break the rule, cut your long run by about a third and pick flatter routes for 1–2 weeks, and break up long sitting.",
     },
     de: {
@@ -16,7 +16,7 @@ export default [
       desc: "Baut sich bei langen oder hügeligen Läufen auf, ist nach dem Sitzen oder morgens nach dem Aufstehen steif und wird besser, sobald du in Bewegung kommst. Der Schmerz ist flächig, sitzt quer über dem unteren Rücken oder neben der Wirbelsäule und zieht nicht ins Bein, auch Taubheit oder Kribbeln im Bein fehlen (sonst wähle lieber die Stelle für Ausstrahlung ins Bein).",
       name: "Nicht-spezifischer Kreuzschmerz",
       about:
-        "Dein Rücken bekommt gerade mehr Belastung, als er gewohnt ist, oft nach längeren oder hügeligeren Läufen oder langen Tagen im Sitzen, und meist steckt keine einzelne verletzte Struktur dahinter. Der Rücken ist robust, Laufen scheint den Bandscheiben sogar gutzutun, und Bewegung und etwas Krafttraining für Rumpf und Hüfte bringen diese Art Schmerz oft innerhalb weniger Wochen zur Ruhe. Lass es abklären, wenn der Schmerz nie nachlässt, auch nicht in Ruhe oder nachts, wenn du dich krank fühlst oder ungewollt abnimmst oder wenn sich über Monate eine Morgensteifigkeit von mehr als 30 Minuten eingeschlichen hat.",
+        "Dein Rücken bekommt gerade mehr Belastung, als er gewohnt ist, oft nach längeren oder hügeligeren Läufen oder langen Tagen im Sitzen, und meist steckt keine einzelne verletzte Struktur dahinter. Der Rücken ist robust, Laufen scheint den Bandscheiben sogar gutzutun, und Bewegung und etwas Krafttraining für Rumpf und Hüfte bringen diese Art Schmerz oft innerhalb weniger Wochen zur Ruhe. Lass es abklären, wenn der Schmerz nie nachlässt, auch nicht in Ruhe oder nachts, wenn du dich krank fühlst oder ungewollt abnimmst oder wenn sich über Monate eine Morgensteifigkeit von mehr als 30 Minuten eingeschlichen hat. Bist du jünger als etwa 20 und lösen Hohlkreuz oder Einbeinstand einseitige Schmerzen im unteren Rücken aus, hör mit dem Laufen auf und lass es abklären, denn das kann eine Stressverletzung der Wirbelsäule sein.",
       load: "Lauf innerhalb der Schmerzregel weiter und bleib auch an den anderen Tagen in Bewegung, denn lockere Läufe und Spaziergänge tun dem Rücken meist gut. Wird die Schmerzregel bei langen oder hügeligen Läufen verletzt, kürze 1–2 Wochen lang deinen langen Lauf um etwa ein Drittel, wähle flachere Strecken und unterbrich langes Sitzen.",
     },
     local: ["bird-dog", "back-extension"],
@@ -47,7 +47,7 @@ export default [
         },
       ],
     ],
-    sources: ["nielsen2012", "silbernagel2007"],
+    sources: ["oliveira2018", "belavy2017", "nielsen2012", "silbernagel2007"],
   },
   {
     id: "si-joint",
@@ -88,7 +88,7 @@ export default [
       ],
       ["hipabd", 1],
     ],
-    sources: ["warden2014", "hoenig2022", "silbernagel2007"],
+    sources: ["cohen2005", "warden2014", "hoenig2022", "silbernagel2007"],
   },
   {
     id: "sciatica-refer",

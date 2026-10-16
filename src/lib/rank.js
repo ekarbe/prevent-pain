@@ -17,6 +17,11 @@ export function rankChain(chain, tests, links) {
     );
 }
 
+// The exercises a weak link adds for this cause. A cause can swap them (`linkExercises`), for
+// example when its own local exercises already train that link.
+export const linkExercisesFor = (cause, linkId, links) =>
+  cause.linkExercises?.[linkId] ?? links[linkId].exercises;
+
 // The week: the cause's local exercises, then exercises from every link that tested weak. No repeats.
 // Exercises the cause lists under `later` (e.g. stretching a freshly strained muscle) are marked to
 // start once the pain has settled.
@@ -28,10 +33,9 @@ export function weekPlan(cause, tests, links) {
     later: later.has(id),
   }));
   for (const [linkId] of cause.chain || []) {
-    const link = links[linkId];
-    if (tests[link.test] === "pos")
-      for (const id of link.exercises)
-        items.push({ id, from: linkId, later: later.has(id) });
+    if (tests[links[linkId].test] !== "pos") continue;
+    for (const id of linkExercisesFor(cause, linkId, links))
+      items.push({ id, from: linkId, later: later.has(id) });
   }
   const seen = new Set();
   return items.filter((it) => (seen.has(it.id) ? false : seen.add(it.id)));

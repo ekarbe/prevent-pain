@@ -1,12 +1,11 @@
-import { useState } from "react";
 import { useT } from "../i18n/lang.js";
 
-export default function Start({ go }) {
+// The ticked flags live in App, so "Change my answers" reopens them as they were.
+export default function Start({ go, ticked, setTicked }) {
   const t = useT();
-  const [ticked, setTicked] = useState([]);
   const toggle = (i) =>
-    setTicked((cur) =>
-      cur.includes(i) ? cur.filter((x) => x !== i) : [...cur, i],
+    setTicked(
+      ticked.includes(i) ? ticked.filter((x) => x !== i) : [...ticked, i],
     );
   const n = ticked.length;
 
@@ -33,15 +32,13 @@ export default function Start({ go }) {
           </label>
         ))}
       </fieldset>
-      <div className="sticky-cta">
-        <button
-          type="button"
-          className={`btn ${n ? "btn-stop" : ""}`}
-          onClick={() => go({ screen: n ? "stop" : "region" })}
-        >
-          {n ? t.startSome(n) : t.startNone}
-        </button>
-      </div>
+      <button
+        type="button"
+        className={`btn ${n ? "btn-stop" : ""}`}
+        onClick={() => go({ screen: n ? "stop" : "region" })}
+      >
+        {n ? t.startSome(n) : t.startNone}
+      </button>
       <p className="fine">{t.startFine}</p>
     </div>
   );

@@ -1,8 +1,9 @@
+import { useEffect, useRef } from "react";
 import { links, regionAt, tests } from "../content/index.js";
 import { pick, useLang, useT } from "../i18n/lang.js";
 
 // The chain at a glance: the pain in place among its weak links, in body order.
-export function ChainStrip({ chain, regionId, regionLabel, results }) {
+export function ChainStrip({ chain, regionId, results }) {
   const t = useT();
   const lang = useLang();
   const nodes = chain
@@ -16,11 +17,13 @@ export function ChainStrip({ chain, regionId, regionLabel, results }) {
       id: "pain",
       at: regionAt[regionId],
       state: "pain",
-      label: regionLabel,
+      label: t.legend.pain,
     })
     .sort((a, b) => a.at - b.at);
   const summary = nodes
-    .map((n) => `${n.label} (${t.legend[n.state]})`)
+    .map((n) =>
+      n.state === "pain" ? n.label : `${n.label} (${t.legend[n.state]})`,
+    )
     .join(", ");
 
   return (
@@ -63,7 +66,7 @@ export function ChainStrip({ chain, regionId, regionLabel, results }) {
           {t.legend.pos}
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <i className="size-2.5 rounded-full border-2 border-dashed border-ink-2 opacity-60" />
+          <i className="size-2.5 rounded-full border-2 border-dashed border-ink-2" />
           {t.legend.neg}
         </span>
       </div>
@@ -71,15 +74,33 @@ export function ChainStrip({ chain, regionId, regionLabel, results }) {
   );
 }
 
-// Yes/no answer to a self-test, or its result with a way to redo it.
+// Yes/no answer to a self-test, or its result with a way to redo it. Answering swaps the buttons for
+// the result, so focus follows: to the result after an answer, back to the first answer after Redo.
 export function TestAnswer({ testId, result, onAnswer, posText, negText }) {
   const t = useT();
   const lang = useLang();
   const test = pick(tests[testId], lang);
+  const acted = useRef(false);
+  const resultRef = useRef(null);
+  const firstRef = useRef(null);
+
+  useEffect(() => {
+    if (!acted.current) return;
+    acted.current = false;
+    (result ? resultRef : firstRef).current?.focus();
+  }, [result]);
+
+  const answer = (r) => {
+    acted.current = true;
+    onAnswer(testId, r);
+  };
+
   if (result) {
     return (
       <div
-        className={`flex items-center justify-between gap-2.5 rounded-[var(--radius-inner)] px-3 py-2.5 text-sm font-bold ${
+        ref={resultRef}
+        tabIndex={-1}
+        className={`flex items-center justify-between gap-2.5 rounded-[var(--radius-inner)] px-3 py-1.5 text-sm font-bold ${
           result === "pos"
             ? "bg-accent-soft text-accent"
             : "bg-surface-2 text-ink-2"
@@ -88,8 +109,8 @@ export function TestAnswer({ testId, result, onAnswer, posText, negText }) {
         <span>{result === "pos" ? posText : negText}</span>
         <button
           type="button"
-          onClick={() => onAnswer(testId, null)}
-          className="flex-none py-1 text-sm font-normal text-accent underline underline-offset-[3px]"
+          onClick={() => answer(null)}
+          className="inline-flex min-h-11 flex-none items-center px-1 text-sm font-normal text-accent underline underline-offset-[3px]"
         >
           {t.redo}
           <span className="sr-only">: {test.name}</span>
@@ -103,15 +124,20 @@ export function TestAnswer({ testId, result, onAnswer, posText, negText }) {
         <span className="label">{t.test}</span> <strong>{test.name}.</strong>{" "}
         {test.how}
       </p>
-      <div className="grid grid-cols-2 gap-2">
+      <div
+        role="group"
+        aria-label={test.name}
+        className="grid grid-cols-2 gap-2"
+      >
         {[
           ["pos", test.pos],
           ["neg", test.neg],
-        ].map(([r, label]) => (
+        ].map(([r, label], i) => (
           <button
             key={r}
+            ref={i === 0 ? firstRef : undefined}
             type="button"
-            onClick={() => onAnswer(testId, r)}
+            onClick={() => answer(r)}
             className="min-h-12 rounded-[var(--radius-inner)] border border-line bg-surface px-2.5 py-2 text-left text-sm leading-snug hover:border-accent"
           >
             {label}
@@ -122,14 +148,14 @@ export function TestAnswer({ testId, result, onAnswer, posText, negText }) {
   );
 }
 
-export function SuspectCard({ item, rank, onAnswer, cause }) {
+// One weak link: why it matters for this cause, its self-test, and what a weak result adds.
+export function SuspectCard({ item, rank, onAnswer, added }) {
   const t = useT();
   const lang = useLang();
   const link = links[item.id];
   const x = pick(link, lang);
   const why = item.why ? pick(item.why, lang) : x.why;
   const state = item.result;
-  const added = link.exercises.filter((id) => !cause.local.includes(id)).length;
 
   return (
     <article
@@ -137,7 +163,7 @@ export function SuspectCard({ item, rank, onAnswer, cause }) {
         state === "pos"
           ? "border-accent"
           : state === "neg"
-            ? "border-transparent opacity-75 shadow-none"
+            ? "border-dashed border-line shadow-none"
             : "border-transparent"
       }`}
     >
@@ -146,7 +172,9 @@ export function SuspectCard({ item, rank, onAnswer, cause }) {
           className={`grid size-[30px] flex-none place-items-center rounded-full border-2 text-sm font-bold tabular-nums ${
             state === "pos"
               ? "border-accent bg-accent text-accent-ink"
-              : "border-ink-2"
+              : state === "neg"
+                ? "border-dashed border-ink-2"
+                : "border-ink-2"
           }`}
         >
           {rank}

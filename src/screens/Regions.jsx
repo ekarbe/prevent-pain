@@ -2,7 +2,7 @@ import { regions } from "../content/index.js";
 import { pick, useLang, useT } from "../i18n/lang.js";
 import { BodyFigure } from "../components/Figures.jsx";
 
-export default function Regions({ route, go }) {
+export default function Regions({ go }) {
   const t = useT();
   const lang = useLang();
   const names = Object.fromEntries(
@@ -26,12 +26,7 @@ export default function Regions({ route, go }) {
             ["back", t.backView],
           ].map(([side, label]) => (
             <figure key={side} className="flex flex-col items-center gap-1.5">
-              <BodyFigure
-                side={side}
-                selected={route.region}
-                onSelect={choose}
-                names={names}
-              />
+              <BodyFigure side={side} onSelect={choose} names={names} />
               <figcaption className="text-[13px] text-ink-2">
                 {label}
               </figcaption>
@@ -44,10 +39,11 @@ export default function Regions({ route, go }) {
               key={r.id}
               type="button"
               className="chip"
-              aria-pressed={route.region === r.id}
               onClick={() => choose(r.id)}
             >
-              <span className="key">{i + 1}</span>
+              <span className="key" aria-hidden="true">
+                {i + 1}
+              </span>
               <span>{names[r.id]}</span>
             </button>
           ))}

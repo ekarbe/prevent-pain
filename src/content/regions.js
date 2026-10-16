@@ -80,7 +80,7 @@ export const regions = [
         id: "inner-thigh",
         en: { name: "Inner thigh" },
         de: { name: "Innenseite des Oberschenkels" },
-        causes: ["adductor-strain"],
+        causes: ["adductor-strain", "hip-bsi-refer"],
       },
       {
         id: "outer-thigh",
@@ -157,7 +157,7 @@ export const regions = [
         id: "front-shin",
         en: { name: "Front of the shin, in the muscle" },
         de: { name: "Vorne am Schienbein, im Muskel" },
-        causes: ["tib-ant", "compartment-refer"],
+        causes: ["tib-ant", "tibia-bsi-refer", "compartment-refer"],
       },
       {
         id: "calf",
@@ -165,6 +165,13 @@ export const regions = [
         de: { name: "Wadenmuskel" },
         causes: ["calf-strain"],
         warn: "clot",
+      },
+      {
+        id: "achilles",
+        en: { name: "Achilles tendon, above the heel" },
+        de: { name: "Achillessehne, über der Ferse" },
+        causes: ["achilles-mid", "achilles-insertional"],
+        warn: "rupture",
       },
     ],
   },

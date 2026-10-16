@@ -54,6 +54,10 @@ export default [
       "vandervlist2019",
       "franettovichsmith2014",
     ],
+    later: ["pogo-hop"],
+    linkExercises: {
+      calf: [],
+    },
   },
   {
     id: "achilles-insertional",
@@ -100,6 +104,7 @@ export default [
       "silbernagel2020",
       "franettovichsmith2014",
     ],
+    later: ["pogo-hop"],
   },
   {
     id: "plantar-heel",
@@ -245,7 +250,7 @@ export default [
       desc: "Builds on roads that slope to the side, on trails and in tight turns. The tendons just behind the bone are tender to press, and pushing the outer edge of your foot outward against resistance brings it on.",
       name: "Peroneal tendinopathy",
       about:
-        "The two tendons behind your outer ankle bone steady the foot against rolling over, and they've had more load than they could adapt to, often after an old sprain. Slow, gradually heavier strengthening often settles them over 2–3 months. Have a physio check it if a tendon clicks or slips over the bone, and get one sore spot on the bone halfway along the outer edge of your foot seen soon, as it can be a stress injury.",
+        "The two tendons behind your outer ankle bone steady the foot against rolling over, and they've had more load than they could adapt to, often after an old sprain. Slow, gradually heavier strengthening often settles them over 2–3 months. Have a physio check it if a tendon clicks or slips over the bone. If one spot on the bone hurts to press, halfway along the outer edge of your foot or a few centimetres above the outer ankle bone, or hopping hurts, stop running and get it seen soon, as it can be a stress injury.",
       load: "Run on flat, even ground, and don't always run on the same side of a cambered road. Skip trails and tight turns until flat runs stay within the pain rule, then bring them back gradually.",
     },
     de: {
@@ -254,7 +259,7 @@ export default [
       desc: "Nimmt auf Straßen mit seitlichem Gefälle, auf Trails und in engen Kurven zu. Die Sehnen direkt hinter dem Knochen sind druckempfindlich, und den Fußaußenrand gegen Widerstand nach außen zu drücken löst den Schmerz aus.",
       name: "Peronealsehnen-Tendinopathie",
       about:
-        "Die beiden Sehnen hinter deinem Außenknöchel sichern den Fuß gegen das Umknicken und haben mehr Last bekommen, als sie verkraften konnten, häufig nach einer alten Bänderverletzung. Langsames, schrittweise schwereres Krafttraining bringt sie oft in 2–3 Monaten zur Ruhe. Springt oder rutscht eine Sehne über den Knochen, lass das physiotherapeutisch abklären. Eine einzelne druckempfindliche Stelle am Knochen etwa in der Mitte des Fußaußenrands sollte bald untersucht werden, denn das kann eine Stressverletzung sein.",
+        "Die beiden Sehnen hinter deinem Außenknöchel sichern den Fuß gegen das Umknicken und haben mehr Last bekommen, als sie verkraften konnten, häufig nach einer alten Bänderverletzung. Langsames, schrittweise schwereres Krafttraining bringt sie oft in 2–3 Monaten zur Ruhe. Springt oder rutscht eine Sehne über den Knochen, lass das physiotherapeutisch abklären. Ist eine Stelle am Knochen druckempfindlich, etwa in der Mitte des Fußaußenrands oder einige Zentimeter über dem Außenknöchel, oder tut Hüpfen weh, hör mit dem Laufen auf und lass es bald untersuchen, denn das kann eine Stressverletzung sein.",
       load: "Lauf auf flachem, ebenem Untergrund und nicht immer auf derselben Straßenseite mit Gefälle. Trails und enge Kurven weglassen, bis flache Läufe innerhalb der Schmerzregel bleiben, dann schrittweise zurückholen.",
     },
     local: ["eversion-hold", "band-eversion", "calf-raise"],

@@ -59,3 +59,14 @@ test("validate trims a link to its deepest valid part", () => {
     "plan",
   );
 });
+
+test("ids that are built-in object properties don't resolve to them", () => {
+  const ctx = { regionById, causes };
+  for (const id of ["constructor", "toString", "__proto__", "hasOwnProperty"]) {
+    assert.equal(validate(parseHash(`#/en/${id}`), ctx).screen, "region");
+    assert.equal(
+      validate(parseHash(`#/en/knee/below-kneecap/${id}`), ctx).screen,
+      "causes",
+    );
+  }
+});

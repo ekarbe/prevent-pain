@@ -14,7 +14,7 @@ export default [
     de: {
       title: "Dumpfer Schmerz rund um oder hinter der Kniescheibe",
       desc: "Schlimmer auf Treppen (vor allem abwärts), in der Hocke, beim Bergablaufen oder nach langem Sitzen mit gebeugten Knien.",
-      name: "Patellofemorales Schmerzsyndrom (Läuferknie)",
+      name: "Patellofemorales Schmerzsyndrom (vorderer Knieschmerz)",
       about:
         "Das Gelenk hinter deiner Kniescheibe bekommt gerade mehr Last, als es verträgt. Es ist das häufigste Knieproblem bei Laufenden und bessert sich meist mit angepasster Belastung und kräftigeren Oberschenkel- und Hüftmuskeln.",
       load: "Lauf weiter auf flachem Untergrund. Wird die Schmerzregel verletzt: 2 Wochen kein Bergab und etwa ein Drittel weniger Wochenumfang.",
@@ -86,17 +86,17 @@ export default [
       name: "Iliotibial band syndrome (ITBS)",
       about:
         "Tissue on the outside of the knee gets squeezed each time the knee bends through about 30°, thousands of times per run. Lowering that load and building hip control usually settles it.",
-      load: "Run only as long as it stays pain-free, then stop. Avoid downhill and running on the same side of a cambered road.",
+      load: "Stricter than the pain rule for this one: run only as long as it stays pain-free, then stop. Avoid downhill and running on the same side of a cambered road.",
     },
     de: {
       title: "Stechender Schmerz außen am Knie, der mitten im Lauf beginnt",
       desc: "Setzt nach vorhersehbarer Zeit oder Strecke ein, wird bergab schlimmer und lässt nach dem Stoppen bald nach.",
-      name: "Iliotibiales Bandsyndrom (ITBS)",
+      name: "Iliotibiales Bandsyndrom (ITBS, Läuferknie)",
       about:
         "Gewebe an der Knieaußenseite wird bei jeder Beugung um etwa 30° zusammengedrückt, tausendfach pro Lauf. Weniger Last und mehr Hüftkontrolle bringen es meist zur Ruhe.",
-      load: "Lauf nur so lange, wie es schmerzfrei bleibt, dann aufhören. Bergab und immer dieselbe Straßenseite mit Gefälle meiden.",
+      load: "Hier gilt mehr als die Schmerzregel: Lauf nur so lange, wie es schmerzfrei bleibt, dann aufhören. Bergab und immer dieselbe Straßenseite mit Gefälle meiden.",
     },
-    local: [],
+    local: ["hip-abduction-hold", "side-abduction", "banded-side-step"],
     chain: [
       [
         "hipabd",
@@ -153,6 +153,9 @@ export default [
       ["calf", 1],
     ],
     sources: ["malliaras2015", "rio2015", "kongsgaard2009", "heiderscheit2011"],
+    linkExercises: {
+      glutes: ["single-leg-bridge", "glute-bridge"],
+    },
   },
   {
     id: "pes-anserine",
@@ -167,7 +170,7 @@ export default [
     },
     de: {
       title: "Druckschmerz innen am Knie, etwas unterhalb des Gelenkspalts",
-      desc: "Eine Stelle innen am oberen Schienbein, zwei bis drei Fingerbreit unter dem inneren Gelenkspalt, ist druckempfindlich. Schlimmer auf Treppen, beim Aufstehen vom Stuhl und nachts, wenn die Knie aneinanderliegen, aber das Knie hakt, blockiert oder knickt nicht weg.",
+      desc: "Eine Stelle innen am oberen Schienbein, zwei bis drei Fingerbreit unter dem inneren Gelenkspalt, ist druckempfindlich. Schlimmer auf Treppen, beim Aufstehen vom Stuhl und nachts, wenn die Knie aneinanderliegen. Das Knie hakt aber nicht, blockiert nicht und knickt nicht weg.",
       name: "Pes-anserinus-Tendinopathie oder -Bursitis (Pes-anserinus-Syndrom)",
       about:
         "Knapp unterhalb des Knies setzen innen drei Sehnen von der Vorder-, Innen- und Rückseite des Oberschenkels über einem kleinen Schleimbeutel am Schienbein an, und deutlich mehr Umfang oder Hügel als gewohnt können sie reizen. Eine Zeit lang weniger Belastung und schrittweise mehr Kraft rund um Hüfte und Knie bringen es meist zur Ruhe, nachts hilft oft ein Kissen zwischen den Knien. Wird der Schmerz von Lauf zu Lauf stärker, tut es auch in Ruhe weh oder schmerzt Hüpfen auf dem Bein, hör mit dem Laufen auf und lass es bald abklären, denn eine Stressverletzung oben am Schienbein kann sich ähnlich anfühlen.",

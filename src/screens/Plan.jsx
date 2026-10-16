@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Share2, TriangleAlert } from "lucide-react";
 import {
   causes,
@@ -7,6 +8,7 @@ import {
   regionById,
   sources,
   sourceUrl,
+  tests,
 } from "../content/index.js";
 import { pick, useLang, useT } from "../i18n/lang.js";
 import { rankChain, weekPlan } from "../lib/rank.js";
@@ -33,7 +35,7 @@ function Sources({ ids }) {
         {ids.map((id) => {
           const s = sources[id];
           return (
-            <li key={id}>
+            <li key={id} lang={s.lang ?? "en"}>
               <a
                 href={sourceUrl(s)}
                 target="_blank"
@@ -93,6 +95,7 @@ function Refer({ cause, eyebrow, go }) {
 export default function Plan({ route, go, notify }) {
   const t = useT();
   const lang = useLang();
+  const [announce, setAnnounce] = useState("");
   const cause = causes[route.cause];
   const region = regionById[route.region];
   const spot = findSpot(route.region, route.spot);
@@ -109,6 +112,9 @@ export default function Plan({ route, go, notify }) {
     if (result) next[testId] = result;
     else delete next[testId];
     go({ tests: next }, { replace: true });
+    setAnnounce(
+      `${pick(tests[testId], lang).name}: ${t.legend[result ?? "none"]}`,
+    );
   };
   const ranked = rankChain(cause.chain, results, links);
   const week = weekPlan(cause, results, links);
@@ -116,6 +122,7 @@ export default function Plan({ route, go, notify }) {
     .filter((it) => !it.later)
     .reduce((sum, it) => sum + exercises[it.id].min, 0);
   const anyWeak = cause.chain.some(([id]) => results[links[id].test] === "pos");
+  const anyOpen = cause.chain.some(([id]) => !results[links[id].test]);
 
   const share = async () => {
     const url = window.location.href;
@@ -137,6 +144,9 @@ export default function Plan({ route, go, notify }) {
       <h1 tabIndex={-1} className="page-title">
         {c.name}
       </h1>
+      <p role="status" aria-live="polite" className="sr-only">
+        {announce}
+      </p>
       <p className="lead">{c.about}</p>
 
       <section className="sec">
@@ -174,7 +184,6 @@ export default function Plan({ route, go, notify }) {
         <ChainStrip
           chain={cause.chain}
           regionId={region.id}
-          regionLabel={pick(region, lang).short}
           results={results}
         />
         {ranked.map((item, i) => (
@@ -183,7 +192,7 @@ export default function Plan({ route, go, notify }) {
             item={item}
             rank={i + 1}
             onAnswer={answer}
-            cause={cause}
+            added={week.filter((w) => w.from === item.id).length}
           />
         ))}
       </section>
@@ -192,7 +201,9 @@ export default function Plan({ route, go, notify }) {
         <SectionTitle n={3}>{t.weekTitle}</SectionTitle>
         {week.length ? (
           <>
-            <p className="lead">{t.weekLead(minutes)}</p>
+            <p className="lead">
+              {minutes ? t.weekLead(minutes) : t.weekLeadRuns}
+            </p>
             <ul className="card flex flex-col divide-y divide-line">
               {week.map((it) => (
                 <li
@@ -201,7 +212,9 @@ export default function Plan({ route, go, notify }) {
                 >
                   <span>{pick(exercises[it.id], lang).name}</span>
                   <span className="rounded-full bg-surface-2 px-2 py-px text-xs font-bold text-ink-2">
-                    {it.from ? pick(links[it.from], lang).short : regionName}
+                    {it.from
+                      ? pick(links[it.from], lang).short
+                      : pick(region, lang).short}
                   </span>
                   <span className="min-w-[3.5em] text-right text-[13px] text-ink-2 tabular-nums">
                     {it.later
@@ -215,7 +228,7 @@ export default function Plan({ route, go, notify }) {
             </ul>
           </>
         ) : null}
-        {anyWeak ? null : <Note>{t.weekEmpty}</Note>}
+        {anyWeak ? null : <Note>{anyOpen ? t.weekEmpty : t.weekAllFine}</Note>}
         {week
           .filter((it) => it.from)
           .map((it) => (

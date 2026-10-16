@@ -703,6 +703,28 @@ export const sources = {
     where: "BMJ 367:l6273",
     url: "https://pubmed.ncbi.nlm.nih.gov/31744805",
   },
+  oliveira2018: {
+    who: "Oliveira CB et al.",
+    year: 2018,
+    title:
+      "Clinical practice guidelines for the management of non-specific low back pain in primary care: an updated overview",
+    where: "Eur Spine J 27(11):2791–2803",
+    url: "https://pubmed.ncbi.nlm.nih.gov/29971708",
+  },
+  belavy2017: {
+    who: "Belavý DL et al.",
+    year: 2017,
+    title: "Running exercise strengthens the intervertebral disc",
+    where: "Sci Rep 7:45975",
+  },
+  cohen2005: {
+    who: "Cohen SP",
+    year: 2005,
+    title:
+      "Sacroiliac joint pain: a comprehensive review of anatomy, diagnosis, and treatment",
+    where: "Anesth Analg 101(5):1440–1453",
+    url: "https://pubmed.ncbi.nlm.nih.gov/16244008",
+  },
 };
 
 export const sourceUrl = (s) =>

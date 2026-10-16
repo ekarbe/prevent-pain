@@ -3,7 +3,7 @@ import * as content from "./content/index.js";
 import { LangContext, pick } from "./i18n/lang.js";
 import { ui } from "./i18n/ui.js";
 import { formatHash, validate } from "./lib/router.js";
-import { navigate, useRoute } from "./lib/useRoute.js";
+import { canGoBack, navigate, useRoute } from "./lib/useRoute.js";
 import { preferredLang, saveLang } from "./lib/prefs.js";
 import AppBar from "./components/AppBar.jsx";
 import StepHeader from "./components/StepHeader.jsx";
@@ -41,12 +41,17 @@ function docTitle(route, lang) {
   return name ? `${name} · Prevent Pain` : "Prevent Pain";
 }
 
+// A language picked in this session wins over the one in older history entries or links, so browser
+// Back doesn't flip the interface back. Only an explicit pick is saved for future visits.
+const session = { lang: null };
+
 export default function App() {
   const route = useRoute();
-  const lang = route.lang ?? preferredLang();
+  const lang = session.lang ?? route.lang ?? preferredLang();
   const valid = validate({ ...route, lang }, content);
   const target = formatHash(valid);
   const [toast, setToast] = useState(null);
+  const [flags, setFlags] = useState([]);
   const mainRef = useRef(null);
   const pageKey = `${valid.screen}/${valid.region}/${valid.spot}/${valid.cause}`;
   const lastPage = useRef(pageKey);
@@ -57,7 +62,6 @@ export default function App() {
   });
 
   useEffect(() => {
-    saveLang(lang);
     document.documentElement.lang = lang;
   }, [lang]);
 
@@ -80,16 +84,24 @@ export default function App() {
   }, [toast]);
 
   const go = (patch, opts) => navigate({ ...valid, ...patch }, opts);
-  const back = () => go({ screen: PARENT[valid.screen] ?? "start" });
+  const back = () => {
+    if (canGoBack()) window.history.back();
+    else go({ screen: PARENT[valid.screen] ?? "start" }, { replace: true });
+  };
+  const chooseLang = (l) => {
+    session.lang = l;
+    saveLang(l);
+    go({ lang: l }, { replace: true });
+  };
   const step = STEP[valid.screen];
 
   let screen;
   switch (valid.screen) {
     case "stop":
-      screen = <Stop go={go} />;
+      screen = <Stop go={go} back={back} />;
       break;
     case "region":
-      screen = <Regions route={valid} go={go} />;
+      screen = <Regions go={go} />;
       break;
     case "spot":
       screen = <Spots key={valid.region} route={valid} go={go} />;
@@ -109,13 +121,13 @@ export default function App() {
       );
       break;
     default:
-      screen = <Start go={go} />;
+      screen = <Start go={go} ticked={flags} setTicked={setFlags} />;
   }
 
   return (
     <LangContext.Provider value={lang}>
       <div className="flex min-h-dvh flex-col pr-[max(18px,env(safe-area-inset-right))] pl-[max(18px,env(safe-area-inset-left))]">
-        <AppBar onLang={(l) => go({ lang: l }, { replace: true })} />
+        <AppBar onLang={chooseLang} />
         <main
           ref={mainRef}
           className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-4 pt-1 pb-10"

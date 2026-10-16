@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { exercises } from "../content/index.js";
 import { pick, useLang, useT } from "../i18n/lang.js";
@@ -9,6 +9,11 @@ function VideoEmbed({ video, name }) {
   const t = useT();
   const lang = useLang();
   const [open, setOpen] = useState(false);
+  const frame = useRef(null);
+  // The tapped button is replaced by the player, so focus moves to the player.
+  useEffect(() => {
+    if (open) frame.current?.focus();
+  }, [open]);
   const v = video ? (video[lang] ?? video.en) : null;
   if (!v) return <p className="fine">{t.videoNone}</p>;
 
@@ -20,6 +25,7 @@ function VideoEmbed({ video, name }) {
       <figure className="flex flex-col gap-1.5">
         <div className="aspect-video w-full overflow-hidden rounded-[var(--radius-inner)] bg-ink">
           <iframe
+            ref={frame}
             src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.id)}?${params}`}
             title={t.videoTitle(name)}
             className="size-full"
@@ -49,7 +55,10 @@ function VideoEmbed({ video, name }) {
         />
       </span>
       <span className="flex flex-col">
-        <strong className="text-[15px]">{t.video}</strong>
+        <strong className="text-[15px]">
+          {t.video}
+          <span className="sr-only">: {name}</span>
+        </strong>
         <small className="text-xs text-ink-2">{t.videoNote}</small>
       </span>
     </button>

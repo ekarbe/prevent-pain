@@ -16,4 +16,7 @@ export const causeFiles = {
 };
 
 export const causeList = Object.values(causeFiles).flat();
-export const causes = Object.fromEntries(causeList.map((c) => [c.id, c]));
+export const causes = Object.assign(
+  Object.create(null),
+  Object.fromEntries(causeList.map((c) => [c.id, c])),
+);

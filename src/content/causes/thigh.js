@@ -27,7 +27,7 @@ export default [
         "hipflex",
         2,
         {
-          en: "The rectus femoris also bends your hip, so stiff hip flexors pull it long under load at the back of every fast stride. Wait with this test and the stretch until straightening your knee against resistance no longer hurts, usually 1–2 weeks or more, then stretch only to a mild pull.",
+          en: "The rectus femoris also bends your hip, so stiff hip flexors pull it long under load at the back of every fast stride. Hold off on this test and the stretch until straightening your knee against resistance no longer hurts, usually 1–2 weeks or more, then stretch only to a mild pull.",
           de: "Der Rectus femoris beugt auch die Hüfte. Sind die Hüftbeuger steif, wird er am Ende jedes schnellen Schritts unter Last in die Länge gezogen. Warte mit dem Test und der Dehnung, bis das Strecken des Knies gegen Widerstand nicht mehr wehtut, meist 1–2 Wochen oder länger, und dehne dann nur bis zu einem leichten Ziehen.",
         },
       ],
@@ -69,7 +69,7 @@ export default [
       desc: "Hurts when you squeeze your knees together, speed up, change direction or run hills and trails. The muscle at the top of the inner thigh is often tender to press.",
       name: "Adductor-related groin pain (groin strain)",
       about:
-        "The muscles that pull your legs together run from the pubic bone down the inner thigh, and speed work, hills, trails and quick turns can overload or mildly strain them. Strength work that builds from simple squeezes to the Copenhagen exercise often settles it and can lower the chance of it coming back. If it aches at night, hopping on that leg hurts or the pain sits deep in the groin, get it checked soon, as the pubic bone or the hip joint can cause similar pain.",
+        "The muscles that pull your legs together run from the pubic bone down the inner thigh, and speed work, hills, trails and quick turns can overload or mildly strain them. Strength work that builds from simple squeezes to the Copenhagen exercise often settles it and can lower the chance of it coming back. If it aches at night, hopping on that leg hurts or the pain sits deep in the groin, stop running and hopping and see a doctor today, as a stress injury of the hip or the pubic bone can feel like this.",
       load: "Keep easy runs on flat, even ground within the pain rule, and drop sprints, hills, trails and sharp turns for now. Bring speed back step by step once squeezing your knees together no longer hurts.",
     },
     de: {
@@ -78,7 +78,7 @@ export default [
       desc: "Tut weh, wenn du die Knie zusammendrückst, beschleunigst, die Richtung wechselst oder Hügel und Trails läufst. Der Muskel oben an der Oberschenkelinnenseite ist oft druckempfindlich.",
       name: "Adduktorenbedingter Leistenschmerz (Adduktorenzerrung)",
       about:
-        "Die Muskeln, die deine Beine zusammenführen, ziehen vom Schambein an der Oberschenkelinnenseite nach unten. Tempotraining, Hügel, Trails und schnelle Richtungswechsel können sie überlasten oder leicht zerren. Krafttraining, das vom einfachen Zusammendrücken bis zur Copenhagen-Übung aufbaut, bringt es oft zur Ruhe und kann das Risiko senken, dass es wiederkommt. Schmerzt es nachts, tut Hüpfen auf dem Bein weh oder sitzt der Schmerz tief in der Leiste, lass es bald abklären, denn Schambein oder Hüftgelenk können ähnliche Schmerzen verursachen.",
+        "Die Muskeln, die deine Beine zusammenführen, ziehen vom Schambein an der Oberschenkelinnenseite nach unten. Tempotraining, Hügel, Trails und schnelle Richtungswechsel können sie überlasten oder leicht zerren. Krafttraining, das vom einfachen Zusammendrücken bis zur Copenhagen-Übung aufbaut, bringt es oft zur Ruhe und kann das Risiko senken, dass es wiederkommt. Schmerzt es nachts, tut Hüpfen auf dem Bein weh oder sitzt der Schmerz tief in der Leiste, hör mit Laufen und Hüpfen auf und lass es noch heute ärztlich abklären, denn eine Stressverletzung von Hüfte oder Schambein kann sich so anfühlen.",
       load: "Lockere Läufe auf flachem, ebenem Untergrund innerhalb der Schmerzregel laufen, Sprints, Hügel, Trails und scharfe Richtungswechsel vorerst weglassen. Das Tempo schrittweise zurückholen, sobald das Zusammendrücken der Knie nicht mehr wehtut.",
     },
     local: ["adductor-squeeze", "copenhagen-adduction"],

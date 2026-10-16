@@ -2,6 +2,7 @@
 export const ui = {
   en: {
     back: "Back",
+    backLabel: "Back to the previous step",
     skip: "Skip to content",
     steps: ["Where", "Spot", "Feels like", "Plan"],
     stepOf: (n, label) => `Step ${n} of 4 · ${label}`,
@@ -50,6 +51,7 @@ export const ui = {
       inside: "Inside",
       back: "Back",
       sole: "Sole",
+      profile: "Side",
       top: "Top",
     },
     viewsLabel: "View",
@@ -83,8 +85,9 @@ export const ui = {
     ruleText:
       "During exercises and runs, pain up to 3/10 is fine if it has settled by the next morning.",
     loadYes:
-      "Drop back to what you ran before the jump for 1–2 weeks, then build up by about 10% a week.",
-    loadNo: "Good. Keep it steady while this settles.",
+      "That jump is a likely trigger. Follow the running advice above first. Once you're back to your usual running, build up by no more than about 10% a week.",
+    loadNo:
+      "Then training load probably wasn't the trigger. Still follow the running advice above.",
     noLocal:
       "For this one, the fix is mostly further up the chain. Follow the pain rule and start with your chain below.",
     chainTitle: "Check your chain",
@@ -100,17 +103,20 @@ export const ui = {
     test: "Self-test",
     pos: (n) =>
       `Likely a weak link · ${n} exercise${n === 1 ? "" : "s"} added to your week`,
-    posNone: "Likely a weak link · its exercises are already in your week",
+    posNone: "Likely a weak link · the exercises in your week already cover it",
     neg: "Looks fine for now",
     redo: "Redo",
     legend: { none: "Not tested", pos: "Weak link", neg: "Fine", pain: "Pain" },
     weekTitle: "Your week",
-    weekLead: (m) => `Every 2–3 days, about ${m} minutes:`,
+    weekLead: (m) =>
+      `About ${m} minutes per session. How often to do each one is on its card:`,
+    weekLeadRuns: "Build this into your runs:",
     weekEmpty: "Do the self-tests above to add exercises for your weak links.",
+    weekAllFine: "No weak links found. Keep to the exercises above.",
     duringRuns: "during runs",
     later: "Later",
     laterNote:
-      "Start this once the pain has settled. The reason is in your chain above.",
+      "Hold this one back for now. When to add it is in your chain above.",
     min: "min",
     physioTitle: "See a physio if",
     physio: [
@@ -151,6 +157,7 @@ export const ui = {
   },
   de: {
     back: "Zurück",
+    backLabel: "Zurück zum vorherigen Schritt",
     skip: "Zum Inhalt springen",
     steps: ["Wo", "Stelle", "Gefühl", "Plan"],
     stepOf: (n, label) => `Schritt ${n} von 4 · ${label}`,
@@ -200,6 +207,7 @@ export const ui = {
       inside: "Innen",
       back: "Hinten",
       sole: "Sohle",
+      profile: "Seite",
       top: "Oben",
     },
     viewsLabel: "Ansicht",
@@ -233,8 +241,9 @@ export const ui = {
     ruleText:
       "Bei Übungen und Läufen ist Schmerz bis 3/10 in Ordnung, wenn er bis zum nächsten Morgen abgeklungen ist.",
     loadYes:
-      "Geh für 1–2 Wochen auf den Umfang vor dem Anstieg zurück und steigere dann um etwa 10 % pro Woche.",
-    loadNo: "Gut. Halte es gleichmäßig, solange sich das beruhigt.",
+      "Der Anstieg ist ein wahrscheinlicher Auslöser. Halte dich zuerst an die Laufhinweise oben. Wenn du wieder normal läufst, steigere um höchstens etwa 10 % pro Woche.",
+    loadNo:
+      "Dann war der Trainingsumfang wohl nicht der Auslöser. Halte dich trotzdem an die Laufhinweise oben.",
     noLocal:
       "Hier liegt die Lösung meist weiter oben in der Kette. Halte dich an die Schmerzregel und starte mit deiner Kette unten.",
     chainTitle: "Prüfe deine Kette",
@@ -251,7 +260,7 @@ export const ui = {
     pos: (n) =>
       `Wahrscheinlich ein schwaches Glied · ${n} ${n === 1 ? "Übung" : "Übungen"} in deiner Woche ergänzt`,
     posNone:
-      "Wahrscheinlich ein schwaches Glied · die passenden Übungen sind schon in deiner Woche",
+      "Wahrscheinlich ein schwaches Glied · die Übungen in deiner Woche decken das schon ab",
     neg: "Sieht vorerst gut aus",
     redo: "Neu testen",
     legend: {
@@ -261,13 +270,17 @@ export const ui = {
       pain: "Schmerz",
     },
     weekTitle: "Deine Woche",
-    weekLead: (m) => `Alle 2–3 Tage, etwa ${m} Minuten:`,
+    weekLead: (m) =>
+      `Etwa ${m} Minuten pro Einheit. Wie oft, steht bei jeder Übung:`,
+    weekLeadRuns: "Bau das in deine Läufe ein:",
+    weekAllFine:
+      "Keine schwachen Glieder gefunden. Bleib bei den Übungen oben.",
     weekEmpty:
       "Mach die Selbsttests oben, um Übungen für deine schwachen Glieder zu ergänzen.",
     duringRuns: "beim Laufen",
     later: "Später",
     laterNote:
-      "Beginne damit erst, wenn sich der Schmerz beruhigt hat. Den Grund findest du oben in deiner Kette.",
+      "Diese Übung noch zurückstellen. Wann du sie dazunimmst, steht oben in deiner Kette.",
     min: "Min.",
     physioTitle: "Geh zur Physiotherapie, wenn",
     physio: [

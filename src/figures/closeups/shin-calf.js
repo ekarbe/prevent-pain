@@ -40,6 +40,7 @@ export default {
     spots: {
       calf: [84, 96],
       "inner-shin": [138, 212],
+      achilles: [100, 246],
     },
     edges: ["back", "front"],
   },
@@ -63,6 +64,7 @@ export default {
     spots: {
       calf: [128, 100],
       "inner-shin": [145, 212],
+      achilles: [120, 250],
     },
     edges: ["outer", "inner"],
   },

@@ -33,8 +33,8 @@ export default [
         "hipflex",
         2,
         {
-          en: "Stiff hip flexors are pulled long under load at the back of every stride. If this tests stiff, wait with the couch stretch until lifting your knee against resistance no longer hurts, usually 1–2 weeks or more. Then start gently, only to a mild pull.",
-          de: "Steife Hüftbeuger werden am Ende jedes Schritts unter Last in die Länge gezogen. Fällt der Test steif aus, warte mit dem Couch Stretch, bis das Knieanheben gegen Widerstand nicht mehr wehtut, meist 1–2 Wochen oder länger. Dann sanft beginnen, nur bis zu einem leichten Ziehen.",
+          en: "Stiff hip flexors are pulled long under load at the back of every stride. Hold off on this test and the couch stretch until lifting your knee against resistance no longer hurts, usually 1–2 weeks or more. Then start gently, only to a mild pull.",
+          de: "Steife Hüftbeuger werden am Ende jedes Schritts unter Last in die Länge gezogen. Mach den Test und den Couch Stretch erst, wenn das Knieanheben gegen Widerstand nicht mehr wehtut, meist nach 1–2 Wochen oder länger. Dann sanft beginnen, nur bis zu einem leichten Ziehen.",
         },
       ],
       ["stride", 1],
@@ -72,7 +72,7 @@ export default [
     urgency: "today",
     en: {
       title:
-        "Deep ache in the groin or front of the hip that builds with every run",
+        "Deep ache in the groin or high inner thigh that builds with every run",
       desc: "Often starts after a jump in training. It comes on earlier and lingers longer with each run, hopping on that leg hurts, and it can ache at night or at rest.",
       name: "Femoral neck bone stress injury (stress fracture)",
       about:
@@ -81,7 +81,8 @@ export default [
         "Stop running and hopping now. Walk only as much as you need to, and if walking hurts or makes you limp, keep weight off that leg until you've been seen, with crutches if you have them. If you can't put weight on the leg at all, or the pain suddenly gets much worse, go to an emergency department now. Tell the doctor about any recent jump in training, earlier stress injuries, eating too little or missed periods.",
     },
     de: {
-      title: "Tiefer Schmerz in Leiste oder Hüfte, der mit jedem Lauf zunimmt",
+      title:
+        "Tiefer Schmerz in Leiste oder Innenschenkel, mit jedem Lauf stärker",
       desc: "Beginnt oft nach einer Trainingssteigerung. Setzt mit jedem Lauf früher ein und hält länger an, Hüpfen auf dem Bein tut weh, und auch nachts oder in Ruhe kann es schmerzen.",
       name: "Knochenstressverletzung am Schenkelhals (Ermüdungsbruch)",
       about:
@@ -130,7 +131,14 @@ export default [
           de: "Eine etwas höhere Schrittfrequenz kann verringern, wie weit der Oberschenkel bei jeder Landung nach innen sinkt. Genau diese Bewegung drückt auf die Sehne.",
         },
       ],
-      ["trunk", 1],
+      [
+        "trunk",
+        1,
+        {
+          en: "A steady trunk keeps your pelvis level over the standing leg. Do the side-plank test from your knees on the painful side, and stop at the first outer-hip ache.",
+          de: "Ein stabiler Rumpf hält das Becken über dem Standbein waagerecht. Mach den Seitstütz-Test auf der schmerzhaften Seite von den Knien aus und hör beim ersten Ziehen außen an der Hüfte auf.",
+        },
+      ],
     ],
     later: ["side-abduction"],
     sources: ["grimaldi2015", "mellor2018", "grimaldi2017", "heiderscheit2011"],
@@ -216,5 +224,6 @@ export default [
       ["stride", 1],
     ],
     sources: ["goom2016", "nasser2021", "fredericson2005"],
+    later: ["slow-rdl"],
   },
 ];

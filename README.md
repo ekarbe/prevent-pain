@@ -48,6 +48,8 @@ All content lives in `src/content/`, every text in both languages as `{ en: …,
 
 A chain entry is `[linkId, weight]` or `[linkId, weight, { en, de }]` with a cause-specific "why". Weights: 3 often involved, 2 sometimes, 1 occasionally. On the plan, a weak test result doubles the weight and a fine result cuts it to a fifth (`src/lib/rank.js`).
 
+Two optional cause fields tune the week. `later: [exerciseId]` keeps an exercise in the week but marks it "Later", for things that don't suit a fresh injury yet, such as stretching a strained muscle. `linkExercises: { linkId: [exerciseIds] }` swaps the exercises a weak link adds for this cause, for example when the cause's own exercises already train that link.
+
 Close-up drawings live in `src/figures/closeups/<region>.js`: per view an outline path, detail strokes, spot positions in a 240 × 300 drawing and the two edge words.
 
 `npm run check:content` fails on missing translations, unknown or unused ids, causes with fewer than two sources, links without a test or exercise, and spots that aren't placed in any figure view.

@@ -17,6 +17,7 @@ export default function StepHeader({ step, onBack }) {
         <button
           type="button"
           onClick={onBack}
+          aria-label={t.backLabel}
           className="inline-flex min-h-10 items-center gap-0.5 rounded-lg pr-2.5 pl-1 text-sm text-ink-2 hover:text-ink"
         >
           <ChevronLeft className="size-[18px]" aria-hidden="true" />

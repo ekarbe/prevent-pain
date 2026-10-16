@@ -27,7 +27,14 @@ export const saveLang = (lang) => set("lang", lang);
 
 export const isDark = () => document.documentElement.classList.contains("dark");
 
+// The phone's status and address bar follow the page background.
+const paintBar = (dark) =>
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute("content", dark ? "#0f1715" : "#f1f5f1");
+
 export function setDark(dark) {
   document.documentElement.classList.toggle("dark", dark);
+  paintBar(dark);
   set("theme", dark ? "dark" : "light");
 }

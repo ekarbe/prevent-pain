@@ -5,6 +5,7 @@ import {
   causeList,
   causeFiles,
   links,
+  regionAt,
   tests,
   exercises,
   sources,
@@ -13,7 +14,7 @@ import {
 import { closeups } from "../src/figures/closeups/index.js";
 
 const LANGS = ["en", "de"];
-const VIEWS = ["front", "side", "inside", "back", "sole", "top"];
+const VIEWS = ["front", "side", "inside", "back", "sole", "top", "profile"];
 const EDGES = ["inner", "outer", "front", "back", "toes", "heel", "up", "down"];
 const errors = [];
 const warns = [];
@@ -45,6 +46,8 @@ for (const region of regions) {
   if (seenRegions.has(region.id)) err(where, "duplicate region id");
   seenRegions.add(region.id);
   needText(where, region, ["name", "short"]);
+  if (typeof regionAt[region.id] !== "number")
+    err(where, "missing position in regionAt (links.js)");
   if (!region.spots?.length) err(where, "has no spots");
   const seenSpots = new Set();
   for (const spot of region.spots ?? []) {
@@ -130,13 +133,26 @@ for (const cause of causeList) {
   }
   if (cause.kind !== "plan") err(where, 'kind must be "plan" or "refer"');
   needText(where, cause, ["title", "desc", "name", "about", "load"]);
+  if (!Array.isArray(cause.local))
+    err(where, "needs a `local` array (it may be empty)");
+  const chainIds = (cause.chain ?? []).map(([id]) => id);
+  for (const [linkId, ids] of Object.entries(cause.linkExercises ?? {})) {
+    if (!chainIds.includes(linkId))
+      err(where, `linkExercises names "${linkId}", which isn't in its chain`);
+    for (const id of ids) {
+      usedExercises.add(id);
+      if (!exercises[id]) err(where, `linkExercises: unknown exercise "${id}"`);
+    }
+  }
   for (const id of cause.local ?? []) {
     usedExercises.add(id);
     if (!exercises[id]) err(where, `unknown exercise "${id}"`);
   }
   const reachable = new Set([
     ...(cause.local ?? []),
-    ...(cause.chain ?? []).flatMap(([id]) => links[id]?.exercises ?? []),
+    ...chainIds.flatMap(
+      (id) => cause.linkExercises?.[id] ?? links[id]?.exercises ?? [],
+    ),
   ]);
   for (const id of cause.later ?? [])
     if (!reachable.has(id))
@@ -172,6 +188,7 @@ for (const [id, link] of Object.entries(links)) {
 }
 for (const [id, test] of Object.entries(tests))
   needText(`test ${id}`, test, ["name", "how", "pos", "neg"]);
+if (!tests.load) err("test load", "required: the plan asks it on every cause");
 
 let withVideo = 0;
 for (const [id, ex] of Object.entries(exercises)) {

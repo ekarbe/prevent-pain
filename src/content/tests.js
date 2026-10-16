@@ -5,14 +5,14 @@ export const tests = {
     en: {
       name: "Step-rate count",
       how: "On an easy run, count each time your right foot lands for 30 seconds, then multiply by 4.",
-      pos: "Under about 160 steps per minute",
-      neg: "About 165 or more",
+      pos: "Under 165 steps per minute",
+      neg: "165 or more",
     },
     de: {
       name: "Schrittfrequenz zählen",
       how: "Zähl bei einem lockeren Lauf 30 Sekunden lang, wie oft dein rechter Fuß aufsetzt, und nimm das mal 4.",
-      pos: "Unter etwa 160 Schritten pro Minute",
-      neg: "Etwa 165 oder mehr",
+      pos: "Unter 165 Schritten pro Minute",
+      neg: "165 oder mehr",
     },
   },
   sph: {
@@ -130,15 +130,15 @@ export const tests = {
   bal: {
     en: {
       name: "Balance with eyes closed",
-      how: "Stand on the painful leg, hands on hips, and close your eyes. Time how long you stay steady.",
-      pos: "Under 20 seconds, or big wobbles",
-      neg: "20 seconds or more, steady",
+      how: "Stand on one leg, hands on hips, and close your eyes. Time how long you stay steady, then do the same on the other leg.",
+      pos: "Clearly shorter or wobblier than on the other leg",
+      neg: "About the same as on the other leg",
     },
     de: {
       name: "Gleichgewicht mit geschlossenen Augen",
-      how: "Auf dem schmerzenden Bein stehen, Hände an der Hüfte, Augen schließen. Stopp die Zeit, wie lange du ruhig stehst.",
-      pos: "Unter 20 Sekunden oder starkes Wackeln",
-      neg: "20 Sekunden oder länger, ruhig",
+      how: "Auf einem Bein stehen, Hände an der Hüfte, Augen schließen. Stopp die Zeit, wie lange du ruhig stehst, dann dasselbe auf dem anderen Bein.",
+      pos: "Deutlich kürzer oder wackliger als auf dem anderen Bein",
+      neg: "Etwa so wie auf dem anderen Bein",
     },
   },
   load: {

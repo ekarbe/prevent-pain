@@ -67,12 +67,12 @@ export const exercises = {
     en: {
       name: "Heavy slow leg press",
       dose: "4 × 15 → 6 over 12 weeks · 3 s down, 3 s up",
-      how: "Choose a weight that makes the last rep hard. Go heavier with fewer reps every 2 weeks while pain stays within the rule.",
+      how: "Choose a weight that makes the last rep hard. Go heavier with fewer reps every 2 weeks while pain stays within the rule. Keep the knee bend shallow at first (about 60°) and go deeper only as the pain rule allows.",
     },
     de: {
       name: "Schwere, langsame Beinpresse",
       dose: "4 × 15 → 6 über 12 Wochen · 3 s runter, 3 s hoch",
-      how: "Gewicht so wählen, dass die letzte Wiederholung schwer ist. Alle 2 Wochen schwerer mit weniger Wiederholungen, solange die Schmerzregel hält.",
+      how: "Gewicht so wählen, dass die letzte Wiederholung schwer ist. Alle 2 Wochen schwerer mit weniger Wiederholungen, solange die Schmerzregel hält. Beuge das Knie anfangs nur flach (etwa 60°) und geh erst tiefer, wenn die Schmerzregel es zulässt.",
     },
   },
   "side-abduction": {
@@ -533,7 +533,7 @@ export const exercises = {
       },
     },
     en: {
-      name: "Banded ankle eversion",
+      name: "Banded foot turn-out",
       dose: "3 × 15 per side · 3 s return",
       how: "Sit with your legs straight and loop a band around both forefeet. Keep your heels and knees still, turn the outer edge of one foot outward against the band, then let it return over 3 seconds. Use a stronger band once 15 feel easy.",
     },
@@ -553,7 +553,7 @@ export const exercises = {
       },
     },
     en: {
-      name: "Eversion hold",
+      name: "Foot turn-out hold",
       dose: "5 × 30–45 s · 1 min rest",
       how: "Sit with the outer edge of the sore foot against a wall or a heavy table leg. Push the foot outward into it at about half effort without moving, and hold. Ease off if pain passes 3/10.",
     },
@@ -708,7 +708,7 @@ export const exercises = {
       },
     },
     en: {
-      name: "Lying hip abduction hold",
+      name: "Lying push-apart hold",
       dose: "5 × 30–45 s · 1 min rest",
       how: "Lie on your back, legs straight and hip-width apart, with a belt or band around your lower thighs. Press both legs out into it at about a third of your full effort and hold, without letting the legs roll in. Ease off if pain passes 3/10.",
     },
@@ -841,7 +841,7 @@ export const exercises = {
       },
     },
     en: {
-      name: "Adductor squeeze hold",
+      name: "Knee squeeze hold",
       dose: "5 × 30 s · 1 min rest",
       how: "Lie on your back, knees bent, with a ball or firm pillow between your knees. Squeeze steadily at about half effort, keeping pain at 3/10 or less, hold, then relax slowly. Squeeze a little harder each week as it settles.",
     },
@@ -915,7 +915,7 @@ export const exercises = {
     min: 4,
     video: null,
     en: {
-      name: "Prone back extension",
+      name: "Face-down back lift",
       dose: "3 × 10–15 · 2 s holds",
       how: "Lie face down, arms by your sides. Squeeze your glutes and lift your chest a few centimetres off the floor, neck long and eyes on the floor, hold 2 seconds and lower slowly. Stay within the pain rule, and when 3 × 15 feels easy, put your hands by your temples or move to a back-extension bench.",
     },

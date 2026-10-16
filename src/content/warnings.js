@@ -4,12 +4,12 @@ export const warnings = {
   twist: {
     level: "warn",
     en: "Did it start with a twist? Inner-knee pain after twisting that catches, locks or swells points to the meniscus. Have it checked first.",
-    de: "Hat es mit einem Verdrehen angefangen? Schmerzen innen nach einer Drehbewegung, die haken, blockieren oder anschwellen, deuten auf den Meniskus hin. Lass das zuerst abklären.",
+    de: "Hat es mit einem Verdrehen angefangen? Schmerzen innen am Knie nach einer Drehbewegung, wenn das Knie dabei hakt, blockiert oder anschwillt, deuten auf den Meniskus hin. Lass das zuerst abklären.",
   },
   clot: {
     level: "stop",
-    en: "Calf swelling, warmth or redness together with this pain needs a doctor today, to rule out a blood clot.",
-    de: "Schwellung, Wärme oder Rötung der Wade zusammen mit diesem Schmerz: heute noch ärztlich abklären lassen, um eine Thrombose auszuschließen.",
+    en: "Calf swelling, warmth or redness together with this pain needs a doctor today, to rule out a blood clot, especially after a long flight, surgery or on hormonal contraception. With sudden shortness of breath, chest pain or coughing up blood, call emergency services now.",
+    de: "Schwellung, Wärme oder Rötung der Wade zusammen mit diesem Schmerz: heute noch ärztlich abklären lassen, um eine Thrombose auszuschließen, vor allem nach einem Langstreckenflug, einer Operation oder unter hormoneller Verhütung. Bei plötzlicher Atemnot, Brustschmerzen oder Bluthusten sofort den Notruf 112 wählen.",
   },
   cauda: {
     level: "stop",

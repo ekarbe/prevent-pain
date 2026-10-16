@@ -29,13 +29,15 @@ export function useRoute() {
   return useSyncExternalStore(subscribe, () => current);
 }
 
+// Each in-app step is its own history entry that knows how many steps it is from the entry page,
+// so the in-app Back button can go back through history instead of piling up new entries.
 export function navigate(route, { replace = false } = {}) {
   const hash = formatHash(route);
   if (hash === window.location.hash) return;
-  if (replace) {
-    window.history.replaceState(null, "", hash);
-    emit();
-  } else {
-    window.location.hash = hash;
-  }
+  const { history } = window;
+  if (replace) history.replaceState(history.state, "", hash);
+  else history.pushState({ depth: (history.state?.depth ?? 0) + 1 }, "", hash);
+  emit();
 }
+
+export const canGoBack = () => (window.history.state?.depth ?? 0) > 0;

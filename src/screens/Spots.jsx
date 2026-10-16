@@ -63,13 +63,18 @@ export default function Spots({ route, go }) {
                 names={names}
                 edges={t.edges}
               />
-              <figcaption className="text-[13px] text-ink-2">
-                {pick(figure[view].caption, lang)}
+              <figcaption className="flex flex-col items-center gap-0.5 text-center text-[13px] text-ink-2">
+                {selected ? (
+                  <strong className="text-[15px] text-pain">
+                    {names[selected]}
+                  </strong>
+                ) : null}
+                <span>{pick(figure[view].caption, lang)}</span>
               </figcaption>
             </figure>
           </div>
         ) : null}
-        <div className="flex flex-col gap-4 md:sticky md:top-4">
+        <div className="flex flex-col gap-4 max-md:contents md:sticky md:top-4">
           <div className="flex flex-wrap gap-2 md:flex-col md:items-stretch">
             {region.spots.map((s) => (
               <button

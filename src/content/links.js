@@ -30,7 +30,7 @@ export const links = {
     de: {
       name: "Rumpfkontrolle",
       short: "Rumpf",
-      why: "Der Rumpf ist die Basis, von der jeder Schritt abdrückt. Kann er nicht stabil halten, wackelt das Becken und Rücken und Hüfte fangen das auf.",
+      why: "Der Rumpf ist die Basis, von der jeder Schritt abdrückt. Bleibt er nicht stabil, wackelt das Becken, und Rücken und Hüfte müssen das abfangen.",
     },
   },
   hipflex: {
@@ -54,12 +54,12 @@ export const links = {
     exercises: ["side-abduction", "side-plank"],
     en: {
       name: "Side-hip strength (glute med)",
-      short: "Hip",
+      short: "Side hip",
       why: "If the side-hip muscles can't keep your pelvis level, the thigh drops inward on every stride. That twist travels down to the knee and up to the back.",
     },
     de: {
       name: "Seitliche Hüftkraft (Gluteus medius)",
-      short: "Hüfte",
+      short: "Hüftseite",
       why: "Halten die seitlichen Hüftmuskeln das Becken nicht stabil, sinkt der Oberschenkel bei jedem Schritt nach innen. Diese Drehung wandert nach unten ins Knie und nach oben in den Rücken.",
     },
   },
@@ -105,7 +105,7 @@ export const links = {
     de: {
       name: "Kraft der hinteren Oberschenkel",
       short: "Hamstrings",
-      why: "Die hinteren Oberschenkel bremsen das schwingende Bein vor jeder Landung. Fehlt ihnen Kraft, zerren sie, und Knie und Becken verlieren einen Stabilisator.",
+      why: "Die hinteren Oberschenkel bremsen das schwingende Bein vor jeder Landung. Fehlt ihnen Kraft, zerren sie sich leichter, und Knie und Becken verlieren einen Stabilisator.",
     },
   },
   calf: {
@@ -135,7 +135,7 @@ export const links = {
     de: {
       name: "Beweglichkeit im Sprunggelenk",
       short: "Knöchel",
-      why: "Ein steifes Sprunggelenk lässt das Schienbein nicht über den Fuß nach vorn. Knie, Fuß und Achillessehne gleichen aus, indem sie verdrehen oder mehr Last tragen.",
+      why: "Ein steifes Sprunggelenk lässt das Schienbein nicht über den Fuß nach vorn. Knie, Fuß und Achillessehne gleichen aus, indem sie sich verdrehen oder mehr Last tragen.",
     },
   },
   foot: {

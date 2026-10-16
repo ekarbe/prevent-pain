@@ -37,7 +37,7 @@ export default function AppBar({ onLang }) {
               lang={l}
               aria-pressed={l === lang}
               onClick={() => onLang(l)}
-              className="min-h-[30px] min-w-9 rounded-full px-2 text-[13px] font-bold tracking-[0.04em] text-ink-2 aria-pressed:bg-accent aria-pressed:text-accent-ink"
+              className="min-h-11 min-w-11 rounded-full px-2 text-[13px] font-bold tracking-[0.04em] text-ink-2 aria-pressed:bg-accent aria-pressed:text-accent-ink"
             >
               {l.toUpperCase()}
             </button>
@@ -47,7 +47,7 @@ export default function AppBar({ onLang }) {
           type="button"
           onClick={toggleTheme}
           aria-label={dark ? t.toLight : t.toDark}
-          className="grid size-10 place-items-center rounded-full text-ink-2 hover:bg-surface-2 hover:text-ink"
+          className="grid size-11 place-items-center rounded-full text-ink-2 hover:bg-surface-2 hover:text-ink"
         >
           {dark ? (
             <Sun className="size-5" aria-hidden="true" />

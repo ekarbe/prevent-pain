@@ -8,7 +8,10 @@ export { warnings } from "./warnings.js";
 
 import { regions } from "./regions.js";
 
-export const regionById = Object.fromEntries(regions.map((r) => [r.id, r]));
+export const regionById = Object.assign(
+  Object.create(null),
+  Object.fromEntries(regions.map((r) => [r.id, r])),
+);
 
 export function findSpot(regionId, spotId) {
   return regionById[regionId]?.spots.find((s) => s.id === spotId) ?? null;

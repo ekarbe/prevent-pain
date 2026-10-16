@@ -99,7 +99,7 @@ export const body = {
   front: {
     // [regionId, y, height]
     bands: [
-      ["hip", 50, 58],
+      ["hip", -8, 116],
       ["thigh", 108, 94],
       ["knee", 202, 44],
       ["shin-calf", 246, 96],
@@ -123,8 +123,8 @@ export const body = {
       ["hip", 56, 56],
       ["thigh", 112, 90],
       ["knee", 202, 44],
-      ["shin-calf", 246, 96],
-      ["ankle-foot", 342, 62],
+      ["shin-calf", 246, 82],
+      ["ankle-foot", 328, 76],
     ],
     details: [
       "M 80 0 L 80 40",

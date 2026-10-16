@@ -1,7 +1,7 @@
 // Lower back close-up. Drawing area 0 0 240 300 (rendered with a small margin).
 // Each view: outline (filled silhouette), details (strokes), spots { spotId: [x, y] }, edges [left, right] label keys.
 export default {
-  views: ["back", "side"],
+  views: ["back", "profile"],
   back: {
     caption: { en: "Lower back from behind", de: "Unterer Rücken von hinten" },
     outline:
@@ -29,7 +29,7 @@ export default {
     },
     edges: null,
   },
-  side: {
+  profile: {
     caption: { en: "Lower back from the left", de: "Unterer Rücken von links" },
     outline:
       "M 68 0 C 60 36, 54 80, 56 116 C 58 150, 66 178, 74 196 C 78 230, 80 266, 82 300 L 162 300 C 164 276, 166 258, 170 244 C 186 234, 196 210, 196 182 C 196 150, 180 124, 166 104 C 158 90, 160 40, 170 0 Z",
