@@ -154,7 +154,30 @@ export const ui = {
       start: "Before we start",
       stop: "Get this checked first",
       region: "Where does it hurt?",
+      topics: "All topics",
     },
+
+    // Search engine titles and descriptions, one per page.
+    meta: {
+      start: "Running pain: find the cause and the weak links",
+      site: "Tap where running hurts, check the weak links in your chain with 30-second self-tests, and get a strength plan. In English and German.",
+      stop: "Some symptoms need a doctor or physio before any exercise plan. What to do now.",
+      region:
+        "Tap where running hurts on a body map: lower back, hip, thigh, knee, shin and calf, ankle and foot.",
+      topics:
+        "Every running ache and injury Prevent Pain covers, by body region, each with exercises and self-tests for the weak links.",
+      spot: (region) => `${region} pain from running`,
+      spotDesc: (region, spots) =>
+        `${region} pain from running: ${spots}. Tap the spot, pick what it feels like and get a plan.`,
+      causes: (spot, region) => `${spot} (${region}): what it could be`,
+      causesDesc: (spot, names) =>
+        `${spot}: ${names}. Pick the description that fits and get exercises and self-tests.`,
+      plan: (name) => `${name}: exercises and tips for runners`,
+      refer: (name) => `${name}: get it checked`,
+    },
+    topicsLead:
+      "Every ache and injury Prevent Pain covers, by body region. Not sure which one you have? Start with where it hurts.",
+    topicsStart: "Start with where it hurts",
   },
   de: {
     back: "Zurück",
@@ -319,6 +342,28 @@ export const ui = {
       start: "Bevor es losgeht",
       stop: "Lass das zuerst abklären",
       region: "Wo tut es weh?",
+      topics: "Alle Themen",
     },
+
+    meta: {
+      start: "Schmerzen beim Laufen: Ursache und Schwachstellen finden",
+      site: "Tippe an, wo das Laufen schmerzt, prüfe die Schwachstellen deiner Kette mit 30-Sekunden-Tests und hol dir einen Kraftplan. Auf Deutsch und Englisch.",
+      stop: "Manche Beschwerden gehören zuerst in ärztliche oder physiotherapeutische Hände. Was du jetzt tun solltest.",
+      region:
+        "Tippe auf der Körperkarte an, wo das Laufen schmerzt: unterer Rücken, Hüfte, Oberschenkel, Knie, Schienbein und Wade, Sprunggelenk und Fuß.",
+      topics:
+        "Alle Laufbeschwerden und Verletzungen in Prevent Pain, nach Körperregion, jeweils mit Übungen und Selbsttests für die Schwachstellen.",
+      spot: (region) => `${region}: Schmerzen beim Laufen`,
+      spotDesc: (region, spots) =>
+        `${region}: Schmerzen beim Laufen. Stellen: ${spots}. Tippe die Stelle an, wähle, wie es sich anfühlt, und hol dir einen Plan.`,
+      causes: (spot, region) => `${spot} (${region}): Was dahinterstecken kann`,
+      causesDesc: (spot, names) =>
+        `${spot}: ${names}. Wähle die passende Beschreibung und hol dir Übungen und Selbsttests.`,
+      plan: (name) => `${name}: Übungen und Tipps fürs Laufen`,
+      refer: (name) => `${name}: ärztlich abklären`,
+    },
+    topicsLead:
+      "Alle Beschwerden und Verletzungen, die Prevent Pain abdeckt, nach Körperregion. Du weißt nicht, was du hast? Fang damit an, wo es wehtut.",
+    topicsStart: "Damit anfangen, wo es wehtut",
   },
 };

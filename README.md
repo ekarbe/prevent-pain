@@ -17,7 +17,7 @@ Tap where running hurts, pick the description that fits, and get a plan: how to 
    - _Check your chain_: weak links ranked by how often research connects them to this problem. Each has a self-test; a weak result moves it up and adds its exercises.
    - _Your week_, when to see a physio, sources, and a share link that restores the plan including test results.
 
-Every screen has its own link, e.g. `#/de/knee/below-kneecap/patellar-tendon?t=ktw1.load1`.
+Every screen is its own page, e.g. `/prevent-pain/de/knee/below-kneecap/patellar-tendon/?t=ktw1.load1`. Links from version 1 (`/prevent-pain/#/de/knee/…`) still work and move to the new address. `/en/topics/` lists every cause as plain links.
 
 ## Development
 
@@ -27,10 +27,22 @@ npm run dev            # http://localhost:5173/prevent-pain/
 npm run lint
 npm test               # router and ranking unit tests (node:test)
 npm run check:content  # validates all content, see below
-npm run build
+npm run build          # client build, server build, then pre-renders every page into dist/
 ```
 
-Requires Node 22.12 or newer. Pushing to `main` runs `.github/workflows/deploy.yml`: lint, tests and the content check, then `vite build` and deploy to GitHub Pages.
+Requires Node 22.12 or newer. Pushing to `main` runs `.github/workflows/deploy.yml`: lint, tests and the content check, then `npm run build` and deploy to GitHub Pages.
+
+## Pages and search
+
+`npm run build` runs three steps:
+
+1. `vite build` builds the app into `dist/`.
+2. `vite build --ssr src/entry-server.jsx` builds a Node version of the same app into `dist-ssr/`.
+3. `scripts/prerender.mjs` renders every route in both languages (`src/lib/pages.js`) to `dist/<lang>/<region>/<spot>/<cause>/index.html`. Each page gets its own title, description, canonical address, `hreflang` links to the other language, social preview tags and breadcrumbs (`src/lib/meta.js`). It also writes `dist/sitemap.xml` and `dist/404.html`.
+
+In the browser, a pre-rendered page hydrates its HTML; anything else (a plan link with test results, the 404 page for an unknown address) renders from scratch and then corrects the address to the nearest valid page. A cause offered at several spots has one page per spot; all of them name the first spot's page as canonical, and only that one is in the sitemap.
+
+GitHub Pages only reads `robots.txt` at the domain root, so submit `https://ekarbe.github.io/prevent-pain/sitemap.xml` in Google Search Console (as a URL-prefix property) instead.
 
 ## Content model
 

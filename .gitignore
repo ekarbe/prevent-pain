@@ -3,6 +3,7 @@ node_modules/
 
 # build output (CI builds its own for GitHub Pages)
 dist/
+dist-ssr/
 
 # local env and editor files
 .env*
@@ -20,3 +21,7 @@ ISSUES.md
 CODESTYLE.md
 PLAN.md
 PLAND.md
+
+# deep-research notes and reports (kept local)
+research_notes/
+reports/

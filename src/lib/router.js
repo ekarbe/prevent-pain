@@ -1,11 +1,16 @@
-// Hash routes, so every screen has a link that works on GitHub Pages without a 404 fallback.
-//   #/en               red-flag check
-//   #/en/check         "get this checked first"
-//   #/en/where         region picker
-//   #/en/knee          spot picker for a region
-//   #/en/knee/below-kneecap                  cause cards
-//   #/en/knee/below-kneecap/patellar-tendon?t=ktw1.sls0   plan, with self-test results
+// Every screen is a real page under the site's base path, pre-rendered at build time:
+//   /en/               red-flag check
+//   /en/check/         "get this checked first"
+//   /en/where/         region picker
+//   /en/topics/        everything the app covers, as links
+//   /en/knee/          spot picker for a region
+//   /en/knee/below-kneecap/                   cause cards
+//   /en/knee/below-kneecap/patellar-tendon/?t=ktw1.sls0   plan, with self-test results
+// Version 1 used the same routes after a hash (#/en/knee/…); parseHash still reads those old links.
 export const LANGS = ["en", "de"];
+
+const SCREEN_AT = { check: "stop", where: "region", topics: "topics" };
+const SEGMENT = { stop: "check", region: "where", topics: "topics" };
 
 export function parseTests(value) {
   const out = {};
@@ -25,21 +30,17 @@ export function formatTests(tests) {
     .join(".");
 }
 
-export function parseHash(hash) {
-  const raw = (hash || "").replace(/^#\/?/, "");
-  const q = raw.indexOf("?");
-  const path = q === -1 ? raw : raw.slice(0, q);
-  const params = new URLSearchParams(q === -1 ? "" : raw.slice(q + 1));
-  const parts = path
-    .split("/")
-    .filter(Boolean)
-    .map((p) => {
-      try {
-        return decodeURIComponent(p);
-      } catch {
-        return p;
-      }
-    });
+function decode(part) {
+  try {
+    return decodeURIComponent(part);
+  } catch {
+    return part;
+  }
+}
+
+function parseParts(path, query) {
+  const parts = path.split("/").filter(Boolean).map(decode);
+  if (parts.at(-1) === "index.html") parts.pop();
   const lang = LANGS.includes(parts[0]) ? parts.shift() : null;
   const route = {
     lang,
@@ -49,34 +50,41 @@ export function parseHash(hash) {
     cause: null,
     tests: {},
   };
-  if (parts[0] === "check") route.screen = "stop";
-  else if (parts[0] === "where") route.screen = "region";
+  if (Object.hasOwn(SCREEN_AT, parts[0])) route.screen = SCREEN_AT[parts[0]];
   else if (parts.length) {
     [route.region, route.spot = null, route.cause = null] = parts;
     route.screen = route.cause ? "plan" : route.spot ? "causes" : "spot";
   }
-  if (route.screen === "plan") route.tests = parseTests(params.get("t"));
+  if (route.screen === "plan")
+    route.tests = parseTests(new URLSearchParams(query).get("t"));
   return route;
 }
 
-export function formatHash(route) {
-  const base = `#/${route.lang}`;
-  switch (route.screen) {
-    case "stop":
-      return `${base}/check`;
-    case "region":
-      return `${base}/where`;
-    case "spot":
-      return `${base}/${route.region}`;
-    case "causes":
-      return `${base}/${route.region}/${route.spot}`;
-    case "plan": {
-      const t = formatTests(route.tests || {});
-      return `${base}/${route.region}/${route.spot}/${route.cause}${t ? `?t=${t}` : ""}`;
-    }
-    default:
-      return base;
-  }
+function formatParts(route) {
+  if (SEGMENT[route.screen]) return [route.lang, SEGMENT[route.screen]];
+  const deep = { spot: 1, causes: 2, plan: 3 }[route.screen] ?? 0;
+  return [route.lang, route.region, route.spot, route.cause].slice(0, deep + 1);
+}
+
+// base is the site's base path with slashes on both ends, e.g. "/prevent-pain/".
+export function parsePath(pathname, search, base = "/") {
+  const path = pathname.startsWith(base)
+    ? pathname.slice(base.length)
+    : pathname;
+  return parseParts(path, search);
+}
+
+export function formatPath(route, base = "/") {
+  const t = route.screen === "plan" ? formatTests(route.tests || {}) : "";
+  return `${base}${formatParts(route).join("/")}/${t ? `?t=${t}` : ""}`;
+}
+
+export function parseHash(hash) {
+  const raw = (hash || "").replace(/^#\/?/, "");
+  const q = raw.indexOf("?");
+  return q === -1
+    ? parseParts(raw, "")
+    : parseParts(raw.slice(0, q), raw.slice(q + 1));
 }
 
 // The deepest valid route for the given content, so a stale or mistyped link lands somewhere sensible.

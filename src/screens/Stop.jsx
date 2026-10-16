@@ -1,8 +1,9 @@
 import { TriangleAlert } from "lucide-react";
 import { useT } from "../i18n/lang.js";
 import Note from "../components/Note.jsx";
+import Link from "../components/Link.jsx";
 
-export default function Stop({ go, back }) {
+export default function Stop({ route, back }) {
   const t = useT();
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col gap-4 pt-3">
@@ -18,13 +19,9 @@ export default function Stop({ go, back }) {
         <button type="button" className="btn" onClick={back}>
           {t.stopBack}
         </button>
-        <button
-          type="button"
-          className="btn btn-ghost"
-          onClick={() => go({ screen: "region" })}
-        >
+        <Link to={{ ...route, screen: "region" }} className="btn btn-ghost">
           {t.stopCleared}
-        </button>
+        </Link>
       </div>
     </div>
   );

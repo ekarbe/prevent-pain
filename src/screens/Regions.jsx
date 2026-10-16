@@ -1,15 +1,22 @@
 import { regions } from "../content/index.js";
 import { pick, useLang, useT } from "../i18n/lang.js";
 import { BodyFigure } from "../components/Figures.jsx";
+import Link from "../components/Link.jsx";
 
-export default function Regions({ go }) {
+export default function Regions({ route, go }) {
   const t = useT();
   const lang = useLang();
   const names = Object.fromEntries(
     regions.map((r) => [r.id, pick(r, lang).name]),
   );
-  const choose = (region) =>
-    go({ screen: "spot", region, spot: null, cause: null });
+  const at = (region) => ({
+    ...route,
+    screen: "spot",
+    region,
+    spot: null,
+    cause: null,
+  });
+  const choose = (region) => go(at(region));
 
   return (
     <div className="flex flex-col gap-4">
@@ -35,17 +42,12 @@ export default function Regions({ go }) {
         </div>
         <div className="flex flex-wrap gap-2 md:flex-col md:items-stretch">
           {regions.map((r, i) => (
-            <button
-              key={r.id}
-              type="button"
-              className="chip"
-              onClick={() => choose(r.id)}
-            >
+            <Link key={r.id} to={at(r.id)} className="chip">
               <span className="key" aria-hidden="true">
                 {i + 1}
               </span>
               <span>{names[r.id]}</span>
-            </button>
+            </Link>
           ))}
         </div>
       </div>

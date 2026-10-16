@@ -16,6 +16,7 @@ import Note from "../components/Note.jsx";
 import PainScale from "../components/PainScale.jsx";
 import ExerciseCard from "../components/ExerciseCard.jsx";
 import { ChainStrip, SuspectCard, TestAnswer } from "../components/Chain.jsx";
+import Link from "../components/Link.jsx";
 
 function SectionTitle({ n, children }) {
   return (
@@ -53,7 +54,7 @@ function Sources({ ids }) {
   );
 }
 
-function Refer({ cause, eyebrow, go }) {
+function Refer({ cause, eyebrow, route }) {
   const t = useT();
   const lang = useLang();
   const c = pick(cause, lang);
@@ -79,13 +80,12 @@ function Refer({ cause, eyebrow, go }) {
       <Note tone={today ? "stop" : "warn"}>
         <span className="label">{t.meanwhile}</span> {c.meanwhile}
       </Note>
-      <button
-        type="button"
+      <Link
+        to={{ ...route, screen: "causes", cause: null }}
         className="btn btn-ghost"
-        onClick={() => go({ screen: "causes", cause: null })}
       >
         {t.referBack}
-      </button>
+      </Link>
       <Sources ids={cause.sources} />
     </div>
   );
@@ -102,7 +102,7 @@ export default function Plan({ route, go, notify }) {
   const eyebrow = `${regionName} · ${pick(spot, lang).name}`;
 
   if (cause.kind === "refer")
-    return <Refer cause={cause} eyebrow={eyebrow} go={go} />;
+    return <Refer cause={cause} eyebrow={eyebrow} route={route} />;
 
   const c = pick(cause, lang);
   const results = route.tests;

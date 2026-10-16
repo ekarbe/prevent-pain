@@ -3,8 +3,9 @@ import { ChevronRight } from "lucide-react";
 import { causes, findSpot, regionById, warnings } from "../content/index.js";
 import { pick, useLang, useT } from "../i18n/lang.js";
 import Note from "../components/Note.jsx";
+import Link from "../components/Link.jsx";
 
-export default function Causes({ route, go }) {
+export default function Causes({ route }) {
   const t = useT();
   const lang = useLang();
   const region = regionById[route.region];
@@ -29,10 +30,9 @@ export default function Causes({ route, go }) {
             const cause = causes[id];
             const c = pick(cause, lang);
             return (
-              <button
+              <Link
                 key={id}
-                type="button"
-                onClick={() => go({ screen: "plan", cause: id })}
+                to={{ ...route, screen: "plan", cause: id }}
                 className="card relative flex w-full flex-col gap-1.5 border border-transparent py-4 pr-11 pl-4 text-left hover:border-accent"
               >
                 {cause.kind === "refer" ? (
@@ -56,7 +56,7 @@ export default function Causes({ route, go }) {
                   className="absolute top-1/2 right-3.5 size-5 -translate-y-1/2 text-accent"
                   aria-hidden="true"
                 />
-              </button>
+              </Link>
             );
           })}
         <button

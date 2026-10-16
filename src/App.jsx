@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import * as content from "./content/index.js";
-import { LangContext, pick } from "./i18n/lang.js";
+import { LangContext } from "./i18n/lang.js";
 import { ui } from "./i18n/ui.js";
 import { site } from "./site.js";
-import { formatHash, validate } from "./lib/router.js";
-import { canGoBack, navigate, useRoute } from "./lib/useRoute.js";
+import { validate } from "./lib/router.js";
+import { applyHead, pageHead } from "./lib/meta.js";
+import { BASE, canGoBack, isHere, navigate, useRoute } from "./lib/useRoute.js";
 import { preferredLang, saveLang } from "./lib/prefs.js";
 import AppBar from "./components/AppBar.jsx";
+import Link from "./components/Link.jsx";
 import StepHeader from "./components/StepHeader.jsx";
 import Toast from "./components/Toast.jsx";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
@@ -16,9 +18,9 @@ import Regions from "./screens/Regions.jsx";
 import Spots from "./screens/Spots.jsx";
 import Causes from "./screens/Causes.jsx";
 import Plan from "./screens/Plan.jsx";
+import Topics from "./screens/Topics.jsx";
 
 const STEP = { region: 1, spot: 2, causes: 3, plan: 4 };
-const YEAR = new Date().getFullYear();
 const PARENT = {
   stop: "start",
   region: "start",
@@ -26,22 +28,6 @@ const PARENT = {
   causes: "spot",
   plan: "causes",
 };
-
-function docTitle(route, lang) {
-  const t = ui[lang];
-  const region = content.regionById[route.region];
-  const spot = content.findSpot(route.region, route.spot);
-  const cause = content.causes[route.cause];
-  const name =
-    route.screen === "plan" && cause
-      ? pick(cause, lang).name
-      : route.screen === "causes" && spot
-        ? `${pick(region, lang).name} · ${pick(spot, lang).name}`
-        : route.screen === "spot" && region
-          ? pick(region, lang).name
-          : t.titles[route.screen];
-  return name ? `${name} · Prevent Pain` : "Prevent Pain";
-}
 
 // A language picked in this session wins over the one in older history entries or links, so browser
 // Back doesn't flip the interface back. Only an explicit pick is saved for future visits.
@@ -51,7 +37,6 @@ export default function App() {
   const route = useRoute();
   const lang = session.lang ?? route.lang ?? preferredLang();
   const valid = validate({ ...route, lang }, content);
-  const target = formatHash(valid);
   const [toast, setToast] = useState(null);
   const [flags, setFlags] = useState([]);
   const mainRef = useRef(null);
@@ -60,15 +45,20 @@ export default function App() {
 
   // Normalise the address: add the language, drop unknown regions, spots or causes.
   useEffect(() => {
-    if (target !== window.location.hash) navigate(valid, { replace: true });
+    if (!isHere(valid)) navigate(valid, { replace: true });
   });
 
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
 
+  // Pre-rendered pages arrive with their own head; moving within the app swaps it.
+  const headKey = `${lang}/${pageKey}`;
+  const lastHead = useRef(null);
   useEffect(() => {
-    document.title = docTitle(valid, lang);
+    if (lastHead.current === headKey) return;
+    lastHead.current = headKey;
+    applyHead(pageHead(valid, content, BASE));
   });
 
   // A new screen starts at the top, with focus on its heading for keyboard and screen-reader users.
@@ -93,25 +83,25 @@ export default function App() {
   const chooseLang = (l) => {
     session.lang = l;
     saveLang(l);
-    go({ lang: l }, { replace: true });
   };
   const step = STEP[valid.screen];
 
   let screen;
   switch (valid.screen) {
     case "stop":
-      screen = <Stop go={go} back={back} />;
+      screen = <Stop route={valid} back={back} />;
       break;
     case "region":
-      screen = <Regions go={go} />;
+      screen = <Regions route={valid} go={go} />;
+      break;
+    case "topics":
+      screen = <Topics route={valid} />;
       break;
     case "spot":
       screen = <Spots key={valid.region} route={valid} go={go} />;
       break;
     case "causes":
-      screen = (
-        <Causes key={`${valid.region}/${valid.spot}`} route={valid} go={go} />
-      );
+      screen = <Causes key={`${valid.region}/${valid.spot}`} route={valid} />;
       break;
     case "plan":
       screen = (
@@ -129,7 +119,7 @@ export default function App() {
   return (
     <LangContext.Provider value={lang}>
       <div className="flex min-h-dvh flex-col pr-[max(18px,env(safe-area-inset-right))] pl-[max(18px,env(safe-area-inset-left))]">
-        <AppBar onLang={chooseLang} />
+        <AppBar route={valid} onLang={chooseLang} />
         <main
           ref={mainRef}
           className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-4 pt-1 pb-10"
@@ -137,15 +127,24 @@ export default function App() {
           {step ? <StepHeader step={step} onBack={back} /> : null}
           <ErrorBoundary
             key={pageKey}
-            fallback={{ ...ui[lang].broken, href: `#/${lang}/where` }}
+            fallback={{
+              ...ui[lang].broken,
+              href: `${BASE}${lang}/where/`,
+            }}
           >
             {screen}
           </ErrorBoundary>
         </main>
         <footer className="mx-auto w-full max-w-3xl border-t border-line py-5 text-[13px] leading-normal text-ink-2">
-          <p className="max-w-xl">{ui[lang].footer}</p>
+          <Link
+            to={{ ...valid, screen: "topics" }}
+            className="inline-flex min-h-11 items-center text-[15px] font-bold text-accent underline underline-offset-2"
+          >
+            {ui[lang].titles.topics}
+          </Link>
+          <p className="mt-1 max-w-xl">{ui[lang].footer}</p>
           <p className="mt-3">
-            © {YEAR} {site.author}
+            © {__BUILD_YEAR__} {site.author}
           </p>
           <nav aria-label={ui[lang].links} className="flex flex-wrap gap-x-5">
             {[
