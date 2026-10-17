@@ -1,4 +1,4 @@
-// Spot-specific warnings shown above the cause cards.
+// Warnings shown above the cause cards of a spot (`warn` on a spot) or on a card itself (`warn` on a cause).
 // level "stop": see someone today. level "warn": get it checked before training through it.
 export const warnings = {
   twist: {
@@ -25,5 +25,10 @@ export const warnings = {
     level: "stop",
     en: "Did it feel like a kick to the back of the ankle, and now you can't push off or stand on your toes? Get it seen today. That can be an Achilles rupture.",
     de: "Fühlte es sich an wie ein Tritt gegen die Ferse und du kannst dich jetzt nicht abdrücken oder auf die Zehen stellen? Heute noch abklären lassen. Das kann ein Achillessehnenriss sein.",
+  },
+  fuel: {
+    level: "warn",
+    en: "Missed or irregular periods, restrictive eating, recent weight loss or a previous stress fracture can be signs that your body isn't getting enough energy for your training (low energy availability, REDs), which weakens bone. Men can be affected too. If any of this fits, see a sports doctor, eat enough to cover your training and make sure you get enough calcium and vitamin D.",
+    de: "Eine ausbleibende oder unregelmäßige Periode, stark eingeschränktes Essen, Gewichtsverlust in letzter Zeit oder ein früherer Ermüdungsbruch können Zeichen dafür sein, dass dein Körper zu wenig Energie für dein Training bekommt (geringe Energieverfügbarkeit, REDs), was die Knochen schwächt. Auch Männer können betroffen sein. Trifft etwas davon zu, lass dich sportmedizinisch untersuchen, iss genug für dein Training und achte darauf, genug Kalzium und Vitamin D zu bekommen.",
   },
 };

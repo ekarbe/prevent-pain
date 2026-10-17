@@ -1,8 +1,10 @@
 // Exercise library. `min` is a rough session time (0 = done during runs).
 // `video` is a YouTube demo per language, loaded only after a tap: { en: { id, start?, title, channel }, de?: {…} }.
+// `stage` places tendon exercises on the loading ladder: 1 hold, 2 heavy and slow, 3 springy.
 export const exercises = {
   "wall-sit": {
     min: 10,
+    stage: 1,
     video: {
       en: {
         id: "EzA794cQHrY",
@@ -43,6 +45,7 @@ export const exercises = {
   },
   "spanish-squat": {
     min: 10,
+    stage: 1,
     video: {
       en: {
         id: "1CJ3hteGxo4",
@@ -63,6 +66,7 @@ export const exercises = {
   },
   "slow-leg-press": {
     min: 10,
+    stage: 2,
     video: null,
     en: {
       name: "Heavy slow leg press",
@@ -167,12 +171,12 @@ export const exercises = {
     en: {
       name: "Knee-to-wall mobilisation",
       dose: "2 × 15 per side · daily",
-      how: "Lunge stance facing a wall. Drive the front knee toward the wall without lifting the heel, hold 2 seconds, return.",
+      how: "Lunge stance facing a wall. Drive the front knee toward the wall without lifting the heel, hold 2 seconds, return. Stop if it pinches at the front of the ankle.",
     },
     de: {
       name: "Knie-zur-Wand-Mobilisation",
       dose: "2 × 15 pro Seite · täglich",
-      how: "Schrittstellung vor einer Wand. Das vordere Knie zur Wand schieben, ohne die Ferse anzuheben, 2 Sekunden halten, zurück.",
+      how: "Schrittstellung vor einer Wand. Das vordere Knie zur Wand schieben, ohne die Ferse anzuheben, 2 Sekunden halten, zurück. Abbrechen, wenn es vorne im Sprunggelenk zwickt.",
     },
   },
   "bent-knee-raise": {
@@ -254,13 +258,13 @@ export const exercises = {
     video: null,
     en: {
       name: "Step-rate runs",
-      dose: "2–3 easy runs a week · +5% step rate",
-      how: "Set a metronome app to your current step rate plus 5%. Run short, easy stretches to the beat until it feels natural.",
+      dose: "2–3 easy runs a week · +5–10% step rate",
+      how: "Count your step rate on an easy run, then set a metronome app 5% higher (for example, 168 if you counted 160). Run short, easy stretches to the beat until it feels natural, then you can go up to 10% above your own rate. Aim for your own rate plus a little, not a fixed number like 180.",
     },
     de: {
       name: "Läufe mit höherer Schrittfrequenz",
-      dose: "2–3 lockere Läufe pro Woche · +5 % Schrittfrequenz",
-      how: "Ein Metronom auf deine aktuelle Schrittfrequenz plus 5 % stellen. Kurze, lockere Abschnitte im Takt laufen, bis es sich natürlich anfühlt.",
+      dose: "2–3 lockere Läufe pro Woche · +5–10 % Schrittfrequenz",
+      how: "Zähl bei einem lockeren Lauf deine Schrittfrequenz und stell ein Metronom 5 % höher (zum Beispiel 168, wenn du 160 gezählt hast). Lauf kurze, lockere Abschnitte im Takt, bis es sich natürlich anfühlt, danach kannst du bis 10 % über deine eigene Frequenz gehen. Ziel ist deine eigene Frequenz plus ein wenig, keine feste Zahl wie 180.",
     },
   },
   "bird-dog": {
@@ -384,6 +388,7 @@ export const exercises = {
   },
   "calf-hold": {
     min: 10,
+    stage: 1,
     video: {
       en: {
         id: "MYehmaMlKSs",
@@ -405,6 +410,7 @@ export const exercises = {
   },
   "heavy-calf-raise": {
     min: 10,
+    stage: 2,
     video: {
       en: {
         id: "iwkeoXrKXdk",
@@ -425,6 +431,7 @@ export const exercises = {
   },
   "pogo-hop": {
     min: 5,
+    stage: 3,
     video: {
       en: {
         id: "tnTlWfkbCv4",
@@ -465,6 +472,7 @@ export const exercises = {
   },
   "toe-up-heel-raise": {
     min: 8,
+    stage: 2,
     video: {
       en: {
         id: "PkMHAzaipVg",
@@ -525,6 +533,7 @@ export const exercises = {
   },
   "band-eversion": {
     min: 5,
+    stage: 2,
     video: {
       en: {
         id: "xfrncpP5ONQ",
@@ -545,6 +554,7 @@ export const exercises = {
   },
   "eversion-hold": {
     min: 8,
+    stage: 1,
     video: {
       en: {
         id: "1VfBKWXVquE",
@@ -565,6 +575,7 @@ export const exercises = {
   },
   "hop-stick": {
     min: 4,
+    stage: 3,
     video: {
       en: {
         id: "I9FuUUPT0vE",
@@ -620,6 +631,7 @@ export const exercises = {
   },
   "toe-lift-hold": {
     min: 6,
+    stage: 1,
     video: {
       en: {
         id: "yZ8IeoIxXJQ",
@@ -640,6 +652,7 @@ export const exercises = {
   },
   "wall-toe-raise": {
     min: 4,
+    stage: 2,
     video: {
       en: {
         id: "UmHbtN0iFMg",
@@ -660,6 +673,7 @@ export const exercises = {
   },
   "hip-flexor-hold": {
     min: 6,
+    stage: 1,
     video: {
       en: {
         id: "LOxkaeCcpNQ",
@@ -680,6 +694,7 @@ export const exercises = {
   },
   "banded-knee-drive": {
     min: 5,
+    stage: 2,
     video: {
       en: {
         id: "-wSTNPVgF0Q",
@@ -700,6 +715,7 @@ export const exercises = {
   },
   "hip-abduction-hold": {
     min: 7,
+    stage: 1,
     video: {
       en: {
         id: "iJrkTJG0vtU",
@@ -760,6 +776,7 @@ export const exercises = {
   },
   "hamstring-bridge-hold": {
     min: 7,
+    stage: 1,
     video: {
       en: {
         id: "10FzCesw6Rs",
@@ -780,6 +797,7 @@ export const exercises = {
   },
   "slow-rdl": {
     min: 10,
+    stage: 2,
     video: null,
     en: {
       name: "Heavy slow Romanian deadlift",
@@ -819,6 +837,7 @@ export const exercises = {
   },
   "reverse-nordic": {
     min: 4,
+    stage: 2,
     video: null,
     en: {
       name: "Reverse Nordic",
@@ -833,6 +852,7 @@ export const exercises = {
   },
   "adductor-squeeze": {
     min: 6,
+    stage: 1,
     video: {
       en: {
         id: "Hz1mzJksXJY",
@@ -853,6 +873,7 @@ export const exercises = {
   },
   "copenhagen-adduction": {
     min: 5,
+    stage: 2,
     video: {
       en: {
         id: "nhGK-DxiGBE",
@@ -863,12 +884,12 @@ export const exercises = {
     en: {
       name: "Copenhagen adduction (knee supported)",
       dose: "2–3 × 5–10 per side · 3 times a week",
-      how: "Lie on your side on one forearm with the sore leg on top, its knee resting on a bench or sturdy chair and the bottom leg free underneath. Press the top knee down to lift your hips into a straight line, bring the bottom leg up to the bench, then lower both over 3 seconds. Start with 2 sets of 5, or with 15-second holds if lifting hurts, and rest the top ankle on the bench instead of the knee once 3 × 10 is easy.",
+      how: "Lie on your side on one forearm with the sore leg on top, its knee resting on a bench or sturdy chair and the bottom leg free underneath. Press the top knee down to lift your hips into a straight line, bring the bottom leg up to the bench, then lower both over 3 seconds. Start with 2 sets of 5, or with 15-second holds if lifting hurts. If that is still too hard, begin on the floor: lie on your sore side with the top foot planted in front of your bottom knee, and lift the sore bottom leg a few centimetres. Once 3 × 10 on the bench is easy, rest the top ankle on it instead of the knee.",
     },
     de: {
       name: "Copenhagen-Adduktion (Knie aufgelegt)",
       dose: "2–3 × 5–10 pro Seite · 3-mal pro Woche",
-      how: "Seitlage auf dem Unterarm, das schmerzende Bein oben. Das obere Knie liegt auf einer Bank oder einem stabilen Stuhl, das untere Bein hängt frei darunter. Das obere Knie nach unten drücken, die Hüfte in eine gerade Linie heben, das untere Bein zur Bank führen und dann beides in 3 Sekunden absenken. Mit 2 Sätzen à 5 beginnen, bei Schmerzen stattdessen mit 15 Sekunden Halten, und erst den Knöchel statt des Knies auflegen, wenn 3 × 10 leichtfällt.",
+      how: "Seitlage auf dem Unterarm, das schmerzende Bein oben. Das obere Knie liegt auf einer Bank oder einem stabilen Stuhl, das untere Bein hängt frei darunter. Das obere Knie nach unten drücken, die Hüfte in eine gerade Linie heben, das untere Bein zur Bank führen und dann beides in 3 Sekunden absenken. Mit 2 Sätzen à 5 beginnen, bei Schmerzen stattdessen mit 15 Sekunden Halten. Ist auch das zu schwer, am Boden anfangen: auf die schmerzende Seite legen, den oberen Fuß vor das untere Knie stellen und das schmerzende untere Bein ein paar Zentimeter anheben. Erst wenn 3 × 10 auf der Bank leichtfällt, den Knöchel statt des Knies auflegen.",
     },
   },
   "hamstring-extender": {
@@ -948,6 +969,296 @@ export const exercises = {
       name: "Gesäßbrücke",
       dose: "3 × 12 · 3 s halten",
       how: "Rückenlage, Knie gebeugt, Füße hüftbreit. Bauch leicht anspannen, über die Fersen drücken und das Becken heben, bis Schultern, Hüfte und Knie eine Linie bilden, 3 Sekunden halten und langsam absenken. Wenn 3 × 12 innerhalb der Schmerzregel leichtfällt, zur einbeinigen Variante wechseln.",
+    },
+  },
+  "heel-slide": {
+    min: 4,
+    video: null,
+    en: {
+      name: "Heel slide",
+      dose: "2 × 10 · 5 s holds · 2–3 times a day",
+      how: "Start after the first 24 hours. Lie on your back with both legs straight and a sock or small towel under the heel of the sore leg so it slides easily. Slowly slide that heel toward your bottom until you feel a gentle stretch or pressure in the front of the thigh, hold 5 seconds, then slide it back. Never force or bounce the bend. Try to bend a little further each day, and back off if pain passes 3/10 or the thigh feels tighter afterwards.",
+    },
+    de: {
+      name: "Fersengleiten in Rückenlage",
+      dose: "2 × 10 · 5 s halten · 2–3-mal täglich",
+      how: "Erst nach den ersten 24 Stunden beginnen. Rückenlage, beide Beine gestreckt, unter der Ferse des schmerzenden Beins eine Socke oder ein kleines Handtuch, damit sie gut gleitet. Die Ferse langsam Richtung Gesäß gleiten lassen, bis du vorn im Oberschenkel ein sanftes Ziehen oder Druck spürst, 5 Sekunden halten und zurückgleiten lassen. Die Beugung nie erzwingen und nicht nachfedern. Jeden Tag etwas weiter beugen und zurücknehmen, wenn der Schmerz über 3/10 steigt oder sich der Oberschenkel danach fester anfühlt.",
+    },
+  },
+  "eccentric-heel-drop": {
+    min: 8,
+    stage: 2,
+    video: {
+      en: {
+        id: "e7OpsvHnrCM",
+        title:
+          "Double leg calf raise with Single leg drop on a step - Achilles Tendinopathy",
+        channel: "Perfect Balance Clinic",
+      },
+    },
+    en: {
+      name: "Eccentric heel drop",
+      dose: "3 × 15 straight knee + 3 × 15 bent knee · 3 times a week",
+      how: "Stand with the balls of both feet on a step edge, fingertips on a wall. Rise on both feet, take the weight off the good foot and lower the painful heel over 3 seconds to just below step level, then use both feet to rise again. Do half the sets with the knee straight and half with it slightly bent, and add a backpack once 15 feel easy within the pain rule. Do it instead of the heavy slow calf raise, not on top of it, and skip it if the pain sits right where the tendon meets the heel bone.",
+    },
+    de: {
+      name: "Exzentrisches Fersenabsenken an der Stufe",
+      dose: "3 × 15 Knie gestreckt + 3 × 15 Knie gebeugt · 3-mal pro Woche",
+      how: "Mit beiden Fußballen auf eine Stufenkante stellen, Fingerspitzen an der Wand. Beidbeinig hochdrücken, das gesunde Bein entlasten und die Ferse des schmerzenden Beins in 3 Sekunden bis knapp unter Stufenniveau absenken, dann mit beiden Füßen wieder hoch. Die Hälfte der Sätze mit gestrecktem, die andere Hälfte mit leicht gebeugtem Knie, und mit Rucksack steigern, sobald 15 innerhalb der Schmerzregel leichtfallen. Statt des schweren, langsamen Wadenhebens machen, nicht zusätzlich, und weglassen, wenn der Schmerz direkt am Sehnenansatz an der Ferse sitzt.",
+    },
+  },
+  "deficit-calf-raise": {
+    min: 8,
+    stage: 2,
+    video: {
+      en: {
+        id: "3g5Mb3Y9sFU",
+        title: "Single leg calf raise on a step - Achilles Tendinopathy",
+        channel: "Perfect Balance Clinic",
+      },
+    },
+    en: {
+      name: "Weighted calf raise off a step",
+      dose: "3–4 × 6–10 per side · 3 times a week",
+      how: "Start once single-leg calf raises off a step feel easy (3 × 20). Stand on one leg with the ball of the foot on a step edge and fingertips on a wall, wearing a loaded backpack or holding a dumbbell. Lower the heel below step level over 3 seconds, then rise as high as you can, doing some sets with the knee slightly bent. Pick a load that makes the last rep hard within the pain rule, add weight every 1–2 weeks, and skip it if the pain sits where the tendon meets the heel bone.",
+    },
+    de: {
+      name: "Einbeiniges Wadenheben von der Stufe mit Gewicht",
+      dose: "3–4 × 6–10 pro Seite · 3-mal pro Woche",
+      how: "Erst beginnen, wenn einbeiniges Wadenheben von der Stufe leichtfällt (3 × 20). Einbeinig mit dem Fußballen auf eine Stufenkante stellen, Fingerspitzen an der Wand, dazu ein beladener Rucksack oder eine Kurzhantel. Die Ferse in 3 Sekunden unter Stufenniveau absenken und dann so hoch wie möglich drücken, einige Sätze mit leicht gebeugtem Knie. Das Gewicht so wählen, dass die letzte Wiederholung innerhalb der Schmerzregel schwer ist, alle 1–2 Wochen steigern und weglassen, wenn der Schmerz am Sehnenansatz an der Ferse sitzt.",
+    },
+  },
+  "soleus-wall-hold": {
+    min: 8,
+    stage: 1,
+    video: null,
+    en: {
+      name: "Bent-knee calf hold at the wall",
+      dose: "5 × 30–45 s · 1 min rest",
+      how: "Stand with your back against a wall, feet about 30 cm in front of it, and slide down until your knees bend to about 45°. Lift both heels a few centimetres and hold, keeping the knees bent and pain at 3/10 or less. Over the days, shift more weight onto the sore leg, then hold on that leg alone, then hold a dumbbell.",
+    },
+    de: {
+      name: "Zehenstand mit gebeugten Knien an der Wand halten",
+      dose: "5 × 30–45 s · 1 Min. Pause",
+      how: "Mit dem Rücken an eine Wand lehnen, die Füße etwa 30 cm davor, und herunterrutschen, bis die Knie etwa 45° gebeugt sind. Beide Fersen ein paar Zentimeter anheben und halten, die Knie bleiben gebeugt und der Schmerz bei höchstens 3/10. Über die Tage mehr Gewicht auf das betroffene Bein verlagern, dann nur auf diesem Bein halten, später mit einer Kurzhantel in der Hand.",
+    },
+  },
+  "hamstring-diver": {
+    min: 3,
+    video: {
+      en: {
+        id: "rH_cCwpd-oI",
+        title:
+          "Grade 1 Hamstring Strain Rehab Exercises: Progressing the Askling Single Leg Diver",
+        channel: "",
+      },
+    },
+    en: {
+      name: "Hamstring diver",
+      dose: "3 × 6 · every 2nd day",
+      how: "Stand on the sore leg, knee slightly bent, arms stretched forward. Tip forward from the hip as one unit, reaching your hands forward and the other leg straight back with your pelvis level, until you feel a mild pull in the sore hamstring, then come back up. Start once the extender is pain-free, stop before pain, and dive a little deeper and faster over the weeks.",
+    },
+    de: {
+      name: "Standwaage nach vorn (Diver)",
+      dose: "3 × 6 · jeden 2. Tag",
+      how: "Auf dem schmerzenden Bein stehen, Knie leicht gebeugt, Arme nach vorn gestreckt. Aus der Hüfte als Ganzes nach vorn kippen, die Hände nach vorn und das andere Bein gestreckt nach hinten, das Becken bleibt gerade, bis es hinten im schmerzenden Oberschenkel leicht zieht, dann wieder aufrichten. Erst beginnen, wenn der Extender schmerzfrei geht, vor dem Schmerz stoppen und über die Wochen etwas tiefer und zügiger werden.",
+    },
+  },
+  "prone-leg-curl-hold": {
+    min: 7,
+    stage: 1,
+    video: {
+      en: {
+        id: "NitEV-htByM",
+        title: "Prone Isometric Hamstring Curl",
+        channel: "MVMT Performance & Rehab",
+      },
+    },
+    en: {
+      name: "Face-down leg curl hold",
+      dose: "5 × 30–45 s · 1 min rest",
+      how: "Lie face down with your hips flat on the floor. Bend the sore knee to about 30–45° and cross your other ankle over it, then push the sore heel up into it at about half effort without moving, and hold. If the hamstring cramps, ease off and bend the knee a little less. Push a little harder or hold a little longer each week if pain at the sit bone stays at 3/10 or less.",
+    },
+    de: {
+      name: "Beinbeuger in Bauchlage halten",
+      dose: "5 × 30–45 s · 1 Min. Pause",
+      how: "Bauchlage, die Hüfte liegt flach auf dem Boden. Das schmerzende Knie etwa 30–45° beugen und den anderen Knöchel darüberlegen, dann die Ferse mit etwa halber Kraft gegen den anderen Knöchel nach oben drücken, ohne dass sich etwas bewegt, und halten. Krampft der hintere Oberschenkel, weniger Druck geben und das Knie etwas weniger beugen. Jede Woche etwas fester drücken oder länger halten, solange der Schmerz am Sitzbein höchstens bei 3/10 liegt.",
+    },
+  },
+  "long-lever-bridge": {
+    min: 6,
+    stage: 2,
+    video: null,
+    en: {
+      name: "Long-lever bridge",
+      dose: "3 × 8–12 · 3 s up, 3 s down",
+      how: "Lie on your back with your heels on the floor far from your hips, knees only slightly bent. Press your heels down and lift your hips over 3 seconds until they line up with your knees and shoulders, then lower over 3 seconds. Progress by moving your heels further away, then to one leg. A few reps each morning also work as a check: if the sit bone feels worse than the day before, ease off your training.",
+    },
+    de: {
+      name: "Brücke mit langem Hebel",
+      dose: "3 × 8–12 · 3 s hoch, 3 s runter",
+      how: "Rückenlage, die Fersen weit von der Hüfte entfernt am Boden, Knie nur leicht gebeugt. Die Fersen in den Boden drücken und die Hüfte in 3 Sekunden anheben, bis sie mit Knien und Schultern eine Linie bildet, dann in 3 Sekunden absenken. Steigern, indem du die Fersen weiter weg setzt, später einbeinig. Ein paar Wiederholungen jeden Morgen dienen auch als Test: Fühlt sich das Sitzbein schlechter an als am Vortag, nimm im Training etwas zurück.",
+    },
+  },
+  "standing-abduction-hold": {
+    min: 10,
+    stage: 1,
+    video: {
+      en: {
+        id: "TS7tLpZhhPA",
+        title:
+          "How to Do a Standing Isometric Hip Abduction with Knee at Wall Exercise",
+        channel: "",
+      },
+    },
+    en: {
+      name: "Standing wall push-out hold",
+      dose: "5 × 30–45 s per side · 1 min rest",
+      how: "Stand side-on to a wall, about a hand's width away, and bend the knee nearest the wall to lift that foot. Press the outside of that knee into the wall at about half effort and hold, keeping your pelvis level and your standing hip from pushing out to the side. Turn around for the other side, rest about a minute after each pair, and ease off if pain passes 3/10.",
+    },
+    de: {
+      name: "Knie seitlich gegen die Wand drücken und halten",
+      dose: "5 × 30–45 s pro Seite · 1 Min. Pause",
+      how: "Seitlich etwa eine Handbreit neben eine Wand stellen und das wandnahe Knie beugen, sodass der Fuß abhebt. Die Außenseite dieses Knies mit etwa halber Kraft gegen die Wand drücken und halten. Das Becken bleibt gerade, die Hüfte des Standbeins schiebt sich nicht zur Seite. Dann umdrehen für die andere Seite, nach jedem Paar etwa eine Minute Pause, und weniger Druck, wenn der Schmerz über 3/10 geht.",
+    },
+  },
+  "toe-yoga": {
+    min: 3,
+    video: {
+      en: {
+        id: "bUoTjK0tQEw",
+        title: "Toe Yoga? A Physical Therapist Explains and Demonstrates",
+        channel: "",
+      },
+    },
+    en: {
+      name: "Toe yoga",
+      dose: "2–3 × 10 each way",
+      how: "Sit with both feet flat. Lift only your big toes while the small toes stay down, then press the big toes down and lift the small toes. Keep your ankles still and don't let your feet roll in or out. Progress to standing, then to one leg.",
+    },
+    de: {
+      name: "Zehen-Yoga",
+      dose: "2–3 × 10 pro Richtung",
+      how: "Im Sitzen beide Füße flach aufstellen. Nur die großen Zehen anheben, die kleinen bleiben am Boden, dann die großen Zehen in den Boden drücken und die kleinen anheben. Die Sprunggelenke bleiben ruhig, die Füße kippen nicht nach innen oder außen. Später im Stand, dann auf einem Bein.",
+    },
+  },
+  "toe-spread": {
+    min: 3,
+    video: {
+      en: {
+        id: "LhgaiYrjjRI",
+        title: "Barefoot Running Exercise: Toe Speading",
+        channel: "",
+      },
+    },
+    en: {
+      name: "Toe spread",
+      dose: "2–3 × 10 · 5 s holds",
+      how: "Sit or stand with your feet flat. Spread all your toes as wide as you can without curling or lifting them, hold 5 seconds, then relax. If they barely move at first, guide them apart with your fingers and try to hold the position on your own.",
+    },
+    de: {
+      name: "Zehen spreizen",
+      dose: "2–3 × 10 · 5 s halten",
+      how: "Im Sitzen oder Stehen, die Füße flach am Boden. Alle Zehen so weit wie möglich auseinanderspreizen, ohne sie einzukrallen oder anzuheben, 5 Sekunden halten und lösen. Bewegen sie sich anfangs kaum, mit den Fingern auseinanderführen und versuchen, die Position allein zu halten.",
+    },
+  },
+  "a-skips": {
+    min: 5,
+    stage: 3,
+    video: {
+      en: {
+        id: "GQg9L28bi1g",
+        title: "A Skip Running Drill",
+        channel: "",
+      },
+    },
+    en: {
+      name: "A-skips",
+      dose: "3–4 × 15–20 s · 2 times a week",
+      how: "Start only once heavy, slow strength work feels easy within the pain rule. Skip forward with a quick knee lift to about hip height, landing on the ball of the foot under your hips with a short, springy contact, arms swinging opposite to the legs. Keep the skips low and light at first, and walk back between sets.",
+    },
+    de: {
+      name: "Hopserlauf mit Kniehub (A-Skips)",
+      dose: "3–4 × 15–20 s · 2-mal pro Woche",
+      how: "Erst beginnen, wenn sich das schwere, langsame Krafttraining innerhalb der Schmerzregel leicht anfühlt. Vorwärts hopsen, dabei das Knie zügig etwa auf Hüfthöhe heben und mit kurzem, federndem Kontakt auf dem Fußballen unter der Hüfte landen, die Arme schwingen gegengleich mit. Anfangs niedrig und locker bleiben und zwischen den Sätzen zurückgehen.",
+    },
+  },
+  "line-hops": {
+    min: 4,
+    stage: 3,
+    video: null,
+    en: {
+      name: "Line hops",
+      dose: "3 × 15–20 s · 1 min rest",
+      how: "Start only once heavy, slow strength work feels easy within the pain rule. Stand at a line on the floor and hop quickly over it and back on both feet, first forward and back, then side to side, with small, light contacts on the balls of your feet. Move to one foot once two feet feel easy and any pain has settled by the next morning.",
+    },
+    de: {
+      name: "Liniensprünge",
+      dose: "3 × 15–20 s · 1 Min. Pause",
+      how: "Erst beginnen, wenn sich das schwere, langsame Krafttraining innerhalb der Schmerzregel leicht anfühlt. An eine Linie am Boden stellen und beidbeinig schnell darüber und zurück hüpfen, erst vor und zurück, dann seitlich, mit kleinen, leichten Kontakten auf den Fußballen. Auf ein Bein wechseln, wenn es beidbeinig leichtfällt und Schmerzen bis zum nächsten Morgen abgeklungen sind.",
+    },
+  },
+  "nordic-curl": {
+    min: 5,
+    video: null,
+    en: {
+      name: "Nordic hamstring curl",
+      dose: "2–3 × 3–6 · 1–2 times a week",
+      how: "An optional extra if you've strained a hamstring before or do sprint training. Kneel on a soft mat with your ankles held down by a partner or tucked under a heavy sofa. Keep a straight line from knees to shoulders and lower yourself forward as slowly as you can, catch yourself with your hands, then push back up. Lower only as far as you can control, expect sore hamstrings for 2–3 days the first few times, and skip it while a strain is still healing.",
+    },
+    de: {
+      name: "Nordic Hamstring Curl",
+      dose: "2–3 × 3–6 · 1–2-mal pro Woche",
+      how: "Eine optionale Ergänzung, wenn du schon einmal eine Zerrung hinten am Oberschenkel hattest oder Sprints trainierst. Auf einer weichen Matte knien, die Knöchel von einer zweiten Person gehalten oder unter ein schweres Sofa geklemmt. Den Körper von den Knien bis zu den Schultern gerade halten und so langsam wie möglich nach vorn absinken, mit den Händen abfangen und wieder hochdrücken. Nur so weit absenken, wie du es kontrollierst, rechne die ersten Male mit 2–3 Tagen Muskelkater, und lass die Übung weg, solange eine Zerrung noch heilt.",
+    },
+  },
+  "big-toe-mobilisation": {
+    min: 3,
+    video: null,
+    en: {
+      name: "Big-toe mobilisation",
+      dose: "2 × 10 slow bends · daily",
+      how: "Sit with the foot resting across your other knee. Hold the foot just behind the big-toe joint with one hand and the big toe with the other, then slowly bend the toe up and down as far as is comfortable. Keep it gentle and pain-free: a stretch or stiffness is fine, pain is not.",
+    },
+    de: {
+      name: "Großzehengelenk mobilisieren",
+      dose: "2 × 10 langsame Bewegungen · täglich",
+      how: "Im Sitzen den Fuß auf das andere Knie legen. Mit einer Hand den Fuß direkt hinter dem Großzehengelenk halten, mit der anderen den großen Zeh, dann den Zeh langsam so weit nach oben und unten bewegen, wie es angenehm ist. Sanft und schmerzfrei bleiben: Ein Dehnungs- oder Steifigkeitsgefühl ist in Ordnung, Schmerz nicht.",
+    },
+  },
+  "pelvic-floor-training": {
+    min: 5,
+    video: {
+      en: {
+        id: "-1lViRMMdJg",
+        title:
+          "How To Do Pelvic Floor Exercises For Women - Real Time Guided Training",
+        channel: "Michelle Kenway",
+      },
+    },
+    en: {
+      name: "Pelvic floor training",
+      dose: "8–12 squeezes · 3 times a day",
+      how: "Sit or lie comfortably. Squeeze and lift the muscles you'd use to hold in wind and urine at the same time, without holding your breath or tensing your buttocks, belly or thighs. Hold for up to 10 seconds, relax fully for just as long, and finish with a few quick squeezes. Keep it up for at least 3 months, don't practise by stopping your flow on the toilet, and see a pelvic health physio to check your technique and tailor the programme.",
+    },
+    de: {
+      name: "Beckenbodentraining",
+      dose: "8–12-mal anspannen · 3-mal täglich",
+      how: "Bequem sitzen oder liegen. Spann die Muskeln an, mit denen du Urin und Winde zurückhältst, und zieh sie nach innen oben, ohne die Luft anzuhalten oder Gesäß, Bauch und Oberschenkel mit anzuspannen. Bis zu 10 Sekunden halten, genauso lange ganz lösen und zum Schluss ein paar schnelle Anspannungen. Bleib mindestens 3 Monate dran, übe nicht, indem du auf der Toilette den Harnstrahl unterbrichst, und lass Technik und Programm in einer Beckenboden-Physiotherapie prüfen und anpassen.",
+    },
+  },
+  "single-leg-sit-to-stand": {
+    min: 5,
+    video: null,
+    en: {
+      name: "Single-leg sit-to-stand",
+      dose: "3 × 8–12 per leg",
+      how: "Sit on a knee-high chair, arms crossed, with one foot lifted slightly forward. Stand up on the other leg without rocking, knee over your 2nd toe, then sit back down over 3 seconds without dropping. Start from a higher seat or with light hand support if you need to, and work toward 20 controlled reps per leg.",
+    },
+    de: {
+      name: "Einbeiniges Aufstehen vom Stuhl",
+      dose: "3 × 8–12 pro Bein",
+      how: "Auf einen kniehohen Stuhl setzen, Arme verschränkt, einen Fuß leicht nach vorn anheben. Ohne Schwung auf dem anderen Bein aufstehen, das Knie bleibt über der 2. Zehe, und in 3 Sekunden wieder hinsetzen, ohne dich fallen zu lassen. Wenn nötig von einem höheren Sitz oder mit leichter Hilfe der Hände beginnen und auf 20 saubere Wiederholungen pro Bein hinarbeiten.",
     },
   },
 };

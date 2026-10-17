@@ -246,6 +246,9 @@ export default function Plan({ route, go, notify }) {
     new Set(cause.local.map((id) => exercises[id].stage).filter(Boolean)).size >
     1;
   const rtr = cause.rtr || "standard";
+  // A card without exercises or weak links has no week to show, only the share button.
+  const showWeek = week.length > 0 || hasChain;
+  const weekN = hasChain ? 3 : 2;
 
   const share = async () => {
     const url = window.location.href;
@@ -304,7 +307,7 @@ export default function Plan({ route, go, notify }) {
             />
           ))
         ) : (
-          <Note>{t.noLocal}</Note>
+          <Note>{hasChain ? t.noLocal : t.noLocalNoChain}</Note>
         )}
       </section>
 
@@ -330,7 +333,7 @@ export default function Plan({ route, go, notify }) {
       ) : null}
 
       <section className="sec">
-        <SectionTitle n={hasChain ? 3 : 2}>{t.weekTitle}</SectionTitle>
+        {showWeek ? <SectionTitle n={weekN}>{t.weekTitle}</SectionTitle> : null}
         {week.length ? (
           <>
             <p className="lead">
@@ -378,7 +381,7 @@ export default function Plan({ route, go, notify }) {
         <ReturnSection
           variant={rtr}
           lead={t.rtrPlanLead}
-          n={hasChain ? 4 : 3}
+          n={showWeek ? weekN + 1 : weekN}
           route={route}
         />
       )}

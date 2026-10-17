@@ -86,11 +86,13 @@ export const ui = {
     ruleText:
       "During exercises and runs, pain up to 3/10 is fine if it has settled by the next morning.",
     loadYes:
-      "That jump is a likely trigger. Follow the running advice above first. Once you're back to your usual running, build up by no more than about 10% a week.",
+      "That may well be the trigger, so follow the running advice above first. Once you build up again, keep any run no more than about 10% longer than your longest run in the past 30 days, and never double it.",
     loadNo:
-      "Then training load probably wasn't the trigger. Still follow the running advice above.",
+      "Then training load probably wasn't the trigger. Still follow the running advice above, and keep any run no more than about 10% longer than your longest run in the past 30 days.",
     noLocal:
       "For this one, the fix is mostly further up the chain. Follow the pain rule and start with your chain below.",
+    noLocalNoChain:
+      "For this one, exercises play little part. Follow the advice above and give it time.",
     chainTitle: "Check your chain",
     chainLead:
       "These areas often add to this problem. Each 30-second self-test shows whether it is a weak link for you.",
@@ -116,8 +118,7 @@ export const ui = {
     weekAllFine: "No weak links found. Keep to the exercises above.",
     duringRuns: "during runs",
     later: "Later",
-    laterNote:
-      "Hold this one back for now. When to add it is in your chain above.",
+    laterNote: "Hold this one back until the pain has settled, then add it.",
     min: "min",
     physioTitle: "See a physio if",
     physio: [
@@ -201,7 +202,7 @@ export const ui = {
       3: "Stage 3 · Springy",
     },
     ladder:
-      "Tendons recover in stages: holds, then heavy and slow, then springy work, then running. Move up a stage once the current one has stayed within the pain rule for about a week.",
+      "These exercises build up in stages: holds, then slow strength work, then springy work, then running. Move up a stage once the current one has stayed within the pain rule for about a week.",
     rtrTitle: "Back to running",
     rtrPlanLead:
       "Still running within the pain rule? Carry on. If you had to stop, come back step by step:",
@@ -305,11 +306,13 @@ export const ui = {
     ruleText:
       "Bei Übungen und Läufen ist Schmerz bis 3/10 in Ordnung, wenn er bis zum nächsten Morgen abgeklungen ist.",
     loadYes:
-      "Der Anstieg ist ein wahrscheinlicher Auslöser. Halte dich zuerst an die Laufhinweise oben. Wenn du wieder normal läufst, steigere um höchstens etwa 10 % pro Woche.",
+      "Das könnte gut der Auslöser sein, halte dich also zuerst an die Laufhinweise oben. Wenn du wieder aufbaust, sollte kein Lauf mehr als etwa 10 % länger sein als dein längster Lauf der letzten 30 Tage, und keiner doppelt so lang.",
     loadNo:
-      "Dann war der Trainingsumfang wohl nicht der Auslöser. Halte dich trotzdem an die Laufhinweise oben.",
+      "Dann war die Trainingsbelastung wohl nicht der Auslöser. Halte dich trotzdem an die Laufhinweise oben, und kein Lauf sollte mehr als etwa 10 % länger sein als dein längster Lauf der letzten 30 Tage.",
     noLocal:
       "Hier liegt die Lösung meist weiter oben in der Kette. Halte dich an die Schmerzregel und starte mit deiner Kette unten.",
+    noLocalNoChain:
+      "Hier spielen Übungen kaum eine Rolle. Halte dich an die Hinweise oben und gib dem Ganzen etwas Zeit.",
     chainTitle: "Prüfe deine Kette",
     chainLead:
       "Diese Bereiche tragen oft zu diesem Problem bei. Jeder 30-Sekunden-Selbsttest zeigt, ob es bei dir ein schwaches Glied ist.",
@@ -343,8 +346,7 @@ export const ui = {
       "Mach die Selbsttests oben, um Übungen für deine schwachen Glieder zu ergänzen.",
     duringRuns: "beim Laufen",
     later: "Später",
-    laterNote:
-      "Diese Übung noch zurückstellen. Wann du sie dazunimmst, steht oben in deiner Kette.",
+    laterNote: "Diese Übung erst dazunehmen, wenn der Schmerz abgeklungen ist.",
     min: "Min.",
     physioTitle: "Geh zur Physiotherapie, wenn",
     physio: [
@@ -428,7 +430,7 @@ export const ui = {
       3: "Stufe 3 · Federnd",
     },
     ladder:
-      "Sehnen erholen sich in Stufen: erst Halteübungen, dann schwer und langsam, dann federnde Übungen, dann Laufen. Geh eine Stufe weiter, wenn die aktuelle etwa eine Woche lang innerhalb der Schmerzregel geblieben ist.",
+      "Diese Übungen bauen in Stufen aufeinander auf: erst Halteübungen, dann langsame Kraftübungen, dann federnde Übungen, dann Laufen. Geh eine Stufe weiter, wenn die aktuelle etwa eine Woche lang innerhalb der Schmerzregel geblieben ist.",
     rtrTitle: "Zurück zum Laufen",
     rtrPlanLead:
       "Du läufst innerhalb der Schmerzregel weiter? Dann bleib dabei. Musstest du pausieren, steig Schritt für Schritt wieder ein:",
