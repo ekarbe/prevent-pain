@@ -16,10 +16,12 @@ export default {
       "M 80 64 C 80 116, 88 170, 96 218 C 97 226, 97 232, 96 238",
       "M 92 256 C 98 260, 100 272, 94 280",
       "M 150 266 C 144 270, 144 282, 150 288",
+      "M 147 258 C 144 238, 143 212, 144 178",
     ].join(" "),
     spots: {
       "front-shin": [130, 80],
       "inner-shin": [95, 212],
+      "outer-shin": [144, 205],
     },
     edges: ["inner", "outer"],
   },
@@ -64,6 +66,7 @@ export default {
     spots: {
       calf: [128, 100],
       "inner-shin": [145, 212],
+      "outer-shin": [96, 205],
       achilles: [120, 250],
     },
     edges: ["outer", "inner"],

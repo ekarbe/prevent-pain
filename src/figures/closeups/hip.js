@@ -4,19 +4,27 @@ export default {
   views: ["front", "side", "back"],
   front: {
     caption: { en: "Left hip from the front", de: "Linke Hüfte von vorne" },
+    // midline at x=66; a strip of the other side shows on the left and its groin fold runs down into the crotch
     outline:
-      "M 58 0 L 58 146 C 58 158, 62 165, 68 170 C 70 212, 74 256, 80 300 L 166 300 C 170 262, 178 222, 182 186 C 186 156, 188 128, 186 108 C 184 80, 172 50, 164 30 C 160 20, 158 10, 158 0 Z",
+      "M 38 0 L 38 138 C 38 162, 56 176, 75 181 C 78 218, 82 258, 88 300 L 174 300 C 178 262, 186 222, 190 186 C 194 156, 196 128, 194 108 C 192 80, 180 50, 172 30 C 168 20, 166 10, 166 0 Z",
     details: [
-      "M 166 40 C 158 43, 148 50, 142 60",
-      "M 132 66 a 7 5 0 1 0 14 0 a 7 5 0 1 0 -14 0",
-      "M 132 80 C 116 100, 96 126, 72 158",
-      "M 138 76 C 132 140, 114 220, 98 300",
-      "M 152 94 C 152 160, 148 240, 142 300",
-      "M 178 112 C 174 122, 174 136, 178 146",
+      "M 174 40 C 166 43, 156 50, 150 60",
+      "M 140 66 a 7 5 0 1 0 14 0 a 7 5 0 1 0 -14 0",
+      // groin crease, running down into the crotch where the inner thigh begins
+      "M 140 80 C 124 100, 104 126, 80 158 C 77 162, 75 170, 75 181",
+      "M 146 76 C 140 140, 122 220, 106 300",
+      "M 160 94 C 160 160, 156 240, 150 300",
+      "M 186 112 C 182 122, 182 136, 186 146",
+      // midline down to the pubic bone, where the two halves of the pelvis meet
+      "M 66 24 C 66 58, 66 90, 66 112",
+      "M 46 134 C 52 125, 59 121, 66 121 C 73 121, 80 125, 86 134",
+      "M 66 117 L 66 128",
     ].join(" "),
     spots: {
-      groin: [118, 100],
-      "outer-hip": [172, 128],
+      groin: [126, 100],
+      "outer-hip": [180, 128],
+      pubic: [66, 122],
+      "pelvic-floor": [66, 160],
     },
     edges: ["inner", "outer"],
   },
