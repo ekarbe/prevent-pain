@@ -21,7 +21,7 @@ export const returnToRun = {
         "Hop 10 times on each leg with pain no higher than 2/10.",
         "Do 10 slow single-leg squats on each leg, knee staying over your 2nd toe, pain no higher than 2/10.",
         "Do at least 20 single-leg calf raises on each leg, the weaker side no more than about 10% behind.",
-        "Tendon problem: you've done the holds and the heavy, slow stage within the pain rule.",
+        "Tendon problem: you've done the holds and the slow strength stage within the pain rule.",
       ],
       phases: [
         {
@@ -54,7 +54,7 @@ export const returnToRun = {
         "10-mal auf jedem Bein hüpfen, mit Schmerzen von höchstens 2/10.",
         "10 langsame einbeinige Kniebeugen pro Bein, das Knie bleibt über der 2. Zehe, Schmerzen höchstens 2/10.",
         "Mindestens 20-mal einbeiniges Wadenheben pro Bein, die schwächere Seite höchstens etwa 10 % dahinter.",
-        "Bei Sehnenbeschwerden: Halteübungen und die schwere, langsame Stufe innerhalb der Schmerzregel geschafft.",
+        "Bei Sehnenbeschwerden: Halteübungen und die Stufe mit langsamer Kraft innerhalb der Schmerzregel geschafft.",
       ],
       phases: [
         {
