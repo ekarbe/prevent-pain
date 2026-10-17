@@ -12,6 +12,7 @@ export const ui = {
     footer:
       "Training tips for running aches, not medical advice. Drafted from published research and not reviewed by a clinician.",
     source: "Source code",
+    links: "About the author",
 
     startTitle: "Before we start",
     startLead:
@@ -85,11 +86,13 @@ export const ui = {
     ruleText:
       "During exercises and runs, pain up to 3/10 is fine if it has settled by the next morning.",
     loadYes:
-      "That jump is a likely trigger. Follow the running advice above first. Once you're back to your usual running, build up by no more than about 10% a week.",
+      "That may well be the trigger, so follow the running advice above first. Once you build up again, keep any run no more than about 10% longer than your longest run in the past 30 days, and never double it.",
     loadNo:
-      "Then training load probably wasn't the trigger. Still follow the running advice above.",
+      "Then training load probably wasn't the trigger. Still follow the running advice above, and keep any run no more than about 10% longer than your longest run in the past 30 days.",
     noLocal:
       "For this one, the fix is mostly further up the chain. Follow the pain rule and start with your chain below.",
+    noLocalNoChain:
+      "For this one, exercises play little part. Follow the advice above and give it time.",
     chainTitle: "Check your chain",
     chainLead:
       "These areas often add to this problem. Each 30-second self-test shows whether it is a weak link for you.",
@@ -115,8 +118,7 @@ export const ui = {
     weekAllFine: "No weak links found. Keep to the exercises above.",
     duringRuns: "during runs",
     later: "Later",
-    laterNote:
-      "Hold this one back for now. When to add it is in your chain above.",
+    laterNote: "Hold this one back until the pain has settled, then add it.",
     min: "min",
     physioTitle: "See a physio if",
     physio: [
@@ -153,7 +155,70 @@ export const ui = {
       start: "Before we start",
       stop: "Get this checked first",
       region: "Where does it hurt?",
+      topics: "All topics",
+      prevent: "Stay injury-free",
+      return: "Back to running after an injury",
     },
+
+    // Search engine titles and descriptions, one per page.
+    meta: {
+      start: "Running pain: find the cause and the weak links",
+      site: "Tap where running hurts, check the weak links in your chain with 30-second self-tests, and get a strength plan. In English and German.",
+      stop: "Some symptoms need a doctor or physio before any exercise plan. What to do now.",
+      region:
+        "Tap where running hurts on a body map: lower back, hip, thigh, knee, shin and calf, ankle and foot.",
+      topics:
+        "Every running ache and injury Prevent Pain covers, by body region, each with exercises and self-tests for the weak links.",
+      prevent:
+        "How to stay injury-free as a runner: the single-run rule, two short strength sessions a week, and a quick risk check. Based on published research.",
+      return:
+        "Coming back to running after an injury: checks to pass first, then a walk-run ladder, with versions for bone stress injuries, calf strains and after having a baby.",
+      spot: (region) => `${region} pain from running`,
+      spotDesc: (region, spots) =>
+        `${region} pain from running: ${spots}. Tap the spot, pick what it feels like and get a plan.`,
+      causes: (spot, region) => `${spot} (${region}): what it could be`,
+      causesDesc: (spot, names) =>
+        `${spot}: ${names}. Pick the description that fits and get exercises and self-tests.`,
+      plan: (name) => `${name}: exercises and tips for runners`,
+      refer: (name) => `${name}: get it checked`,
+    },
+    topicsLead:
+      "Every ache and injury Prevent Pain covers, by body region. Not sure which one you have? Start with where it hurts.",
+    topicsStart: "Start with where it hurts",
+    topicsGuides: "Guides",
+    youthMark: "under 18",
+
+    referRoutine: "Book a check in the next few weeks",
+    youthTitle: "Under 18?",
+    youthBadge: "For under-18s",
+    youthLead:
+      "Growing bones have injuries of their own. These descriptions are for children and teenagers.",
+    exitsTitle: "Check this first",
+    exitsLead: "If you answer yes to any of these, open that card instead.",
+    avoidLabel: "Skip for now",
+    stage: {
+      1: "Stage 1 · Hold",
+      2: "Stage 2 · Slow strength",
+      3: "Stage 3 · Springy",
+    },
+    ladder:
+      "These exercises build up in stages: holds, then slow strength work, then springy work, before speed, hills and jumps come back. Move from holds to slow strength once the holds have stayed within the pain rule, including the next morning, for about a week. Add springy work only once slow strength work feels easy at a heavy weight and the pain rule still holds the next morning. For a sore tendon, that usually takes several weeks.",
+    stageShort: (n) => `Stage ${n}`,
+    rtrTitle: "Back to running",
+    rtrPlanLead:
+      "Still running within the pain rule? Carry on. If you had to stop, come back step by step:",
+    rtrReferLead: "Once you've been checked and cleared to run:",
+    rtrShow: "Show the steps",
+    rtrHide: "Hide the steps",
+    gatesTitle: "Pass these checks first",
+    phasesTitle: "Then build up",
+    phaseNext: "Move on when",
+    rtrMore: "More about coming back to running",
+    preventNext: "Once it has settled: how to stay injury-free",
+    startPrevent: "Not hurting right now? How to stay injury-free",
+    ifYes: "If yes",
+    blocksTitle: "Your two sessions",
+    preventStart: "Something hurts already? Start with where it hurts",
   },
   de: {
     back: "Zurück",
@@ -167,6 +232,7 @@ export const ui = {
     footer:
       "Trainingstipps bei Laufbeschwerden, keine medizinische Beratung. Basiert auf veröffentlichter Forschung, nicht von medizinischem Fachpersonal geprüft.",
     source: "Quellcode",
+    links: "Über den Autor",
 
     startTitle: "Bevor es losgeht",
     startLead:
@@ -241,11 +307,13 @@ export const ui = {
     ruleText:
       "Bei Übungen und Läufen ist Schmerz bis 3/10 in Ordnung, wenn er bis zum nächsten Morgen abgeklungen ist.",
     loadYes:
-      "Der Anstieg ist ein wahrscheinlicher Auslöser. Halte dich zuerst an die Laufhinweise oben. Wenn du wieder normal läufst, steigere um höchstens etwa 10 % pro Woche.",
+      "Das könnte gut der Auslöser sein, halte dich also zuerst an die Laufhinweise oben. Wenn du wieder aufbaust, sollte kein Lauf mehr als etwa 10 % länger sein als dein längster Lauf der letzten 30 Tage, und keiner doppelt so lang.",
     loadNo:
-      "Dann war der Trainingsumfang wohl nicht der Auslöser. Halte dich trotzdem an die Laufhinweise oben.",
+      "Dann war die Trainingsbelastung wohl nicht der Auslöser. Halte dich trotzdem an die Laufhinweise oben, und kein Lauf sollte mehr als etwa 10 % länger sein als dein längster Lauf der letzten 30 Tage.",
     noLocal:
       "Hier liegt die Lösung meist weiter oben in der Kette. Halte dich an die Schmerzregel und starte mit deiner Kette unten.",
+    noLocalNoChain:
+      "Hier spielen Übungen kaum eine Rolle. Halte dich an die Hinweise oben und gib dem Ganzen etwas Zeit.",
     chainTitle: "Prüfe deine Kette",
     chainLead:
       "Diese Bereiche tragen oft zu diesem Problem bei. Jeder 30-Sekunden-Selbsttest zeigt, ob es bei dir ein schwaches Glied ist.",
@@ -279,8 +347,7 @@ export const ui = {
       "Mach die Selbsttests oben, um Übungen für deine schwachen Glieder zu ergänzen.",
     duringRuns: "beim Laufen",
     later: "Später",
-    laterNote:
-      "Diese Übung noch zurückstellen. Wann du sie dazunimmst, steht oben in deiner Kette.",
+    laterNote: "Diese Übung erst dazunehmen, wenn der Schmerz abgeklungen ist.",
     min: "Min.",
     physioTitle: "Geh zur Physiotherapie, wenn",
     physio: [
@@ -317,6 +384,69 @@ export const ui = {
       start: "Bevor es losgeht",
       stop: "Lass das zuerst abklären",
       region: "Wo tut es weh?",
+      topics: "Alle Themen",
+      prevent: "Verletzungen vorbeugen",
+      return: "Nach einer Verletzung zurück zum Laufen",
     },
+
+    meta: {
+      start: "Schmerzen beim Laufen: Ursache und Schwachstellen finden",
+      site: "Tippe an, wo das Laufen schmerzt, prüfe die Schwachstellen deiner Kette mit 30-Sekunden-Tests und hol dir einen Kraftplan. Auf Deutsch und Englisch.",
+      stop: "Manche Beschwerden gehören zuerst in ärztliche oder physiotherapeutische Hände. Was du jetzt tun solltest.",
+      region:
+        "Tippe auf der Körperkarte an, wo das Laufen schmerzt: unterer Rücken, Hüfte, Oberschenkel, Knie, Schienbein und Wade, Sprunggelenk und Fuß.",
+      topics:
+        "Alle Laufbeschwerden und Verletzungen in Prevent Pain, nach Körperregion, jeweils mit Übungen und Selbsttests für die Schwachstellen.",
+      prevent:
+        "So bleibst du beim Laufen verletzungsfrei: die Regel für einzelne Läufe, zwei kurze Krafteinheiten pro Woche und ein schneller Risiko-Check. Auf Basis veröffentlichter Forschung.",
+      return:
+        "Nach einer Verletzung zurück zum Laufen: erst ein paar Tests bestehen, dann Schritt für Schritt vom Gehen zum Laufen, mit eigenen Wegen nach Ermüdungsbrüchen, Wadenzerrungen und nach der Geburt.",
+      spot: (region) => `${region}: Schmerzen beim Laufen`,
+      spotDesc: (region, spots) =>
+        `${region}: Schmerzen beim Laufen. Stellen: ${spots}. Tippe die Stelle an, wähle, wie es sich anfühlt, und hol dir einen Plan.`,
+      causes: (spot, region) => `${spot} (${region}): Was dahinterstecken kann`,
+      causesDesc: (spot, names) =>
+        `${spot}: ${names}. Wähle die passende Beschreibung und hol dir Übungen und Selbsttests.`,
+      plan: (name) => `${name}: Übungen und Tipps fürs Laufen`,
+      refer: (name) => `${name}: ärztlich abklären`,
+    },
+    topicsLead:
+      "Alle Beschwerden und Verletzungen, die Prevent Pain abdeckt, nach Körperregion. Du weißt nicht, was du hast? Fang damit an, wo es wehtut.",
+    topicsStart: "Damit anfangen, wo es wehtut",
+    topicsGuides: "Ratgeber",
+    youthMark: "unter 18",
+
+    referRoutine: "In den nächsten Wochen abklären lassen",
+    youthTitle: "Unter 18?",
+    youthBadge: "Für unter 18-Jährige",
+    youthLead:
+      "Wachsende Knochen haben eigene Verletzungen. Diese Beschreibungen sind für Kinder und Jugendliche.",
+    exitsTitle: "Erst das prüfen",
+    exitsLead:
+      "Wenn du eine dieser Fragen mit Ja beantwortest, öffne stattdessen die Karte darunter.",
+    avoidLabel: "Vorerst weglassen",
+    stage: {
+      1: "Stufe 1 · Halten",
+      2: "Stufe 2 · Langsame Kraft",
+      3: "Stufe 3 · Federnd",
+    },
+    ladder:
+      "Diese Übungen bauen in Stufen aufeinander auf: erst Halteübungen, dann langsame Kraftübungen, dann federnde Übungen, bevor Tempo, Hügel und Sprünge zurückkommen. Zu den langsamen Kraftübungen gehst du über, wenn die Halteübungen etwa eine Woche lang innerhalb der Schmerzregel geblieben sind, auch am nächsten Morgen. Federnde Übungen kommen erst dazu, wenn sich die langsamen Kraftübungen auch mit schwerem Gewicht leicht anfühlen und die Schmerzregel am nächsten Morgen noch hält. Bei einer gereizten Sehne dauert das meist einige Wochen.",
+    stageShort: (n) => `Stufe ${n}`,
+    rtrTitle: "Zurück zum Laufen",
+    rtrPlanLead:
+      "Du läufst innerhalb der Schmerzregel weiter? Dann bleib dabei. Musstest du pausieren, steig Schritt für Schritt wieder ein:",
+    rtrReferLead: "Sobald du untersucht wurdest und wieder laufen darfst:",
+    rtrShow: "Schritte zeigen",
+    rtrHide: "Schritte ausblenden",
+    gatesTitle: "Erst diese Tests bestehen",
+    phasesTitle: "Dann steigern",
+    phaseNext: "Weiter, wenn",
+    rtrMore: "Mehr zum Wiedereinstieg ins Laufen",
+    preventNext: "Wenn es abgeklungen ist: so beugst du Verletzungen vor",
+    startPrevent: "Gerade schmerzfrei? So beugst du Verletzungen vor",
+    ifYes: "Wenn ja",
+    blocksTitle: "Deine zwei Einheiten",
+    preventStart: "Es tut schon etwas weh? Fang damit an, wo es wehtut",
   },
 };

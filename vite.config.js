@@ -5,4 +5,5 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "/prevent-pain/",
+  define: { __BUILD_YEAR__: JSON.stringify(new Date().getFullYear()) },
 });

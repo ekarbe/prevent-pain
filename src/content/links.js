@@ -44,7 +44,7 @@ export const links = {
     },
     de: {
       name: "Beweglichkeit der Hüftbeuger",
-      short: "Hüftbeuger",
+      short: "Hüft­beuger",
       why: "Verkürzte Hüftbeuger kippen das Becken nach vorn und verkürzen den Schritt nach hinten. Das belastet den unteren Rücken und die Vorderseite der Hüfte.",
     },
   },
@@ -59,7 +59,7 @@ export const links = {
     },
     de: {
       name: "Seitliche Hüftkraft (Gluteus medius)",
-      short: "Hüftseite",
+      short: "Hüft­seite",
       why: "Halten die seitlichen Hüftmuskeln das Becken nicht stabil, sinkt der Oberschenkel bei jedem Schritt nach innen. Diese Drehung wandert nach unten ins Knie und nach oben in den Rücken.",
     },
   },
@@ -89,7 +89,7 @@ export const links = {
     },
     de: {
       name: "Kraft der vorderen Oberschenkel",
-      short: "Quadrizeps",
+      short: "Quadri­zeps",
       why: "Die vorderen Oberschenkel bremsen jede Landung ab. Ermüden sie früh, fangen Kniegelenk und Sehnen mehr Stoß ab.",
     },
   },
@@ -151,6 +151,21 @@ export const links = {
       name: "Fuß- und Gleichgewichtskontrolle",
       short: "Fuß",
       why: "Sinkt das Fußgewölbe ein und ist das Gleichgewicht wackelig, dreht das Schienbein nach innen und das Gewebe im Fuß arbeitet im Dauereinsatz.",
+    },
+  },
+  adductors: {
+    at: 2.6,
+    test: "cph",
+    exercises: ["adductor-squeeze", "copenhagen-adduction"],
+    en: {
+      name: "Inner-thigh strength (adductors)",
+      short: "Adductors",
+      why: "Your inner-thigh muscles help steady the pelvis and guide the leg on every stride. Strengthening them is a key part of rehab for groin pain, and it may also help prevent it.",
+    },
+    de: {
+      name: "Kraft der Oberschenkelinnenseite (Adduktoren)",
+      short: "Adduktoren",
+      why: "Die Muskeln an der Oberschenkelinnenseite helfen, bei jedem Schritt das Becken zu stabilisieren und das Bein zu führen. Ihre Kräftigung ist ein Kernstück der Reha bei Leistenschmerzen und kann ihnen womöglich auch vorbeugen.",
     },
   },
 };

@@ -1,32 +1,34 @@
 // 30-second self-tests. `pos` describes a result that suggests a weak link, `neg` a result that looks fine.
 // `load` is not tied to a link: the plan asks it on every cause.
+// Thresholds: calf raises after Hébert-Losier et al. 2017 (medians 24 men, 21 women; ±6 reps between days),
+// hamstring bridge after Freckleton et al. 2014 (heel at knee height), load after Frandsen et al. 2025.
 export const tests = {
   cad: {
     en: {
       name: "Step-rate count",
-      how: "On an easy run, count each time your right foot lands for 30 seconds, then multiply by 4.",
-      pos: "Under 165 steps per minute",
-      neg: "165 or more",
+      how: "On an easy run, count each time your right foot lands for 30 seconds, then multiply by 4. The cut-off is only a rough guide, because step rate rises with speed and differs with leg length. In lab studies, raising your own rate by 5% lowered the load on the knee, and by 10% on the hip too.",
+      pos: "Under about 165 steps per minute",
+      neg: "About 165 or more",
     },
     de: {
       name: "Schrittfrequenz zählen",
-      how: "Zähl bei einem lockeren Lauf 30 Sekunden lang, wie oft dein rechter Fuß aufsetzt, und nimm das mal 4.",
-      pos: "Unter 165 Schritten pro Minute",
-      neg: "165 oder mehr",
+      how: "Zähl bei einem lockeren Lauf 30 Sekunden lang, wie oft dein rechter Fuß aufsetzt, und nimm das mal 4. Die Grenze ist nur ein grober Richtwert, weil die Schrittfrequenz mit dem Tempo steigt und von der Beinlänge abhängt. In Laborstudien senkte eine um 5 % höhere eigene Schrittfrequenz die Last auf das Knie, eine um 10 % höhere auch die auf die Hüfte.",
+      pos: "Unter etwa 165 Schritten pro Minute",
+      neg: "Etwa 165 oder mehr",
     },
   },
   sph: {
     en: {
       name: "Side-plank hold",
       how: "Side plank on your forearm and feet, body in a straight line. Time how long you hold with your hips level, then switch sides.",
-      pos: "Under 45 seconds, or one side clearly shorter",
-      neg: "45 seconds or more, both sides similar",
+      pos: "One side clearly shorter, or under 30 seconds",
+      neg: "Both sides similar, 30 seconds or more",
     },
     de: {
       name: "Seitstütz halten",
       how: "Seitstütz auf Unterarm und Füßen, der Körper bildet eine Linie. Stopp die Zeit, solange die Hüfte gerade bleibt, dann Seite wechseln.",
-      pos: "Unter 45 Sekunden oder eine Seite deutlich kürzer",
-      neg: "45 Sekunden oder länger, beide Seiten ähnlich",
+      pos: "Eine Seite deutlich kürzer oder unter 30 Sekunden",
+      neg: "Beide Seiten ähnlich, 30 Sekunden oder länger",
     },
   },
   tho: {
@@ -88,13 +90,13 @@ export const tests = {
   hsb: {
     en: {
       name: "Hamstring bridge count",
-      how: "On your back with one heel on a knee-high step, knee slightly bent, the other leg pointing up. Lift and lower your hips until your form breaks.",
+      how: "On your back with one heel on a box or chair at knee height (about 50–60 cm), knee slightly bent, the other leg pointing up. Lift your hips all the way and lower them, counting until your form breaks.",
       pos: "Fewer than 20, or clearly fewer than the other side",
       neg: "20 or more on each side",
     },
     de: {
       name: "Hamstring-Brücke zählen",
-      how: "Rückenlage, eine Ferse auf einer kniehohen Stufe, Knie leicht gebeugt, das andere Bein zeigt nach oben. Hüfte heben und senken, bis die Technik nachlässt.",
+      how: "Rückenlage, eine Ferse auf einer Box oder einem Stuhl in Kniehöhe (etwa 50–60 cm), Knie leicht gebeugt, das andere Bein zeigt nach oben. Hüfte ganz hochdrücken, wieder senken und zählen, bis die Technik nachlässt.",
       pos: "Weniger als 20 oder deutlich weniger als die andere Seite",
       neg: "20 oder mehr pro Seite",
     },
@@ -103,28 +105,28 @@ export const tests = {
     en: {
       name: "Single-leg calf raise count",
       how: "Stand on one leg, fingertips on a wall. Rise as high as you can and lower slowly. Count until you can't reach full height.",
-      pos: "Fewer than 20, or clearly fewer than the other side",
-      neg: "20 or more on both sides",
+      pos: "Fewer than 20, or at least 6 fewer than the other side",
+      neg: "20 or more on both sides, and within 5 of each other",
     },
     de: {
       name: "Einbeiniges Wadenheben zählen",
       how: "Auf einem Bein stehen, Fingerspitzen an der Wand. So hoch wie möglich drücken und langsam absenken. Zählen, bis du die volle Höhe nicht mehr schaffst.",
-      pos: "Weniger als 20 oder deutlich weniger als die andere Seite",
-      neg: "20 oder mehr auf beiden Seiten",
+      pos: "Weniger als 20 oder mindestens 6 weniger als die andere Seite",
+      neg: "20 oder mehr auf beiden Seiten, höchstens 5 Unterschied",
     },
   },
   ktw: {
     en: {
       name: "Knee-to-wall test",
-      how: "Face a wall, foot pointing at it. Lunge until your knee touches the wall with the heel flat. Slide the foot back until you just can't, then measure toe to wall.",
-      pos: "Under about 10 cm, or clearly less than the other side",
-      neg: "10 cm or more, both sides similar",
+      how: "Face a wall, foot pointing at it. Lunge until your knee touches the wall with the heel flat. Slide the foot back until you just can't, then measure toe to wall. Compare both sides, and stop if it pinches at the front of the ankle.",
+      pos: "Clearly less than the other side, or under about 10 cm",
+      neg: "Both sides similar, about 10 cm or more",
     },
     de: {
       name: "Knie-zur-Wand-Test",
-      how: "Stell dich vor eine Wand, der Fuß zeigt zur Wand. Schieb das Knie an die Wand, die Ferse bleibt am Boden. Rück den Fuß zurück, bis es gerade nicht mehr geht, und miss Zehe bis Wand.",
-      pos: "Unter etwa 10 cm oder deutlich weniger als die andere Seite",
-      neg: "10 cm oder mehr, beide Seiten ähnlich",
+      how: "Stell dich vor eine Wand, der Fuß zeigt zur Wand. Schieb das Knie an die Wand, die Ferse bleibt am Boden. Rück den Fuß zurück, bis es gerade nicht mehr geht, und miss Zehe bis Wand. Teste beide Seiten und hör auf, wenn es vorne im Sprunggelenk zwickt.",
+      pos: "Deutlich weniger als die andere Seite oder unter etwa 10 cm",
+      neg: "Beide Seiten ähnlich, etwa 10 cm oder mehr",
     },
   },
   bal: {
@@ -141,18 +143,32 @@ export const tests = {
       neg: "Etwa so wie auf dem anderen Bein",
     },
   },
+  cph: {
+    en: {
+      name: "Copenhagen side-plank hold",
+      how: "Lie on your side on one forearm, top knee resting on a chair or bench, bottom leg hanging free. Lift your hips into a straight line and hold for up to 30 seconds, then switch sides. Stop as soon as your groin hurts, and skip the test while a recent groin strain still hurts when you squeeze your knees together.",
+      pos: "Groin pain, under 15 seconds, or one side clearly shorter",
+      neg: "Pain-free, 15 seconds or more, sides similar",
+    },
+    de: {
+      name: "Copenhagen-Seitstütz halten",
+      how: "Seitlage auf dem Unterarm, das obere Knie liegt auf einem Stuhl oder einer Bank, das untere Bein hängt frei. Hüfte in eine gerade Linie heben und bis zu 30 Sekunden halten, dann Seite wechseln. Hör sofort auf, wenn die Leiste schmerzt, und lass den Test weg, solange eine frische Leistenzerrung beim Zusammendrücken der Knie noch wehtut.",
+      pos: "Leistenschmerz, unter 15 Sekunden oder eine Seite deutlich kürzer",
+      neg: "Schmerzfrei, 15 Sekunden oder länger, Seiten ähnlich",
+    },
+  },
   load: {
     en: {
       name: "Training load",
-      how: "Did your weekly distance, speed work or hill running jump in the last 4 weeks? New shoes or a new surface count too.",
-      pos: "Yes, something went up or changed",
-      neg: "No, training stayed steady",
+      how: "In the last 4 weeks, was any run more than about 10% longer than your longest run in the 30 days before it? Or did you add more speed work or hills, or switch shoes or running surface?",
+      pos: "Yes, at least one of these",
+      neg: "No, none of these",
     },
     de: {
-      name: "Trainingsumfang",
-      how: "Sind Wochenumfang, Tempotraining oder Hügelläufe in den letzten 4 Wochen gestiegen? Neue Schuhe oder ein neuer Untergrund zählen auch.",
-      pos: "Ja, etwas ist gestiegen oder neu",
-      neg: "Nein, alles blieb gleich",
+      name: "Trainingsbelastung",
+      how: "War in den letzten 4 Wochen ein Lauf mehr als etwa 10 % länger als dein längster Lauf in den 30 Tagen davor? Oder hast du mehr Tempotraining oder Hügel eingebaut oder Schuhe oder Untergrund gewechselt?",
+      pos: "Ja, mindestens eins davon",
+      neg: "Nein, nichts davon",
     },
   },
 };

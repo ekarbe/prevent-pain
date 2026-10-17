@@ -1,3 +1,5 @@
+import { useSyncExternalStore } from "react";
+
 // Small per-device preferences. Storage can be blocked (private mode), so every access is guarded.
 function get(key) {
   try {
@@ -25,7 +27,21 @@ export function preferredLang() {
 
 export const saveLang = (lang) => set("lang", lang);
 
-export const isDark = () => document.documentElement.classList.contains("dark");
+const isDark = () => document.documentElement.classList.contains("dark");
+const darkListeners = new Set();
+
+// The saved scheme is applied by a script in index.html before React loads. Pre-rendered pages
+// are light, so hydration starts light and switches straight after.
+export function useDark() {
+  return useSyncExternalStore(
+    (listener) => {
+      darkListeners.add(listener);
+      return () => darkListeners.delete(listener);
+    },
+    isDark,
+    () => false,
+  );
+}
 
 // The phone's status and address bar follow the page background.
 const paintBar = (dark) =>
@@ -37,4 +53,5 @@ export function setDark(dark) {
   document.documentElement.classList.toggle("dark", dark);
   paintBar(dark);
   set("theme", dark ? "dark" : "light");
+  darkListeners.forEach((l) => l());
 }

@@ -1,20 +1,14 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
-import ErrorBoundary from "./components/ErrorBoundary.jsx";
+import { createRoot, hydrateRoot } from "react-dom/client";
+import Root from "./Root.jsx";
 import "./index.css";
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <ErrorBoundary
-      fallback={{
-        title: "Something went wrong · Etwas ist schiefgelaufen",
-        body: "Reload the page, or start again from the beginning. · Lade die Seite neu oder fang von vorne an.",
-        action: "Start again · Neu starten",
-        href: "#/",
-      }}
-    >
-      <App />
-    </ErrorBoundary>
-  </StrictMode>,
-);
+// A pre-rendered page takes over its HTML. Anything else (the 404 page, a plan with test results in
+// the link, an old #/ link) renders from scratch.
+const container = document.getElementById("root");
+const { pathname, search } = window.location;
+if (container.dataset.route === pathname + search) {
+  hydrateRoot(container, <Root />);
+} else {
+  container.replaceChildren();
+  createRoot(container).render(<Root />);
+}

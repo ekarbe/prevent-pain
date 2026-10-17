@@ -120,10 +120,12 @@ export function TestAnswer({ testId, result, onAnswer, posText, negText }) {
   }
   return (
     <div className="flex flex-col gap-2.5 rounded-[var(--radius-inner)] bg-surface-2 p-3">
-      <p>
-        <span className="label">{t.test}</span> <strong>{test.name}.</strong>{" "}
-        {test.how}
-      </p>
+      <div>
+        <p className="label">{t.test}</p>
+        <p>
+          <strong>{test.name}.</strong> {test.how}
+        </p>
+      </div>
       <div
         role="group"
         aria-label={test.name}
@@ -194,9 +196,10 @@ export function SuspectCard({ item, rank, onAnswer, added }) {
           </span>
         </div>
       </header>
-      <p>
-        <span className="label">{t.why}</span> {why}
-      </p>
+      <div>
+        <p className="label">{t.why}</p>
+        <p>{why}</p>
+      </div>
       <TestAnswer
         testId={link.test}
         result={state === "none" ? null : state}

@@ -92,6 +92,13 @@
   button:disabled {
     cursor: default;
   }
+  summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
 }
 
 @layer components {
@@ -107,8 +114,9 @@
   .fine {
     @apply text-[13px] leading-[1.45] text-ink-2;
   }
+  /* A small heading on its own line above a block of text, e.g. "Why it matters". */
   .label {
-    @apply text-[13px] font-bold tracking-[0.03em] text-ink;
+    @apply mb-1 block text-xs font-bold tracking-[0.08em] text-ink-2 uppercase;
   }
   .card {
     @apply rounded-[var(--radius-card)] bg-surface shadow-[var(--shadow-card)];
