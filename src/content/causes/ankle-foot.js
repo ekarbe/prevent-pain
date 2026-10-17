@@ -307,8 +307,8 @@ export default [
     exits: [
       {
         to: "ankle-fracture-refer",
-        en: "Did you just roll it again, and can't you take 4 steps or does the tip of an ankle bone hurt to press?",
-        de: "Bist du eben wieder umgeknickt und kannst keine 4 Schritte gehen, oder tut eine Knöchelspitze auf Druck weh?",
+        en: "After rolling it again recently, was walking 4 steps impossible then or now, or does the tip or back edge of an ankle bone, the bony bump halfway along the outer edge of your foot or the bony bump on the inner midfoot hurt to press?",
+        de: "Bist du kürzlich wieder umgeknickt und waren danach oder sind jetzt 4 Schritte unmöglich oder tut Druck auf Knöchelspitze oder -hinterkante, den Knochenvorsprung in der Mitte des Fußaußenrands oder den Knochenvorsprung innen am Mittelfuß weh?",
       },
     ],
     sources: [
@@ -508,6 +508,11 @@ export default [
         to: "peroneal-nerve-refer",
         en: "Does the top of your foot go numb or tingle during runs, even with loose laces?",
         de: "Wird dein Fußrücken beim Laufen taub oder kribbelt er, auch bei lockerer Schnürung?",
+      },
+      {
+        to: "ankle-fracture-refer",
+        en: "Did it start suddenly when you rolled or twisted your foot, rather than building up over weeks?",
+        de: "Hat es plötzlich beim Umknicken oder Verdrehen des Fußes begonnen, statt sich über Wochen aufzubauen?",
       },
     ],
     sources: ["hagen2010", "millar2021", "silbernagel2007"],
@@ -795,12 +800,13 @@ export default [
       desc: "Sore on the outer side of the midfoot, between the heel and the bump halfway along the outer edge, often starting after you rolled your ankle or after a hard downhill or track session. Pushing off and walking on the outer edge of the foot hurt, and it can feel as if something is out of place. It tends to start fairly suddenly rather than building over weeks.",
       name: "Cuboid syndrome",
       about:
-        "This pattern can fit cuboid syndrome, where a small bone on the outer midfoot and the joints around it are irritated, possibly slightly out of their usual position, often after an ankle sprain. It isn't well understood and there's no definitive test, but a physio or sports doctor can examine it, rule out a fracture or a stress injury, and start treatment you can't do yourself. In small case series it often settled quickly once treated.",
+        "This pattern can fit cuboid syndrome, where a small bone on the outer midfoot and the joints around it are irritated, possibly slightly out of their usual position, often after an ankle sprain. It isn't well understood and there's no definitive test, but a physio or sports doctor can examine it, rule out a fracture or a stress injury, and start treatment you can't do yourself. In small reports without a comparison group, it often settled quickly once treated.",
       meanwhile:
         "Book a physio or sports doctor within 1–3 weeks. Until then, run only as much as stays within the pain rule, on flat, even ground in firm, supportive shoes, and skip speed work, hills and trails.",
     },
     de: {
-      title: "Stechender Schmerz außen am Mittelfuß, oft nach dem Umknicken",
+      title:
+        "Stechender Schmerz außen am Mittelfuß nach Umknicken oder harter Einheit",
       desc: "Schmerzt außen am Mittelfuß, zwischen der Ferse und dem Höcker in der Mitte des Fußaußenrands, oft nach dem Umknicken oder nach einem harten Bergablauf oder Bahntraining. Abdruck und Gehen über den Fußaußenrand tun weh, und es kann sich anfühlen, als wäre etwas verrutscht. Beginnt eher recht plötzlich, statt sich über Wochen aufzubauen.",
       name: "Kuboid-Syndrom (Würfelbein-Syndrom)",
       about:
@@ -960,7 +966,7 @@ export default [
     exits: [
       {
         to: "ankle-fracture-refer",
-        en: "Couldn't you walk 4 steps then or now, or is the tip or back edge of an ankle bone or a midfoot bone tender?",
+        en: "Were you unable to take 4 steps right after it or now, or does the tip or back edge of an ankle bone or a midfoot bone hurt to press?",
         de: "Waren oder sind 4 Schritte unmöglich, oder tut Druck auf Knöchelspitze, -hinterkante oder Mittelfuß weh?",
       },
     ],
@@ -975,7 +981,7 @@ export default [
       desc: "You rolled or twisted your ankle, and you couldn't take four steps straight after or still can't, or one of these spots hurts to press: the tip of either ankle bone or the back edge of its lowest 6 cm, the bony bump halfway along the outer edge of your foot, or the bony bump on the inner side of the midfoot, in front of and below the inner ankle bone.",
       name: "Possible ankle or midfoot fracture (Ottawa ankle rules)",
       about:
-        "Doctors use these checks, the Ottawa ankle rules, to decide who needs an X-ray after a sprain. They pick up almost every fracture, so if none of them applies, a break is unlikely. Soreness in the soft area just in front of the outer ankle bone usually comes from the stretched ligament and isn't one of these checks. If one does apply, it doesn't mean the bone is broken, and most turn out to be sprains, but only an X-ray can tell.",
+        "Doctors use these checks, the Ottawa ankle rules, to decide who needs an X-ray after a sprain. They pick up almost every fracture, so if none of them applies, a break is unlikely. Soreness in the soft area just in front of the outer ankle bone usually comes from the stretched ligament and isn't one of these checks. If one does apply, it doesn't mean the bone is broken, and most turn out to be sprains, but only an X-ray can tell. Pain across the top of the midfoot after a twist also needs a doctor's check today, especially with bruising on the sole or if you can't rise onto tiptoe on that leg, because these checks can miss an injury to the midfoot joints (Lisfranc injury).",
       meanwhile:
         "Get it X-rayed today at an urgent care clinic, an emergency department or your doctor's practice. Until then, keep weight off the foot as much as you can and keep it raised. Don't run or hop, and don't try to walk through the pain. If the foot looks out of shape, or turns cold, pale or numb, go to an emergency department now.",
     },
@@ -984,7 +990,7 @@ export default [
       desc: "Du bist umgeknickt oder hast dir den Fuß verdreht und konntest danach keine vier Schritte gehen oder kannst es immer noch nicht, oder eine dieser Stellen tut auf Druck weh: die Spitze eines der beiden Knöchel oder die Hinterkante ihrer unteren 6 cm, der Knochenvorsprung in der Mitte des Fußaußenrands oder der Knochenvorsprung innen am Mittelfuß, vor und unterhalb des Innenknöchels.",
       name: "Möglicher Knochenbruch an Sprunggelenk oder Mittelfuß (Ottawa Ankle Rules)",
       about:
-        "Ärztinnen und Ärzte nutzen diese Kriterien, die Ottawa Ankle Rules, um nach dem Umknicken zu entscheiden, wer geröntgt werden muss. Sie übersehen kaum einen Bruch: Trifft keins davon zu, ist ein Bruch unwahrscheinlich. Druckschmerz in der weichen Stelle direkt vor dem Außenknöchel kommt meist vom überdehnten Band und zählt nicht zu diesen Kriterien. Trifft eins zu, heißt das noch nicht, dass der Knochen gebrochen ist, meist ist es doch eine Bänderverletzung. Klarheit bringt aber nur ein Röntgenbild.",
+        "Ärztinnen und Ärzte nutzen diese Kriterien, die Ottawa Ankle Rules, um nach dem Umknicken zu entscheiden, wer geröntgt werden muss. Sie übersehen kaum einen Bruch: Trifft keins davon zu, ist ein Bruch unwahrscheinlich. Druckschmerz in der weichen Stelle direkt vor dem Außenknöchel kommt meist vom überdehnten Band und zählt nicht zu diesen Kriterien. Trifft eins zu, heißt das noch nicht, dass der Knochen gebrochen ist, meist ist es doch eine Bänderverletzung. Klarheit bringt aber nur ein Röntgenbild. Schmerzen oben quer über dem Mittelfuß nach einem Verdrehen gehören ebenfalls noch heute ärztlich abgeklärt, vor allem mit einem Bluterguss an der Fußsohle oder wenn du auf diesem Bein nicht auf die Zehenspitzen kommst, denn eine Verletzung der Mittelfußgelenke (Lisfranc-Verletzung) kann diesen Kriterien entgehen.",
       meanwhile:
         "Lass es heute noch röntgen, in einer Notfallpraxis, der Notaufnahme oder bei deiner Ärztin oder deinem Arzt. Bis dahin den Fuß so wenig wie möglich belasten und hochlagern. Nicht laufen oder hüpfen und nicht trotz Schmerzen weitergehen. Sieht der Fuß verformt aus oder wird er kalt, blass oder taub, geh sofort in die Notaufnahme.",
     },
@@ -1000,8 +1006,8 @@ export default [
       desc: "For runners aged about 8 to 14. The back or bottom of the heel hurts during and after running, jumping or football, and squeezing both sides of the heel hurts. It's often in both heels and eases with rest.",
       name: "Sever's disease (calcaneal apophysitis)",
       about:
-        "While you're growing, the back of your heel bone has a softer growth zone where the Achilles tendon pulls, and lots of running and jumping can irritate it. It's common, it isn't harmful, and it gets better with time. In trials, children improved whether they used heel raises, insoles, exercises or simply waited, and heel raises helped only a little in the first month or two.",
-      load: "You can keep running and playing if the pain stays mild, up to about 3 out of 10, and is gone by the next morning. On sore days, do less jumping and sprinting, choose grass over hard ground, and wear cushioned trainers rather than flat shoes or spikes. Soft heel cups or small heel raises in your trainers can ease it in the first weeks.",
+        "While you're growing, the back of your heel bone has a softer growth zone where the Achilles tendon pulls, and lots of running and jumping can irritate it. It's common, it isn't harmful, and it gets better with time. In trials, children improved whether they used heel lifts in their shoes, insoles, exercises or simply waited, and heel lifts helped only a little in the first month or two.",
+      load: "You can keep running and playing if the pain stays mild, up to about 3 out of 10, and is gone by the next morning. On sore days, do less jumping and sprinting, choose grass over hard ground, and wear cushioned trainers rather than flat shoes or spikes. Soft heel cups or small heel lifts in your trainers can ease it in the first weeks.",
       avoid:
         "Don't play through heel pain that makes you limp, hurts when you rest or at night, or never goes away: see a doctor with a parent in the next few days, or today if you also have a fever or a red, swollen heel.",
     },
@@ -1028,7 +1034,7 @@ export default [
       desc: "Sits deep at the back of the ankle, in front of the Achilles rather than in it, or deep behind the inner ankle bone. It's worse running downhill, on tiptoe and when you point your foot hard, and squeezing the Achilles itself doesn't hurt. If pressing your big toe down against resistance brings it on, the big-toe tendon is likely involved.",
       name: "Posterior ankle impingement, with or without flexor hallucis longus (FHL) tendinopathy",
       about:
-        "When you point your foot fully, bone and soft tissue at the back of the ankle can get pinched, sometimes around a small extra bone, and the tendon that bends your big toe runs right through this area. Lots of downhill or forefoot running can irritate it, and Achilles pain that isn't improving with calf loading sometimes turns out to be this. The evidence is thin, mostly case series, but changing your load and building calf and toe strength in mid-range usually come first. Have a physio or sports doctor check it if it started with a twist, the big toe catches, or it hasn't improved after about 6–8 weeks.",
+        "When you point your foot fully, bone and soft tissue at the back of the ankle can get pinched, sometimes around a small extra bone, and the tendon that bends your big toe runs right through this area. Lots of downhill or forefoot running can irritate it, and Achilles pain that isn't improving with calf loading sometimes turns out to be this. The evidence is thin, mostly small reports without a comparison group, but changing your load and building calf and toe strength in mid-range usually come first. Have a physio or sports doctor check it if it started with a twist, the big toe catches, or it hasn't improved after about 6–8 weeks.",
       load: "Keep running on flat ground within the pain rule, and skip downhill runs, forefoot running and spikes for now. On descents, take short, quick steps instead of reaching with your toes.",
       avoid:
         "Skip full tiptoe raises and pointing your foot hard: keep calf raises to about halfway up for now.",
@@ -1140,6 +1146,11 @@ export default [
         en: "Is it a deep ache that builds through each run and lingers afterwards, rather than a pinch in one position?",
         de: "Ist es ein tiefer Schmerz, der in jedem Lauf zunimmt und danach anhält, statt in einer Position einzuklemmen?",
       },
+      {
+        to: "ankle-fracture-refer",
+        en: "Did it start suddenly when you rolled or twisted your ankle recently, rather than building up over time?",
+        de: "Hat es kürzlich plötzlich beim Umknicken oder Verdrehen des Sprunggelenks begonnen, statt sich mit der Zeit aufzubauen?",
+      },
     ],
     sources: ["vaseenon2012", "lavery2016", "silbernagel2007"],
   },
@@ -1179,8 +1190,8 @@ export default [
     exits: [
       {
         to: "ankle-fracture-refer",
-        en: "Did you just roll it, and can't you take 4 steps or does the tip of an ankle bone hurt to press?",
-        de: "Bist du gerade umgeknickt und kannst keine 4 Schritte gehen, oder tut eine Knöchelspitze auf Druck weh?",
+        en: "After rolling it recently, was walking 4 steps impossible then or now, or does the tip or back edge of an ankle bone, the bony bump halfway along the outer edge of your foot or the bony bump on the inner midfoot hurt to press?",
+        de: "Bist du kürzlich umgeknickt und waren danach oder sind jetzt 4 Schritte unmöglich oder tut Druck auf Knöchelspitze oder -hinterkante, den Knochenvorsprung in der Mitte des Fußaußenrands oder den Knochenvorsprung innen am Mittelfuß weh?",
       },
       {
         to: "jones-bsi-refer",
@@ -1217,8 +1228,8 @@ export default [
     exits: [
       {
         to: "ankle-fracture-refer",
-        en: "Did it start with a twist or fall, and couldn't you take 4 steps right after it?",
-        de: "Hat es mit einem Umknicken oder Sturz begonnen, und konntest du danach keine 4 Schritte gehen?",
+        en: "Did it start suddenly with a twist or fall, rather than building up over weeks?",
+        de: "Hat es plötzlich mit einem Umknicken oder Sturz begonnen, statt sich über Wochen aufzubauen?",
       },
     ],
     warn: ["fuel"],

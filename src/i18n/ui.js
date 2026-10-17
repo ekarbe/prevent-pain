@@ -202,7 +202,8 @@ export const ui = {
       3: "Stage 3 · Springy",
     },
     ladder:
-      "These exercises build up in stages: holds, then slow strength work, then springy work, then running. Move up a stage once the current one has stayed within the pain rule for about a week.",
+      "These exercises build up in stages: holds, then slow strength work, then springy work, before speed, hills and jumps come back. Move from holds to slow strength once the holds have stayed within the pain rule, including the next morning, for about a week. Add springy work only once slow strength work feels easy at a heavy weight and the pain rule still holds the next morning. For a sore tendon, that usually takes several weeks.",
+    stageShort: (n) => `Stage ${n}`,
     rtrTitle: "Back to running",
     rtrPlanLead:
       "Still running within the pain rule? Carry on. If you had to stop, come back step by step:",
@@ -217,7 +218,7 @@ export const ui = {
     startPrevent: "Not hurting right now? How to stay injury-free",
     ifYes: "If yes",
     blocksTitle: "Your two sessions",
-    preventStart: "Something hurts already? Start with where",
+    preventStart: "Something hurts already? Start with where it hurts",
   },
   de: {
     back: "Zurück",
@@ -422,7 +423,7 @@ export const ui = {
       "Wachsende Knochen haben eigene Verletzungen. Diese Beschreibungen sind für Kinder und Jugendliche.",
     exitsTitle: "Erst das prüfen",
     exitsLead:
-      "Wenn du eine dieser Fragen mit Ja beantwortest, öffne lieber diese Karte.",
+      "Wenn du eine dieser Fragen mit Ja beantwortest, öffne stattdessen die Karte darunter.",
     avoidLabel: "Vorerst weglassen",
     stage: {
       1: "Stufe 1 · Halten",
@@ -430,7 +431,8 @@ export const ui = {
       3: "Stufe 3 · Federnd",
     },
     ladder:
-      "Diese Übungen bauen in Stufen aufeinander auf: erst Halteübungen, dann langsame Kraftübungen, dann federnde Übungen, dann Laufen. Geh eine Stufe weiter, wenn die aktuelle etwa eine Woche lang innerhalb der Schmerzregel geblieben ist.",
+      "Diese Übungen bauen in Stufen aufeinander auf: erst Halteübungen, dann langsame Kraftübungen, dann federnde Übungen, bevor Tempo, Hügel und Sprünge zurückkommen. Zu den langsamen Kraftübungen gehst du über, wenn die Halteübungen etwa eine Woche lang innerhalb der Schmerzregel geblieben sind, auch am nächsten Morgen. Federnde Übungen kommen erst dazu, wenn sich die langsamen Kraftübungen auch mit schwerem Gewicht leicht anfühlen und die Schmerzregel am nächsten Morgen noch hält. Bei einer gereizten Sehne dauert das meist einige Wochen.",
+    stageShort: (n) => `Stufe ${n}`,
     rtrTitle: "Zurück zum Laufen",
     rtrPlanLead:
       "Du läufst innerhalb der Schmerzregel weiter? Dann bleib dabei. Musstest du pausieren, steig Schritt für Schritt wieder ein:",
@@ -445,6 +447,6 @@ export const ui = {
     startPrevent: "Gerade schmerzfrei? So beugst du Verletzungen vor",
     ifYes: "Wenn ja",
     blocksTitle: "Deine zwei Einheiten",
-    preventStart: "Es tut schon etwas weh? Fang damit an, wo",
+    preventStart: "Es tut schon etwas weh? Fang damit an, wo es wehtut",
   },
 };

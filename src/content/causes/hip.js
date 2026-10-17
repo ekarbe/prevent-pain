@@ -87,6 +87,11 @@ export default [
         en: "Are you under 18, with a limp or with groin, thigh or knee pain for over a week?",
         de: "Bist du unter 18, mit Hinken oder Leisten-, Oberschenkel- oder Knieschmerzen seit über einer Woche?",
       },
+      {
+        to: "hip-bsi-refer",
+        en: "Does the ache build with every run, or does hopping on that leg hurt?",
+        de: "Wird der Schmerz mit jedem Lauf stärker, oder tut Hüpfen auf dem Bein weh?",
+      },
     ],
     sources: ["griffin2016", "kemp2020", "enseki2023"],
   },
@@ -141,7 +146,7 @@ export default [
         "Die Sehnen deiner seitlichen Hüftmuskeln sind dort gereizt, wo sie am Knochenvorsprung außen an der Hüfte ansetzen, und sie werden gegen den Knochen gedrückt, wenn der Oberschenkel nach innen über die Körpermitte wandert oder du auf dieser Seite liegst. Zu wissen, was die Sehne zusammendrückt, ist ein wichtiger Teil der Behandlung: In einer großen Studie half Beratung zum Vermeiden dieses Drucks plus schrittweise aufbauendes Krafttraining für die seitliche Hüfte besser als eine Spritze oder Abwarten und schnitt auch nach einem Jahr beim Gesamtergebnis besser ab als die Spritze. Schlaf nachts auf der anderen Seite mit einem Kissen zwischen den Knien.",
       load: "Lauf innerhalb der Schmerzregel auf flachem Untergrund weiter, meide vorerst Straßen mit seitlichem Gefälle und steile Hügel und setz die Füße beim Laufen nicht über die Mittellinie. Schmerzt die Hüfte am nächsten Morgen mehr, die nächsten Läufe um etwa ein Drittel kürzen.",
       avoid:
-        "Lass übereinandergeschlagene Beine, das Stehen mit dem Gewicht in einer Hüfte, das Liegen auf der schmerzhaften Seite und Dehnungen, die das Bein quer über den Körper ziehen, weg, denn sie drücken die Sehne gegen den Knochen.",
+        "Schlag die Beine nicht übereinander, häng im Stehen nicht in einer Hüfte, lieg nicht auf der schmerzhaften Seite und lass Dehnungen weg, die das Bein quer über den Körper ziehen, denn all das drückt die Sehne gegen den Knochen.",
     },
     local: [
       "hip-abduction-hold",
@@ -467,7 +472,8 @@ export default [
         "Skip deep squats and lunges that pinch at the front of the hip while it's flaring.",
     },
     de: {
-      title: "Steife, schmerzende Hüfte nach Ruhe, bei bekannter Hüftarthrose",
+      title:
+        "Steife, schmerzende Hüfte oder Leiste nach Ruhe, bei bekannter Hüftarthrose",
       desc: "Nach dem Sitzen oder morgens eine Weile steif, und Socken anziehen oder Fußnägel schneiden fällt schwerer als früher. Der Schmerz nimmt bei langen Läufen zu und lässt bei sanfter Bewegung nach. Diese Karte ist für eine Hüftarthrose, die ärztlich oder physiotherapeutisch bereits festgestellt wurde.",
       name: "Hüftarthrose (Coxarthrose)",
       about:
@@ -519,7 +525,7 @@ export default [
         "The muscles and tendons of the lower tummy wall are overloaded where they attach around the groin, and despite the name sports hernia there's no true hernia. Trunk and inner-thigh strength work over 3–6 months is the usual first step, although good studies on which exercises work best are lacking. If that hasn't helped, a sports doctor or surgeon can discuss other options.",
       load: "Easy runs on flat ground are usually fine within the pain rule. Drop sprints, hills and sharp turns for now, and bring speed back gradually once coughing, sneezing and getting out of bed no longer hurt.",
       avoid:
-        "Skip sit-ups and crunches for now. See a doctor if you notice a lump or bulge in the groin, and get seen today if it's painful and won't go back in, or if a testicle suddenly becomes very painful or swollen.",
+        "Skip sit-ups and crunches for now. See a doctor if you notice a lump or bulge in the groin.",
     },
     de: {
       title:
@@ -530,7 +536,7 @@ export default [
         "Muskeln und Sehnen der unteren Bauchwand sind dort überlastet, wo sie rund um die Leiste ansetzen, und trotz des Begriffs Sportlerhernie liegt kein echter Leistenbruch vor. Krafttraining für Rumpf und Oberschenkelinnenseite über 3–6 Monate ist der übliche erste Schritt, auch wenn gute Studien dazu fehlen, welche Übungen am besten wirken. Hilft das nicht, kannst du in einer sportmedizinischen oder chirurgischen Sprechstunde über andere Möglichkeiten sprechen.",
       load: "Lockere Läufe auf flachem Untergrund sind innerhalb der Schmerzregel meist in Ordnung. Sprints, Hügel und scharfe Richtungswechsel vorerst weglassen und das Tempo schrittweise zurückholen, wenn Husten, Niesen und Aufstehen aus dem Bett nicht mehr wehtun.",
       avoid:
-        "Lass Sit-ups und Crunches vorerst weg. Lass eine Beule oder Vorwölbung in der Leiste ärztlich abklären, und zwar heute noch, wenn sie schmerzt und sich nicht zurückdrücken lässt oder wenn ein Hoden plötzlich stark schmerzt oder anschwillt.",
+        "Lass Sit-ups und Crunches vorerst weg. Lass eine Beule oder Vorwölbung in der Leiste ärztlich abklären.",
     },
     local: [
       "adductor-squeeze",
@@ -539,6 +545,7 @@ export default [
       "copenhagen-adduction",
     ],
     later: ["copenhagen-adduction"],
+    warn: ["hernia"],
     chain: [
       [
         "trunk",
@@ -568,6 +575,11 @@ export default [
         en: "Does it ache at rest or at night, or does standing or hopping on that leg hurt?",
         de: "Schmerzt es in Ruhe oder nachts, oder tut Stehen oder Hüpfen auf dem Bein weh?",
       },
+      {
+        to: "scfe-refer",
+        en: "Are you under 18, with a limp or with groin, thigh or knee pain for over a week?",
+        de: "Bist du unter 18, mit Hinken oder Leisten-, Oberschenkel- oder Knieschmerzen seit über einer Woche?",
+      },
     ],
     sources: ["weir2015", "sheen2014", "holmich1999"],
   },
@@ -586,7 +598,7 @@ export default [
     },
     de: {
       title: "Schnappen oder Klacken vorn oder außen an der Hüfte",
-      desc: "Du spürst oder hörst ein Schnappen tief in der Leiste, wenn du das Bein hebst oder senkst, oder über dem Knochenvorsprung außen an der Hüfte beim Laufen oder Treppensteigen. Oft tut es nicht weh, und die Hüfte hakt, blockiert oder knickt nicht weg.",
+      desc: "Du spürst oder hörst ein Schnappen tief in der Leiste, wenn du das Bein hebst oder senkst, oder über dem Knochenvorsprung außen an der Hüfte beim Laufen oder Treppensteigen. Oft tut es nicht weh, und die Hüfte hakt nicht, blockiert nicht und knickt nicht weg.",
       name: "Schnappende Hüfte (Coxa saltans)",
       about:
         "Eine Sehne springt bei Hüftbewegungen über einen Knochenvorsprung: vorn meist die Sehne des tiefen Hüftbeugers, außen der kräftige Bindegewebsstreifen über dem Hüftknochen. Schmerzloses Schnappen ist harmlos und braucht keine Behandlung. Tut es weh, hilft es meist, die auslösenden Bewegungen zu reduzieren und die Hüfte zu kräftigen, und die meisten schmerzhaften Fälle beruhigen sich innerhalb von 6–12 Monaten.",
@@ -636,10 +648,10 @@ export default [
       desc: "A few drops or more leak when you run, jump, cough or sneeze, or your pelvis feels heavy or dragging during or after runs, often more so late in a long run. If you've recently had a baby, the card on running after birth fits better.",
       name: "Stress urinary incontinence or pelvic floor dysfunction (bladder leakage when running)",
       about:
-        "The muscles that close off the bladder and support the pelvic organs may not hold up fully against the repeated impact of running. It's very common, especially in women who run, and it isn't something you just have to live with. Pelvic floor muscle training is the first-line treatment, and a pelvic health physio can check how your muscles work, often with an internal exam, and tailor a programme to you.",
+        "The muscles that close off the bladder and support the pelvic organs may not hold up fully against the repeated impact of running. It's very common, especially in women who run, and it isn't something you just have to live with. Pelvic floor muscle training is the first treatment to try, and a pelvic health physio can check how your muscles work, often with an internal exam, and tailor a programme to you.",
       load: "You don't need to stop running. Shorter runs, an easier pace and fewer steep downhills may reduce leaking while you train your pelvic floor, and you can build back up as control improves.",
       avoid:
-        "Skip heavy lifting and jumping that bring on leaking or a dragging feeling, and see a doctor if you feel a bulge, have pelvic pain or notice blood in your urine. If leaking starts suddenly together with numbness around the groin or buttocks or weak legs, go to an emergency department now.",
+        "Skip heavy lifting and jumping that bring on leaking or a dragging feeling, and see a doctor if you feel a bulge, have pelvic pain or notice blood in your urine.",
     },
     de: {
       title: "Urinverlust oder Schwere- und Druckgefühl im Becken beim Laufen",
@@ -649,11 +661,12 @@ export default [
         "Die Muskeln, die die Blase verschließen und die Beckenorgane stützen, halten den wiederholten Stößen beim Laufen womöglich nicht ganz stand. Das ist sehr häufig, vor allem bei Läuferinnen, und nichts, womit du dich abfinden musst. Beckenbodentraining ist die Behandlung der ersten Wahl, und in einer auf den Beckenboden spezialisierten Physiotherapie lässt sich prüfen, wie deine Muskeln arbeiten, oft mit einer inneren Untersuchung, und ein Programm auf dich abstimmen.",
       load: "Du musst nicht mit dem Laufen aufhören. Kürzere Läufe, ein lockereres Tempo und weniger steile Bergabpassagen können den Urinverlust verringern, während du den Beckenboden trainierst, und mit besserer Kontrolle kannst du wieder steigern.",
       avoid:
-        "Lass schweres Heben und Sprünge weg, die Urinverlust oder ein Druckgefühl auslösen, und lass dich ärztlich untersuchen, wenn du eine Vorwölbung spürst, Schmerzen im Becken hast oder Blut im Urin bemerkst. Beginnt der Urinverlust plötzlich zusammen mit Taubheit im Genital- oder Gesäßbereich oder schwachen Beinen, geh sofort in die Notaufnahme.",
+        "Lass schweres Heben und Sprünge weg, die Urinverlust oder ein Druckgefühl auslösen, und lass dich ärztlich untersuchen, wenn du eine Vorwölbung spürst, Schmerzen im Becken hast oder Blut im Urin bemerkst.",
     },
     local: ["pelvic-floor-training"],
     chain: [],
     rtr: "none",
+    warn: ["leak"],
     sources: ["goldstick2014", "dumoulin2018"],
   },
   {
@@ -694,7 +707,7 @@ export default [
         3,
         {
           en: "The guideline checks these muscles with 20 side-lying leg raises per side. Even if the mirror squat looks fine, make sure you can do 20 clean raises on each side before you run.",
-          de: "Die Leitlinie prüft diese Muskeln mit 20-mal seitlichem Beinheben pro Seite. Auch wenn die Kniebeuge vor dem Spiegel gut aussieht, solltest du vor dem Laufen 20 saubere Wiederholungen pro Seite schaffen.",
+          de: "Die Leitlinie prüft diese Muskeln mit 20 Beinhebungen im Seitliegen pro Seite. Auch wenn die Kniebeuge vor dem Spiegel gut aussieht, solltest du vor dem Laufen 20 saubere Wiederholungen pro Seite schaffen.",
         },
       ],
       [

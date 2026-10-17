@@ -36,7 +36,7 @@ export default function Prevent({ route }) {
             </h3>
             <p className="text-[15px] text-ink-2">{p.blocks[block.id].note}</p>
             {block.exercises.map((id) => (
-              <ExerciseCard key={id} id={id} />
+              <ExerciseCard key={id} id={id} headingLevel={4} />
             ))}
           </div>
         ))}

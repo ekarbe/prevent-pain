@@ -55,7 +55,7 @@ All content lives in `src/content/`, every text in both languages as `{ en: …,
 | `guides.js`          | `returnToRun` (checks and walk-run steps per variant: standard, bone, calf, postpartum) and `prevent` (the Stay injury-free page).                                            |
 | `regions.js`         | Regions in body order, each with its spots. A spot lists the cause ids to offer and an optional warning.                                                                      |
 | `causes/<region>.js` | Causes. `kind: "plan"` has `title`, `desc`, `name`, `about`, `load`, `local` exercises and a `chain`. `kind: "refer"` has `urgency` (`today`/`soon`) and `meanwhile` instead. |
-| `links.js`           | The ten weak links (stride, trunk, hip flexors, side hip, glutes, quads, hamstrings, calf, ankle, foot). Each owns one self-test and the exercises it adds.                   |
+| `links.js`           | The eleven weak links (stride, trunk, hip flexors, side hip, glutes, adductors, quads, hamstrings, calf, ankle, foot). Each owns one self-test and the exercises it adds.                   |
 | `tests.js`           | The 30-second self-tests, with what a weak (`pos`) and a fine (`neg`) result looks like. `load` is asked on every plan.                                                       |
 | `exercises.js`       | Exercise library with dose, how-to, rough minutes and an optional YouTube demo.                                                                                               |
 | `sources.js`         | Citations. Every cause cites at least two.                                                                                                                                    |

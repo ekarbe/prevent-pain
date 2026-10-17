@@ -18,7 +18,7 @@ export const returnToRun = {
       lead: "This is a common structure drawn from published return-to-running programmes, not a tested programme. Pass the checks, then build from walk-run intervals to 30 minutes of easy running, keeping to the pain rule throughout. If a session breaks the rule, drop back one step for a few days.",
       gates: [
         "Walk briskly for 30 minutes with pain no higher than 2/10 and no limp.",
-        "Hop 10 times on each leg with pain no higher than 2/10.",
+        "Hop 10 times on each leg with pain no higher than 2/10. If hopping hurts at one spot on a bone, or deep in the groin, buttock or low back, stop and get it checked first.",
         "Do 10 slow single-leg squats on each leg, knee staying over your 2nd toe, pain no higher than 2/10.",
         "Do at least 20 single-leg calf raises on each leg, the weaker side no more than about 10% behind.",
         "Tendon problem: you've done the holds and the slow strength stage within the pain rule.",
@@ -51,7 +51,7 @@ export const returnToRun = {
       lead: "Das ist ein gängiger Aufbau, abgeleitet aus veröffentlichten Programmen für den Wiedereinstieg, kein geprüftes Programm. Erst die Tests bestehen, dann vom Wechsel aus Gehen und Joggen bis zu 30 Minuten lockerem Dauerlauf steigern, immer innerhalb der Schmerzregel. Hält eine Einheit die Regel nicht ein, geh für ein paar Tage einen Schritt zurück.",
       gates: [
         "30 Minuten zügig gehen, mit Schmerzen von höchstens 2/10 und ohne zu hinken.",
-        "10-mal auf jedem Bein hüpfen, mit Schmerzen von höchstens 2/10.",
+        "10-mal auf jedem Bein hüpfen, mit Schmerzen von höchstens 2/10. Tut Hüpfen an einer Stelle am Knochen oder tief in der Leiste, im Gesäß oder im unteren Rücken weh, hör auf und lass es zuerst abklären.",
         "10 langsame einbeinige Kniebeugen pro Bein, das Knie bleibt über der 2. Zehe, Schmerzen höchstens 2/10.",
         "Mindestens 20-mal einbeiniges Wadenheben pro Bein, die schwächere Seite höchstens etwa 10 % dahinter.",
         "Bei Sehnenbeschwerden: Halteübungen und die Stufe mit langsamer Kraft innerhalb der Schmerzregel geschafft.",
@@ -402,7 +402,7 @@ export const prevent = {
       },
       {
         title: "What doesn't work on its own",
-        text: "In two large trials, online prevention advice on its own did not reduce injuries. The programmes that worked were active and specific, and in runners, supervised programmes did better in an after-the-fact sub-analysis. So make a plan: put your two strength sessions in your calendar, check long runs against the single-run rule, and redo your self-tests after 4 and 8 weeks to see your progress.",
+        text: "In two large trials, online prevention advice on its own did not reduce injuries. The programmes that worked were active and specific, and in runners, supervised programmes did better, though only in an analysis done after the fact. So make a plan: put your two strength sessions in your calendar, check long runs against the single-run rule, and redo your self-tests after 4 and 8 weeks to see your progress.",
       },
     ],
   },

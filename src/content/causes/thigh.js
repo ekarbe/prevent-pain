@@ -34,6 +34,13 @@ export default [
       ["trunk", 1],
     ],
     later: ["couch-stretch", "a-skips"],
+    exits: [
+      {
+        to: "apophyseal-avulsion-refer",
+        en: "Are you under 18, and did it start with a sudden pop high at the front of the thigh or hip during a sprint or kick?",
+        de: "Bist du unter 18 und hat es mit einem plötzlichen Knall oben vorn am Oberschenkel oder an der Hüfte beim Sprint oder Schuss begonnen?",
+      },
+    ],
     sources: ["mendiguchia2013", "bayer2017", "silbernagel2007"],
   },
   {
@@ -133,6 +140,11 @@ export default [
         to: "osteitis-pubis-refer",
         en: "Is the bony front of your pelvis tender to press, in the middle just above the genitals?",
         de: "Ist die knöcherne Vorderseite des Beckens mittig über dem Genitalbereich druckempfindlich?",
+      },
+      {
+        to: "scfe-refer",
+        en: "Are you under 18, with a limp or with groin, thigh or knee pain for over a week?",
+        de: "Bist du unter 18, mit Hinken oder Leisten-, Oberschenkel- oder Knieschmerzen seit über einer Woche?",
       },
     ],
     sources: [
@@ -303,7 +315,7 @@ export default [
         "The knock has crushed some muscle fibres against the thigh bone, and bleeding inside the muscle makes it tight and stiff. Keeping the knee bent as far as is comfortable, up to about 120° with the heel drawn toward your bottom, for most of the first 24 hours seems to shorten recovery (a loose elastic wrap can help hold it), and after that you gently win back knee bend first, then strength. Most bruised thighs heal well, but if a firm, painful lump is still there or growing after 2–3 weeks, see a doctor, because after a hard knock bone sometimes forms inside the muscle (myositis ossificans).",
       load: "Don't run for the first few days, and see a physio or doctor if you still can't bend the knee to a right angle after 24 hours. Once you walk without limping and can bend the knee nearly as far as on the other side, start with short, easy runs on flat ground within the pain rule, and bring back speed, hills and trails once a slow single-leg sit-to-stand feels as strong as on the other leg.",
       avoid:
-        "Skip massage, heat, alcohol and hard stretching for the first few days, never massage a firm lump, and go to an emergency department now if the thigh turns very tense and swollen with pain that keeps getting worse, or you can't bear weight on it.",
+        "Skip massage, heat, alcohol and hard stretching for the first few days, and never massage a firm lump.",
     },
     de: {
       title:
@@ -314,7 +326,7 @@ export default [
         "Der Stoß hat Muskelfasern gegen den Oberschenkelknochen gequetscht, und die Einblutung im Muskel macht ihn fest und steif. Hältst du das Knie in den ersten 24 Stunden möglichst durchgehend so weit gebeugt, wie es gut auszuhalten ist, bis etwa 120° mit der Ferse Richtung Gesäß, scheint das die Heilung zu verkürzen (eine locker gewickelte elastische Binde hilft, die Beugung zu halten). Danach holst du dir behutsam erst die Kniebeugung und dann die Kraft zurück. Meist heilt eine Prellung gut aus. Ist aber nach 2–3 Wochen noch eine feste, schmerzhafte Verhärtung da oder wird sie größer, lass das ärztlich abklären, denn nach einem harten Stoß bildet sich manchmal Knochen im Muskel (Myositis ossificans).",
       load: "In den ersten Tagen nicht laufen, und kannst du das Knie nach 24 Stunden noch nicht bis zum rechten Winkel beugen, lass es physiotherapeutisch oder ärztlich anschauen. Sobald du ohne Hinken gehst und das Knie fast so weit beugen kannst wie auf der anderen Seite, mit kurzen, lockeren Läufen auf flacher Strecke innerhalb der Schmerzregel beginnen. Tempo, Hügel und Trails erst wieder einbauen, wenn sich langsames einbeiniges Aufstehen vom Stuhl so kräftig anfühlt wie auf der anderen Seite.",
       avoid:
-        "Verzichte in den ersten Tagen auf Massage, Wärme, Alkohol und kräftiges Dehnen, massiere eine Verhärtung nie, und geh sofort in die Notaufnahme, wenn der Oberschenkel sehr prall und geschwollen wird und der Schmerz immer weiter zunimmt oder du das Bein nicht belasten kannst.",
+        "Verzichte in den ersten Tagen auf Massage, Wärme, Alkohol und kräftiges Dehnen und massiere eine Verhärtung nie.",
     },
     local: ["heel-slide", "wall-sit", "split-squat"],
     chain: [],
@@ -325,6 +337,7 @@ export default [
         de: "Bist du unter 18, mit Hinken seit über einer Woche oder zusätzlich Schmerzen in der Leiste?",
       },
     ],
+    warn: ["tense"],
     sources: ["aronen2006", "kary2010"],
   },
 ];

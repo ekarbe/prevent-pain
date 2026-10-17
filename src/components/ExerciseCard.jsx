@@ -66,7 +66,13 @@ function VideoEmbed({ video, name }) {
 }
 
 // The stage label only shows where the plan explains the ladder (its own exercises).
-export default function ExerciseCard({ id, later = false, showStage = false }) {
+export default function ExerciseCard({
+  id,
+  later = false,
+  showStage = false,
+  headingLevel = 3,
+}) {
+  const H = `h${headingLevel}`;
   const t = useT();
   const lang = useLang();
   const exercise = exercises[id];
@@ -74,12 +80,12 @@ export default function ExerciseCard({ id, later = false, showStage = false }) {
   return (
     <article className="card flex flex-col gap-2.5 p-3.5 text-[15px]">
       <header className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
-        <h3 className="flex-auto font-display text-[19px] leading-tight">
+        <H className="flex-auto font-display text-[19px] leading-tight">
           {showStage && exercise.stage ? (
-            <span className="label">{t.stage[exercise.stage]}</span>
+            <span className="label font-sans">{t.stage[exercise.stage]}</span>
           ) : null}
           {x.name}
-        </h3>
+        </H>
         <span className="rounded-full bg-accent-soft px-2.5 py-0.5 text-[13px] font-bold text-accent tabular-nums">
           {x.dose}
         </span>

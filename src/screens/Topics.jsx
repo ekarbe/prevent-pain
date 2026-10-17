@@ -20,7 +20,7 @@ export default function Topics({ route }) {
         {t.topicsStart}
         <ArrowRight className="size-[18px] flex-none" aria-hidden="true" />
       </Link>
-      <nav aria-label={t.topicsGuides} className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2">
         {["prevent", "return"].map((s) => (
           <Link
             key={s}
@@ -31,7 +31,7 @@ export default function Topics({ route }) {
             <ArrowRight className="size-5 flex-none" aria-hidden="true" />
           </Link>
         ))}
-      </nav>
+      </div>
       {regions.map((region) => (
         <section key={region.id} className="sec">
           <h2 className="sec-title">
@@ -61,7 +61,7 @@ export default function Topics({ route }) {
                       <li key={id}>
                         <Link
                           to={{ ...where, screen: "plan", cause: id }}
-                          className="inline-flex min-h-11 items-center text-[15px] text-accent underline decoration-1 underline-offset-2"
+                          className="inline-flex min-h-11 items-center py-2.5 text-[15px] text-accent underline decoration-1 underline-offset-2"
                         >
                           {pick(causes[id], lang).name}
                           {causes[id].youth ? ` (${t.youthMark})` : ""}

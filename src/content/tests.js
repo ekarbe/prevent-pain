@@ -6,13 +6,13 @@ export const tests = {
   cad: {
     en: {
       name: "Step-rate count",
-      how: "On an easy run, count each time your right foot lands for 30 seconds, then multiply by 4. The cut-off is only a rough guide, because step rate rises with speed and differs with leg length. In lab studies, raising your own rate by 5–10% lowered the load on the knees and hips.",
+      how: "On an easy run, count each time your right foot lands for 30 seconds, then multiply by 4. The cut-off is only a rough guide, because step rate rises with speed and differs with leg length. In lab studies, raising your own rate by 5% lowered the load on the knee, and by 10% on the hip too.",
       pos: "Under about 165 steps per minute",
       neg: "About 165 or more",
     },
     de: {
       name: "Schrittfrequenz zählen",
-      how: "Zähl bei einem lockeren Lauf 30 Sekunden lang, wie oft dein rechter Fuß aufsetzt, und nimm das mal 4. Die Grenze ist nur ein grober Richtwert, weil die Schrittfrequenz mit dem Tempo steigt und von der Beinlänge abhängt. In Laborstudien senkten 5–10 % mehr Schritte als die eigene Frequenz die Last auf Knie und Hüfte.",
+      how: "Zähl bei einem lockeren Lauf 30 Sekunden lang, wie oft dein rechter Fuß aufsetzt, und nimm das mal 4. Die Grenze ist nur ein grober Richtwert, weil die Schrittfrequenz mit dem Tempo steigt und von der Beinlänge abhängt. In Laborstudien senkte eine um 5 % höhere eigene Schrittfrequenz die Last auf das Knie, eine um 10 % höhere auch die auf die Hüfte.",
       pos: "Unter etwa 165 Schritten pro Minute",
       neg: "Etwa 165 oder mehr",
     },

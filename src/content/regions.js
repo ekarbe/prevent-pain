@@ -99,6 +99,7 @@ export const regions = [
           "hip-flexor",
           "hip-oa",
           "inguinal-groin",
+          "adductor-strain",
           "snapping-hip",
           "hip-joint-refer",
           "hip-bsi-refer",
@@ -205,6 +206,7 @@ export const regions = [
         causes: [
           "adductor-strain",
           "hip-bsi-refer",
+          "femur-bsi-refer",
           "pubic-ramus-bsi-refer",
           "scfe-refer",
         ],
@@ -227,7 +229,12 @@ export const regions = [
         de: {
           name: "Rückseite des Oberschenkels",
         },
-        causes: ["hamstring-strain", "hamstring-avulsion-refer"],
+        causes: [
+          "hamstring-strain",
+          "proximal-hamstring",
+          "hamstring-avulsion-refer",
+          "sciatica-refer",
+        ],
         warn: "tear",
       },
     ],
@@ -313,6 +320,7 @@ export const regions = [
           name: "Außenseite",
         },
         causes: ["itbs", "biceps-femoris-tendon", "ptfj-refer"],
+        warn: "twist",
       },
       {
         id: "back-of-knee",
@@ -331,11 +339,11 @@ export const regions = [
     id: "shin-calf",
     en: {
       name: "Shin & calf",
-      short: "Shin",
+      short: "Lower leg",
     },
     de: {
       name: "Schienbein & Wade",
-      short: "Schien­bein",
+      short: "Unter­schenkel",
     },
     spots: [
       {
@@ -371,7 +379,11 @@ export const regions = [
         de: {
           name: "Außenseite des Unterschenkels",
         },
-        causes: ["fibula-bsi-refer", "peroneal-nerve-refer"],
+        causes: [
+          "fibula-bsi-refer",
+          "compartment-refer",
+          "peroneal-nerve-refer",
+        ],
       },
       {
         id: "calf",
@@ -450,6 +462,7 @@ export const regions = [
           "severs",
           "achilles-rupture-refer",
         ],
+        warn: "rupture",
       },
       {
         id: "heel",

@@ -79,6 +79,7 @@ export default [
       load: "Sprünge, Sprints und steile Hügel vorerst weglassen. Lockere, flache Läufe sind innerhalb der Schmerzregel in Ordnung.",
     },
     local: ["spanish-squat", "slow-leg-press", "line-hops"],
+    later: ["line-hops"],
     chain: [
       [
         "ankle",
@@ -162,6 +163,7 @@ export default [
       load: "Lockere Läufe auf flachem Untergrund sind innerhalb der Schmerzregel meist in Ordnung. Steile Abstiege, Treppentraining und tiefe Kniebeugen oder Ausfallschritte vorerst weglassen und Bergabstücke in kurzen Abschnitten wieder einbauen, wenn das Knie am nächsten Morgen ruhig bleibt.",
     },
     local: ["wall-sit", "slow-leg-press", "hop-stick"],
+    later: ["hop-stick"],
     linkExercises: {
       glutes: ["single-leg-bridge", "glute-bridge"],
     },
@@ -381,7 +383,7 @@ export default [
         "With osteoarthritis the joint surfaces and the tissues around them change, and the knee gets achier, stiffer and less tolerant of sudden jumps in load. Running is not the enemy: in pooled studies, recreational runners had less hip and knee arthritis than inactive people, and in a large study of people over 50 who already had knee arthritis, those who chose to run had no more pain and no faster X-ray changes over 4 years than those who didn't. Guidelines put exercise first, and strength and balance work twice a week for at least 6–8 weeks often eases pain and makes running more comfortable.",
       load: "Keep running as long as it stays within the pain rule, ideally on alternate days and on flat, even or softer surfaces. During a flare, swap some runs for walk-run intervals or cycling rather than stopping altogether.",
       avoid:
-        "Don't run on a knee that is hot and swollen, locks or gives way, or hurts at night, and have it checked by a doctor first, the same day if you also feel feverish or unwell.",
+        "Don't run on a knee that locks, gives way or hurts at night, and have it checked by a doctor first. If it turns hot and swollen, or you feel feverish or unwell, get it seen the same day.",
     },
     de: {
       title:
@@ -392,7 +394,7 @@ export default [
         "Bei einer Arthrose verändern sich die Gelenkflächen und das umliegende Gewebe, und das Knie wird schmerzempfindlicher, steifer und verträgt plötzliche Belastungssprünge schlechter. Laufen ist nicht der Feind: In zusammengefassten Studien hatten Freizeitlaufende seltener Hüft- und Kniearthrose als inaktive Menschen, und in einer großen Studie mit Menschen über 50, die schon eine Kniearthrose hatten, zeigten diejenigen, die von sich aus liefen, über 4 Jahre weder mehr Schmerzen noch schnellere Veränderungen im Röntgenbild als die anderen. Leitlinien setzen Training an die erste Stelle, und Kraft- und Gleichgewichtsübungen zweimal pro Woche über mindestens 6–8 Wochen lindern oft die Schmerzen und machen das Laufen angenehmer.",
       load: "Lauf weiter, solange die Schmerzregel hält, am besten jeden zweiten Tag und auf flachem, ebenem oder weicherem Untergrund. Wenn das Knie gerade aufflammt, ersetze lieber einige Läufe durch Geh-Lauf-Intervalle oder Radfahren, statt ganz aufzuhören.",
       avoid:
-        "Lauf nicht mit einem Knie, das heiß und geschwollen ist, blockiert, wegknickt oder nachts wehtut, sondern lass es zuerst ärztlich abklären, noch am selben Tag, wenn du dich zusätzlich fiebrig oder krank fühlst.",
+        "Lauf nicht mit einem Knie, das blockiert, wegknickt oder nachts wehtut, sondern lass es zuerst ärztlich abklären. Wird es heiß und geschwollen oder fühlst du dich fiebrig oder krank, lass es noch am selben Tag untersuchen.",
     },
     local: ["single-leg-sit-to-stand", "step-up", "balance-reach"],
     chain: [
@@ -410,7 +412,7 @@ export default [
         2,
         {
           en: "Balance and control drills are a core part of structured knee arthritis programmes, because a steadier leg lands more smoothly and twists less.",
-          de: "Gleichgewichts- und Kontrollübungen sind ein Kernstück strukturierter Programme bei Kniearthrose, denn ein stabileres Bein landet ruhiger und verdreht weniger.",
+          de: "Gleichgewichts- und Kontrollübungen sind ein Kernstück strukturierter Programme bei Kniearthrose, denn ein stabileres Bein landet ruhiger und verdreht sich weniger.",
         },
       ],
       ["stride", 1],
@@ -445,7 +447,7 @@ export default [
     },
     de: {
       title:
-        "Druckschmerz am Knochen unter der Kniescheibe beim Springen und Knien",
+        "Schmerzende Knochenstelle unter der Kniescheibe beim Laufen, Springen oder Knien",
       desc: "Für Laufende im Wachstum, etwa 9–15 Jahre: Eine Knochenbeule oben am Schienbein oder die untere Spitze der Kniescheibe tut auf Druck weh und kann geschwollen aussehen. Laufen, Springen, Treppen und Knien tun weh, in Ruhe wird es besser.",
       name: "Morbus Osgood-Schlatter oder Sinding-Larsen-Johansson-Syndrom (gereizte Wachstumszone am Knie)",
       about:
@@ -537,7 +539,7 @@ export default [
       desc: "Sore along the inner edge of the kneecap, with a click, catch or snap as the knee bends and straightens, often worse after long sitting, cycling or lots of squatting. Unlike a meniscus problem, it sits above the joint gap and usually didn't start with a twist or swelling.",
       name: "Medial plica syndrome (irritated fold in the knee lining)",
       about:
-        "A plica is a normal fold in the knee's lining, and on the inner side it can thicken and get irritated by lots of repeated bending, so it catches over the thigh bone. Most people do well with the same strength and load programme used for kneecap pain, and in pooled studies this kind of conservative care did about as well as keyhole surgery after 1–2 years. If painful snapping is still there after about 3 months of steady work, see a sports doctor or orthopaedic specialist.",
+        "A plica is a normal fold in the knee's lining, and on the inner side it can thicken and get irritated by lots of repeated bending, so it catches over the thigh bone. Most people do well with the same strength and load programme used for kneecap pain, and in pooled studies this kind of care without surgery did about as well as keyhole surgery after 1–2 years. If painful snapping is still there after about 3 months of steady work, see a sports doctor or orthopaedic specialist.",
       load: "Keep easy runs on flat ground within the pain rule. For a few weeks, cut back on things that bend the knee a lot over and over, such as hills, deep squats, long stair sessions or a bike saddle set too low.",
       avoid:
         "Skip deep squats and long spells of kneeling or sitting with the knee sharply bent for now, because deep bending makes the fold catch.",
@@ -583,7 +585,7 @@ export default [
         "The strong ligament on the inner side of the knee has been overstretched, with mild to moderate damage to some of its fibres. Mild and moderate sprains usually heal well without surgery, with gradual loading and strength work. In older studies athletes were back after about 10 days with a mild sprain and about 3 weeks with a moderate one, so expect weeks rather than months.",
       load: "Walking and cycling are fine as soon as they're comfortable, and you can start short, easy runs on flat, even ground once walking is pain-free and a gentle hop doesn't hurt. Bring back trails, cambered roads and sharp turns last.",
       avoid:
-        "Skip twisting, pivoting and side-to-side drills for now, and get the knee checked within a few days if it gives way or you felt a pop when it happened, because another ligament may be hurt as well.",
+        "Skip twisting, pivoting and side-to-side drills for now, and get the knee checked within a few days if it gives way or you felt a pop when it happened, because another ligament may be hurt as well. If you're under 18 and still growing, get it checked within a few days anyway, because at that age the growth plate right next to the ligament can be hurt instead.",
     },
     de: {
       title:
@@ -594,7 +596,7 @@ export default [
         "Das kräftige Band an der Innenseite des Knies wurde überdehnt, wobei ein Teil seiner Fasern leicht bis mäßig verletzt ist. Leichte und mittlere Verletzungen heilen meist gut ohne Operation, mit schrittweiser Belastung und Krafttraining. In älteren Studien dauerte die Rückkehr zum Sport bei einer leichten Zerrung etwa 10 Tage und bei einer mittleren etwa 3 Wochen, rechne also eher mit Wochen als mit Monaten.",
       load: "Gehen und Radfahren sind in Ordnung, sobald sie sich gut anfühlen, und mit kurzen, lockeren Läufen auf flachem, ebenem Untergrund kannst du beginnen, wenn Gehen schmerzfrei ist und ein vorsichtiger Hüpfer nicht wehtut. Trails, Wege mit Seitenneigung und enge Kurven kommen zuletzt zurück.",
       avoid:
-        "Drehbewegungen, Richtungswechsel und seitliche Sprünge vorerst weglassen, und lass das Knie innerhalb weniger Tage abklären, wenn es wegknickt oder du bei der Verletzung einen Knall gespürt hast, weil dann auch ein anderes Band verletzt sein kann.",
+        "Drehbewegungen, Richtungswechsel und seitliche Sprünge vorerst weglassen, und lass das Knie innerhalb weniger Tage abklären, wenn es wegknickt oder du bei der Verletzung einen Knall gespürt hast, weil dann auch ein anderes Band verletzt sein kann. Bist du unter 18 und noch im Wachstum, lass es in jedem Fall innerhalb weniger Tage abklären, weil in diesem Alter statt des Bands auch die Wachstumsfuge direkt daneben verletzt sein kann.",
     },
     local: ["wall-sit", "step-up", "balance-reach", "hop-stick"],
     later: ["hop-stick", "side-plank"],
@@ -763,7 +765,7 @@ export default [
       about:
         "Near the end of your growth spurt, the growth area at the top of the shin where the kneecap tendon attaches can be weaker than the tendon, and one very hard pull of the thigh muscle can tear off a piece of bone there. It's rare, mostly affects teenage boys during sport, especially jumping, and can happen with or without earlier Osgood-Schlatter pain. It needs an X-ray today, and the piece usually has to be fixed back in place with an operation, but the outlook is good: in one large review almost every bone healed and nearly all teens in the studies that checked got back to sport, although some needed a second operation later.",
       meanwhile:
-        "Stop sport straight away, don't try to walk it off, and get to an emergency department today with a parent. Keep the leg as still as you can, straight or slightly bent, whichever is more comfortable, and use crutches or get help to move. Ice wrapped in a cloth can ease the pain. If the shin below the knee swells up tight, the pain keeps getting worse even when you keep still, or your foot tingles, goes numb or turns pale or cold, tell the staff at once or call emergency services.",
+        "Stop sport straight away, don't try to walk it off, and go to an emergency department now with a parent. Keep the leg as still as you can, straight or slightly bent, whichever is more comfortable, and use crutches or get help to move. Ice wrapped in a cloth can ease the pain. If the shin below the knee swells up tight, the pain keeps getting worse even when you keep still, or your foot tingles, goes numb or turns pale or cold, call emergency services, or tell the staff at once if you're already there.",
       avoid:
         "Don't force the knee straight, kneel on it or test it with jumps until an X-ray has checked the bone.",
     },
@@ -775,7 +777,7 @@ export default [
       about:
         "Gegen Ende des Wachstumsschubs kann die Wachstumszone oben am Schienbein, an der die Kniescheibensehne ansetzt, schwächer sein als die Sehne selbst, und ein einziger sehr kräftiger Zug des Oberschenkelmuskels kann dort ein Knochenstück abreißen. Das ist selten, betrifft vor allem Jungen im Teenageralter beim Sport, besonders beim Springen, und kann mit oder ohne frühere Osgood-Schlatter-Beschwerden auftreten. Es braucht heute noch ein Röntgenbild, und meist muss das Knochenstück operativ wieder befestigt werden, die Aussichten sind aber gut: In einer großen Übersichtsarbeit heilte fast jeder Knochen, und fast alle Jugendlichen in den Studien, die das erfasst hatten, kehrten zum Sport zurück, manche brauchten allerdings später eine zweite Operation.",
       meanwhile:
-        "Hör sofort mit dem Sport auf, lauf nicht weiter und lass dich heute noch von einem Elternteil in die Notaufnahme bringen. Halte das Bein möglichst ruhig, gestreckt oder leicht gebeugt, je nachdem, was angenehmer ist, und nimm Unterarmgehstützen oder lass dir helfen. Kühlen mit in ein Tuch gewickeltem Eis kann den Schmerz lindern. Schwillt das Schienbein unter dem Knie prall an, wird der Schmerz auch in Ruhe immer stärker oder kribbelt dein Fuß, wird er taub, blass oder kalt, sag sofort dem Personal Bescheid oder wähl den Notruf 112.",
+        "Hör sofort mit dem Sport auf, lauf nicht weiter und lass dich gleich von einem Elternteil in die Notaufnahme bringen. Halte das Bein möglichst ruhig, gestreckt oder leicht gebeugt, je nachdem, was angenehmer ist, und nimm Unterarmgehstützen oder lass dir helfen. Kühlen mit in ein Tuch gewickeltem Eis kann den Schmerz lindern. Schwillt das Schienbein unter dem Knie prall an, wird der Schmerz auch in Ruhe immer stärker oder kribbelt dein Fuß, wird er taub, blass oder kalt, wähl den Notruf 112, oder sag sofort dem Personal Bescheid, wenn du schon dort bist.",
       avoid:
         "Zwing das Knie nicht in die Streckung, knie nicht darauf und teste es nicht mit Sprüngen, bis ein Röntgenbild den Knochen geprüft hat.",
     },

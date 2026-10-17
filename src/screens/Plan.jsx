@@ -24,6 +24,7 @@ import PainScale from "../components/PainScale.jsx";
 import ExerciseCard from "../components/ExerciseCard.jsx";
 import { ChainStrip, SuspectCard, TestAnswer } from "../components/Chain.jsx";
 import Link from "../components/Link.jsx";
+import { href } from "../lib/useRoute.js";
 import ReturnSteps from "../components/ReturnSteps.jsx";
 import Sources from "../components/Sources.jsx";
 
@@ -128,12 +129,13 @@ function ReturnSection({ variant, lead, n, route }) {
         <div className="mt-3 flex flex-col gap-3">
           <p className="text-[15px]">{steps.lead}</p>
           <ReturnSteps steps={steps} />
-          <Link
-            to={{ ...route, screen: "return" }}
+          {/* A plain link to the matching version on the guide page; the pre-rendered page scrolls to it. */}
+          <a
+            href={`${href({ ...route, screen: "return" })}#${variant}`}
             className="inline-flex min-h-11 items-center gap-1 text-[15px] text-accent underline underline-offset-2"
           >
             {t.rtrMore}
-          </Link>
+          </a>
         </div>
       </details>
     </section>
@@ -180,6 +182,7 @@ function Refer({ cause, eyebrow, route }) {
       <p className="lead">{t.referLead}</p>
       <div className="card flex flex-col gap-2 p-4 text-[15px]">
         <p className="font-display text-[19px] leading-tight">{c.title}</p>
+        <p className="text-ink-2">{c.desc}</p>
         <p className="text-[13px] text-ink-2">
           <span className="mr-1 font-bold tracking-[0.03em]">{t.medName}</span>
           {c.name}
@@ -236,15 +239,22 @@ export default function Plan({ route, go, notify }) {
   };
   const ranked = rankChain(cause.chain, results, links);
   const week = weekPlan(cause, results, links);
+  const stages = cause.local.map((id) => exercises[id].stage).filter(Boolean);
+  const ladder = new Set(stages).size > 1;
+  // On a ladder, the plan's own exercises above its first stage come in later, stage by stage.
+  const stageAhead = (it) =>
+    ladder &&
+    !it.from &&
+    !it.later &&
+    exercises[it.id].stage > Math.min(...stages)
+      ? exercises[it.id].stage
+      : 0;
   const minutes = week
-    .filter((it) => !it.later)
+    .filter((it) => !it.later && !stageAhead(it))
     .reduce((sum, it) => sum + exercises[it.id].min, 0);
   const anyWeak = cause.chain.some(([id]) => results[links[id].test] === "pos");
   const anyOpen = cause.chain.some(([id]) => !results[links[id].test]);
   const hasChain = cause.chain.length > 0;
-  const ladder =
-    new Set(cause.local.map((id) => exercises[id].stage).filter(Boolean)).size >
-    1;
   const rtr = cause.rtr || "standard";
   // A card without exercises or weak links has no week to show, only the share button.
   const showWeek = week.length > 0 || hasChain;
@@ -354,9 +364,11 @@ export default function Plan({ route, go, notify }) {
                   <span className="min-w-[3.5em] text-right text-[13px] text-ink-2 tabular-nums">
                     {it.later
                       ? t.later
-                      : exercises[it.id].min
-                        ? `${exercises[it.id].min} ${t.min}`
-                        : t.duringRuns}
+                      : stageAhead(it)
+                        ? t.stageShort(stageAhead(it))
+                        : exercises[it.id].min
+                          ? `${exercises[it.id].min} ${t.min}`
+                          : t.duringRuns}
                   </span>
                 </li>
               ))}

@@ -588,12 +588,12 @@ export const exercises = {
     en: {
       name: "Hop and stick",
       dose: "3 × 8 per side",
-      how: "Start once you can stand steadily on that leg for 30 seconds without pain. Hop about 30 cm forward, land softly and hold still for 3 seconds with the knee over your toes. When that feels solid, hop sideways and diagonally, then a little farther.",
+      how: "Start once you can stand steadily on that leg for 30 seconds without pain, and for a tendon problem only once heavy, slow strength work feels easy within the pain rule. Hop about 30 cm forward, land softly and hold still for 3 seconds with the knee over your toes. When that feels solid, hop sideways and diagonally, then a little farther.",
     },
     de: {
       name: "Hüpfen und Landung halten",
       dose: "3 × 8 pro Seite",
-      how: "Erst beginnen, wenn du 30 Sekunden ruhig und schmerzfrei auf dem Bein stehen kannst. Etwa 30 cm nach vorn hüpfen, weich landen und 3 Sekunden ruhig stehen bleiben, das Knie bleibt über den Zehen. Klappt das sicher, zur Seite und schräg hüpfen, dann etwas weiter.",
+      how: "Erst beginnen, wenn du 30 Sekunden ruhig und schmerzfrei auf dem Bein stehen kannst, bei Sehnenbeschwerden erst, wenn sich das schwere, langsame Krafttraining innerhalb der Schmerzregel leicht anfühlt. Etwa 30 cm nach vorn hüpfen, weich landen und 3 Sekunden ruhig stehen bleiben, das Knie bleibt über den Zehen. Klappt das sicher, zur Seite und schräg hüpfen, dann etwas weiter.",
     },
   },
   "wall-calf-stretch": {

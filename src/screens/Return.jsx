@@ -9,17 +9,16 @@ const VARIANTS = ["standard", "bone", "calf", "postpartum"];
 export default function Return() {
   const t = useT();
   const lang = useLang();
-  const [first, ...rest] = VARIANTS.map((v) => pick(returnToRun[v], lang));
+  const all = VARIANTS.map((v) => ({ id: v, ...pick(returnToRun[v], lang) }));
 
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col gap-4 pt-3">
       <h1 tabIndex={-1} className="page-title">
         {t.titles.return}
       </h1>
-      <p className="lead">{first.lead}</p>
-      <ReturnSteps steps={first} headingLevel={2} />
-      {rest.map((steps) => (
-        <section key={steps.title} className="sec">
+      <p className="lead">{t.meta.return}</p>
+      {all.map((steps) => (
+        <section key={steps.id} id={steps.id} className="sec">
           <h2 className="sec-title">{steps.title}</h2>
           <p className="text-[15px]">{steps.lead}</p>
           <ReturnSteps steps={steps} />

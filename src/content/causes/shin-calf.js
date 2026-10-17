@@ -65,7 +65,7 @@ export default [
       desc: "Tender in one spot on the inner or front edge of the bone, smaller than about 5 cm. Hopping on that leg hurts, and it can ache when you walk, at rest or at night. It often builds over a few weeks of more running.",
       name: "Tibial bone stress injury (stress reaction or stress fracture)",
       about:
-        "This pattern can mean the shinbone has been loaded faster than it could rebuild, which can range from a stress reaction to a small crack. Caught early, a sore spot on the inner edge usually heals with less load and a gradual return, and many runners are running again within about 6–8 weeks, sometimes longer, but running through it can make it worse. A spot on the sharp front ridge of the shin, usually in the middle third and worse when you jump, is a higher-risk type: it heals slowly and can need 4–6 months of relative rest or sometimes surgery, so a doctor should see it within days.",
+        "This pattern can mean the shinbone has been loaded faster than it could rebuild, which can range from a stress reaction to a small crack. Caught early, a sore spot on the inner edge usually heals with less load and a gradual return, and many runners are running again within about 6–8 weeks, sometimes longer, but running through it can make it worse. A spot on the sharp front ridge of the shin, usually in the middle third and worse when you jump, is a higher-risk type: it heals slowly and can need 4–6 months without running or jumping or sometimes surgery, so a doctor should see it within days.",
       meanwhile:
         "Stop running and avoid hopping and jumping until a doctor or physio has seen you. Walking is fine if it doesn't hurt, and cycling, swimming or pool running keep you fit if they're pain-free. If even normal walking hurts, see a doctor within a day or two. Tell them about any recent jump in training, earlier stress injuries, eating too little or missed periods.",
     },
@@ -247,6 +247,7 @@ export default [
       },
     ],
     rtr: "calf",
+    warn: ["clot"],
     sources: ["green2017", "green2022", "green2020", "bayer2017", "dixon2009"],
   },
   {
@@ -395,7 +396,7 @@ export default [
         "A cramp is a sudden, involuntary contraction that won't let go. The old idea that it's mainly about losing water and salt is disputed: tired muscles, running faster or longer than you've trained for, and having had cramps before seem to matter at least as much. When one hits, stop and gently stretch the muscle until it releases, as in the calf stretch below; to prevent the next one, look at your own pattern rather than simply drinking more.",
       load: "Keep running as usual. If cramps keep striking late in long runs or races, build your long runs and race-pace sessions up more gradually, start races at a pace you've actually trained for, and add calf strength work twice a week.",
       avoid:
-        "Skip running and see a doctor if cramps keep coming at rest or with muscle weakness, or started after a new medicine such as a statin. Dark, cola-coloured urine after a hard run needs a doctor the same day, and confusion, vomiting or collapse during or after a race means calling emergency services now.",
+        "Skip running and see a doctor if cramps keep coming at rest or with muscle weakness, or started after a new medicine such as a statin.",
     },
     de: {
       title:
@@ -406,7 +407,7 @@ export default [
         "Ein Krampf ist eine plötzliche, unwillkürliche Muskelanspannung, die nicht loslässt. Die alte Vorstellung, dass vor allem Flüssigkeits- und Salzverlust dahinterstecken, ist umstritten: Ermüdete Muskeln, ein schnelleres oder längeres Rennen als im Training und frühere Krämpfe scheinen mindestens genauso wichtig zu sein. Kommt ein Krampf, bleib stehen und dehne den Muskel sanft, bis er sich löst, so wie bei der Wadendehnung unten. Um dem nächsten vorzubeugen, schau dir dein eigenes Muster an, statt einfach mehr zu trinken.",
       load: "Lauf ganz normal weiter. Kommen die Krämpfe immer wieder spät in langen Läufen oder Rennen, steigere lange Läufe und Einheiten im Renntempo behutsamer, geh Rennen in einem Tempo an, das du im Training auch gelaufen bist, und mach zweimal pro Woche Krafttraining für die Waden.",
       avoid:
-        "Pausiere mit dem Laufen und lass es ärztlich abklären, wenn Krämpfe immer wieder in Ruhe oder mit Muskelschwäche kommen oder nach einem neuen Medikament wie einem Statin begonnen haben. Dunkler, colafarbener Urin nach einem harten Lauf gehört noch am selben Tag in ärztliche Hände, und bei Verwirrtheit, Erbrechen oder einem Zusammenbruch während oder nach einem Rennen sofort den Notruf 112 wählen.",
+        "Pausiere mit dem Laufen und lass es ärztlich abklären, wenn Krämpfe immer wieder in Ruhe oder mit Muskelschwäche kommen oder nach einem neuen Medikament wie einem Statin begonnen haben.",
     },
     local: ["calf-raise", "bent-knee-raise", "wall-calf-stretch"],
     chain: [],
@@ -418,6 +419,7 @@ export default [
       },
     ],
     rtr: "none",
+    warn: ["collapse"],
     sources: ["miller2022", "schwellnus2011"],
   },
   {
@@ -463,7 +465,7 @@ export default [
         "Stop running and avoid hopping and jumping until a doctor or physio has seen you, ideally within a few days. Walking is fine if it doesn't hurt, and cycling, swimming or pool running keep you fit if they're pain-free. If even normal walking hurts, see a doctor within a day or two. Tell them about any recent jump in training, earlier stress injuries, eating too little or missed periods.",
     },
     de: {
-      title: "Punktueller Schmerz am Wadenbein, schlimmer beim Hüpfen",
+      title: "Punktueller Schmerz unten am Wadenbein, schlimmer beim Hüpfen",
       desc: "Eine Stelle am Knochen, meist etwa eine Handbreit über dem Außenknöchel, ist druckempfindlich, und Hüpfen auf dem Bein tut weh. Es wird von Lauf zu Lauf schlimmer, kann beim Gehen schmerzen und folgt oft auf eine Trainingssteigerung. Kribbeln oder Taubheit ohne druckschmerzhafte Stelle am Knochen sprechen eher für einen Nerv.",
       name: "Knochenstressverletzung am Wadenbein (Stressreaktion oder Ermüdungsbruch der Fibula)",
       about:
@@ -474,8 +476,8 @@ export default [
     exits: [
       {
         to: "ankle-fracture-refer",
-        en: "Did it start with a twist or fall, and were you unable to take 4 steps right after it?",
-        de: "Hat es mit einem Umknicken oder Sturz begonnen, und konntest du danach keine 4 Schritte gehen?",
+        en: "Did it start suddenly with a twist or fall, rather than building up over weeks of running?",
+        de: "Hat es plötzlich mit einem Umknicken oder Sturz begonnen, statt sich über Wochen beim Laufen aufzubauen?",
       },
     ],
     warn: ["fuel"],
@@ -493,7 +495,7 @@ export default [
       about:
         "A small nerve that supplies the skin of the foot can be squeezed where it comes through the tough tissue of the outer lower leg, often about 10 cm above the ankle, or pressed from outside by laces, a shoe tongue or tight socks. The nerve along the outer edge of the foot (sural nerve), and higher up the nerve that wraps around the outer knee, can be irritated in a similar way. A sports physio or doctor can usually tell from an exam; taking pressure off the nerve is the first step, and if it keeps coming back, a doctor can discuss other options, including an operation.",
       meanwhile:
-        "Book a sports physio or doctor within the next 1–3 weeks. Until then, loosen your laces or skip the eyelets over the sore area, choose socks and shoes that don't press there, avoid crossing your legs, and shorten runs that bring it on. If your foot starts to slap, drag or catch the toes, the numbness spreads or both legs are affected, see a doctor within a day or two.",
+        "Book a sports physio or doctor within the next 1–3 weeks. Until then, loosen your laces or skip the eyelets over the sore area, choose socks and shoes that don't press there, avoid crossing your legs, and shorten runs that bring it on. If your foot starts to slap, drag or catch the toes, the numbness spreads or both legs are affected, see a doctor within a day or two. If both legs get weak, or you notice numbness around the groin or buttocks or new trouble with your bladder or bowel, go to an emergency department now.",
     },
     de: {
       title:
@@ -503,7 +505,7 @@ export default [
       about:
         "Ein kleiner Hautnerv des Fußes kann eingeengt werden, wo er außen am Unterschenkel durch die straffe Muskelhülle tritt, oft etwa 10 cm über dem Knöchel, oder von außen durch Schnürsenkel, Schuhzunge oder enge Socken gedrückt werden. Ähnlich gereizt werden können der Nerv an der Fußaußenkante (Nervus suralis) und weiter oben der Nerv, der sich außen unterhalb des Knies um das Wadenbeinköpfchen windet. In der Physiotherapie oder sportmedizinischen Praxis lässt sich das meist durch eine Untersuchung klären. Der erste Schritt ist, den Druck vom Nerv zu nehmen, und kommt es immer wieder, kann eine Ärztin oder ein Arzt mit dir weitere Möglichkeiten besprechen, bis hin zu einer Operation.",
       meanwhile:
-        "Vereinbare innerhalb der nächsten 1–3 Wochen einen Termin in der Physiotherapie oder sportmedizinischen Praxis. Bis dahin locker schnüren oder die Ösen über der empfindlichen Stelle auslassen, Socken und Schuhe wählen, die dort nicht drücken, die Beine nicht übereinanderschlagen und Läufe verkürzen, die es auslösen. Beginnt dein Fuß aufzuklatschen, zu schleifen oder mit den Zehen hängen zu bleiben, breitet sich die Taubheit aus oder sind beide Beine betroffen, lass dich innerhalb von ein bis zwei Tagen ärztlich untersuchen.",
+        "Vereinbare innerhalb der nächsten 1–3 Wochen einen Termin in der Physiotherapie oder sportmedizinischen Praxis. Bis dahin locker schnüren oder die Ösen über der empfindlichen Stelle auslassen, Socken und Schuhe wählen, die dort nicht drücken, die Beine nicht übereinanderschlagen und Läufe verkürzen, die es auslösen. Beginnt dein Fuß aufzuklatschen, zu schleifen oder mit den Zehen hängen zu bleiben, breitet sich die Taubheit aus oder sind beide Beine betroffen, lass dich innerhalb von ein bis zwei Tagen ärztlich untersuchen. Werden beide Beine schwach, oder bemerkst du Taubheit im Schritt- oder Gesäßbereich oder neue Probleme mit Blase oder Darm, geh sofort in die Notaufnahme.",
     },
     exits: [
       {

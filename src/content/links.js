@@ -44,7 +44,7 @@ export const links = {
     },
     de: {
       name: "Beweglichkeit der Hüftbeuger",
-      short: "Hüftbeuger",
+      short: "Hüft­beuger",
       why: "Verkürzte Hüftbeuger kippen das Becken nach vorn und verkürzen den Schritt nach hinten. Das belastet den unteren Rücken und die Vorderseite der Hüfte.",
     },
   },
@@ -59,7 +59,7 @@ export const links = {
     },
     de: {
       name: "Seitliche Hüftkraft (Gluteus medius)",
-      short: "Hüftseite",
+      short: "Hüft­seite",
       why: "Halten die seitlichen Hüftmuskeln das Becken nicht stabil, sinkt der Oberschenkel bei jedem Schritt nach innen. Diese Drehung wandert nach unten ins Knie und nach oben in den Rücken.",
     },
   },
@@ -89,7 +89,7 @@ export const links = {
     },
     de: {
       name: "Kraft der vorderen Oberschenkel",
-      short: "Quadrizeps",
+      short: "Quadri­zeps",
       why: "Die vorderen Oberschenkel bremsen jede Landung ab. Ermüden sie früh, fangen Kniegelenk und Sehnen mehr Stoß ab.",
     },
   },

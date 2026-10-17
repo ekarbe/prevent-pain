@@ -67,6 +67,11 @@ export default [
         en: "Has it lasted over 3 months, with more than 30 minutes of stiffness each morning that eases as you move?",
         de: "Hast du seit über 3 Monaten jeden Morgen über 30 Minuten einen steifen Rücken, der in Bewegung besser wird?",
       },
+      {
+        to: "sciatica-refer",
+        en: "Does pain shoot below the knee, or do you have numbness, tingling or weakness in the leg?",
+        de: "Schießt der Schmerz bis unter das Knie, oder hast du Taubheit, Kribbeln oder Schwäche im Bein?",
+      },
     ],
     sources: ["oliveira2018", "belavy2017", "nielsen2012", "silbernagel2007"],
   },
@@ -122,8 +127,13 @@ export default [
       },
       {
         to: "inflammatory-back-refer",
-        en: "Has it lasted over 3 months, and are you stiff for over 30 minutes each morning or does it switch sides?",
+        en: "Has it lasted over 3 months, with over 30 minutes of stiffness each morning or pain that switches sides?",
         de: "Seit über 3 Monaten: Bist du morgens über 30 Minuten steif, oder wechselt der Schmerz die Seite?",
+      },
+      {
+        to: "sciatica-refer",
+        en: "Does pain shoot below the knee, or do you have numbness, tingling or weakness in the leg?",
+        de: "Schießt der Schmerz bis unter das Knie, oder hast du Taubheit, Kribbeln oder Schwäche im Bein?",
       },
     ],
     sources: ["cohen2005", "warden2014", "hoenig2022", "silbernagel2007"],
@@ -230,7 +240,7 @@ export default [
     },
     de: {
       title:
-        "Steifer, schmerzender unterer Rücken seit Monaten, besser in Bewegung",
+        "Seit Monaten steifer, schmerzender unterer Rücken, schlimmer nach Ruhe, besser in Bewegung",
       desc: "Die Schmerzen haben angefangen, bevor du etwa 45 warst, bestehen seit mehr als 3 Monaten, und morgens bist du länger als 30 Minuten steif. Anders als bei einem vom Training strapazierten Rücken kamen sie schleichend ohne klaren Auslöser, werden durch Ruhe nicht besser, wohl aber durch Bewegung, können dich in der zweiten Nachthälfte wecken und tief in einer Gesäßhälfte sitzen, mal links, mal rechts.",
       name: "Entzündlicher Rückenschmerz (mögliche axiale Spondyloarthritis, z. B. Morbus Bechterew)",
       about:
