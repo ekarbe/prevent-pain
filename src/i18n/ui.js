@@ -197,7 +197,7 @@ export const ui = {
     avoidLabel: "Skip for now",
     stage: {
       1: "Stage 1 · Hold",
-      2: "Stage 2 · Heavy and slow",
+      2: "Stage 2 · Slow strength",
       3: "Stage 3 · Springy",
     },
     ladder:
@@ -424,7 +424,7 @@ export const ui = {
     avoidLabel: "Vorerst weglassen",
     stage: {
       1: "Stufe 1 · Halten",
-      2: "Stufe 2 · Schwer und langsam",
+      2: "Stufe 2 · Langsame Kraft",
       3: "Stufe 3 · Federnd",
     },
     ladder:

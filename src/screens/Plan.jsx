@@ -68,8 +68,8 @@ function Exits({ cause, route }) {
       </h2>
       <p>{t.exitsLead}</p>
       <ul className="flex flex-col divide-y divide-stop/20">
-        {exits.map((x) => (
-          <li key={x.to} className="flex flex-col gap-0.5 py-2">
+        {exits.map((x, i) => (
+          <li key={`${x.to}-${i}`} className="flex flex-col gap-0.5 py-2">
             <span>{pick(x, lang)}</span>
             <Link
               to={causeAt(route, x.to)}
@@ -300,6 +300,7 @@ export default function Plan({ route, go, notify }) {
               key={id}
               id={id}
               later={(cause.later || []).includes(id)}
+              showStage={ladder}
             />
           ))
         ) : (
