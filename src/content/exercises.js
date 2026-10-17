@@ -1,6 +1,7 @@
 // Exercise library. `min` is a rough session time (0 = done during runs).
 // `video` is a YouTube demo per language, loaded only after a tap: { en: { id, start?, title, channel }, de?: {…} }.
 // `stage` places tendon exercises on the loading ladder: 1 hold, 2 heavy and slow, 3 springy.
+// `stage` places tendon exercises on the loading ladder: 1 hold, 2 heavy and slow, 3 springy.
 export const exercises = {
   "wall-sit": {
     min: 10,

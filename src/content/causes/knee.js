@@ -226,6 +226,13 @@ export default [
         },
       ],
     ],
+    exits: [
+      {
+        to: "plateau-bsi-refer",
+        en: "Does the pain build run after run, ache even at rest, or hurt when you hop on that leg?",
+        de: "Wird der Schmerz von Lauf zu Lauf stärker, tut es auch in Ruhe weh oder schmerzt Hüpfen auf dem Bein?",
+      },
+    ],
     sources: [
       "powers2010",
       "heiderscheit2011",
@@ -414,6 +421,11 @@ export default [
         en: "Did it start with a twist, or does the knee get stuck so it won't fully straighten?",
         de: "Hat es mit einem Verdrehen angefangen, oder bleibt das Knie hängen und lässt sich nicht ganz strecken?",
       },
+      {
+        to: "plateau-bsi-refer",
+        en: "Does a spot on the bone just below the inner knee hurt when you hop, or does it ache at rest or at night?",
+        de: "Tut eine Stelle am Knochen knapp unter dem Knie innen beim Hüpfen weh, oder schmerzt sie in Ruhe oder nachts?",
+      },
     ],
     sources: ["bannuru2019", "skou2017", "alentorngeli2017", "lo2018"],
   },
@@ -449,6 +461,11 @@ export default [
       ["glutes", 2],
     ],
     exits: [
+      {
+        to: "tubercle-avulsion-refer",
+        en: "Did a sudden pop at the bony bump below your kneecap leave you unable to straighten the knee or walk normally?",
+        de: "Hat es an der Knochenbeule unter der Kniescheibe geknallt, und kannst du das Knie seitdem kaum strecken oder gehen?",
+      },
       {
         to: "scfe-refer",
         en: "Do you limp, or do your hip, groin or thigh hurt as well?",
@@ -602,9 +619,14 @@ export default [
     ],
     exits: [
       {
+        to: "acl-refer",
+        en: "When it happened, did you feel a pop, or did the knee swell up within a few hours or give way?",
+        de: "Hast du dabei einen Knall gespürt, oder ist das Knie innerhalb weniger Stunden dick geworden oder weggeknickt?",
+      },
+      {
         to: "meniscus-refer",
-        en: "Does the knee catch or lock, or did it swell up within a few hours?",
-        de: "Hakt oder blockiert das Knie, oder ist es innerhalb weniger Stunden dick geworden?",
+        en: "Does the knee catch, or lock so it won't fully straighten?",
+        de: "Hakt das Knie, oder blockiert es, sodass es sich nicht ganz strecken lässt?",
       },
       {
         to: "patellar-dislocation-refer",
@@ -693,5 +715,101 @@ export default [
         "Vereinbare innerhalb der nächsten 1–3 Wochen einen Termin in der Sportphysiotherapie oder sportmedizinischen Praxis. Bis dahin kannst du auf flachem, ebenem Untergrund weiterlaufen, solange die Schmerzregel hält und nichts klickt oder verrutscht, aber tiefe Kniebeugen, Drehbewegungen und seitliche Sprünge lässt du weg. Hat es mit einem Sturz begonnen und steht der Höcker jetzt sichtbar anders, oder werden Unterschenkelaußenseite oder Fuß taub oder schwach, lass es heute noch abklären.",
     },
     sources: ["curatolo2018", "silbernagel2007"],
+  },
+  {
+    id: "acl-refer",
+    kind: "refer",
+    urgency: "soon",
+    en: {
+      title: "Pop in the knee on a twist or fall, then swelling and giving way",
+      desc: "Happened in one moment, often a slip or fall on a trail, a twist on uneven ground or a sudden stop or turn, and the knee usually swelled up within a few hours. Since then it may feel loose or give way when you turn or step down, unlike an inner-knee sprain, which stays stable and barely swells, or a meniscus tear, which more often catches or locks.",
+      name: "Anterior cruciate ligament tear (torn ACL)",
+      about:
+        "This pattern can fit a tear of the ACL, the ligament in the middle of the knee that stops the shinbone sliding forward and twisting under the thigh, sometimes together with damage to a meniscus or another ligament. A physio or sports doctor can usually tell from a few hands-on tests whether it's likely and whether you need an MRI scan. Many people do well with a structured rehab programme first, and some later choose an operation to rebuild the ligament, especially if the knee keeps giving way or they want to get back to sports with lots of turning, so it's worth talking the options through.",
+      meanwhile:
+        "Stop running, jumping and sports with turns until you've been seen, ideally within a few days. Walk as much as is comfortable, with crutches if walking hurts, and gently bend and straighten the knee within comfort to keep it moving. Ice wrapped in a cloth and resting with the leg raised can ease the swelling. Get it seen today if the knee is locked so it won't straighten, you can't take 4 steps on it, or it swelled up big and tight within an hour or two.",
+      avoid:
+        "Skip twisting, pivoting and walking on rough, uneven ground until the knee has been checked, because each time it gives way it can further damage the meniscus or cartilage.",
+    },
+    de: {
+      title: "Knall im Knie beim Verdrehen oder Sturz, dann dick und instabil",
+      desc: "Passierte in einem Moment, oft beim Ausrutschen oder Sturz auf dem Trail, beim Verdrehen auf unebenem Boden oder bei einem abrupten Stopp oder Richtungswechsel, und das Knie ist meist innerhalb weniger Stunden angeschwollen. Seitdem fühlt es sich vielleicht wackelig an oder knickt beim Drehen oder Hinuntersteigen weg, anders als bei einer Innenbandzerrung, bei der das Knie stabil bleibt und kaum anschwillt, oder bei einem Meniskusriss, bei dem das Knie eher hakt oder blockiert.",
+      name: "Ruptur des vorderen Kreuzbands (Kreuzbandriss)",
+      about:
+        "Dieses Muster kann zu einem Riss des vorderen Kreuzbands passen, des Bandes in der Mitte des Knies, das verhindert, dass das Schienbein unter dem Oberschenkel nach vorn rutscht oder sich wegdreht, manchmal zusammen mit einer Verletzung des Meniskus oder eines anderen Bandes. In der Physiotherapie oder sportmedizinischen Praxis lässt sich mit ein paar Handgriffen meist klären, ob das wahrscheinlich ist und ob es ein MRT braucht. Viele kommen zunächst mit einem gezielten Rehaprogramm gut zurecht, und manche entscheiden sich später für eine Operation, bei der das Band ersetzt wird, vor allem wenn das Knie immer wieder wegknickt oder sie zu Sportarten mit vielen Richtungswechseln zurückwollen. Es lohnt sich also, die Möglichkeiten in Ruhe zu besprechen.",
+      meanwhile:
+        "Pausiere Laufen, Springen und Sport mit Richtungswechseln, bis du untersucht wurdest, am besten innerhalb weniger Tage. Geh so viel, wie es angenehm ist, bei Schmerzen mit Unterarmgehstützen, und beuge und strecke das Knie sanft im angenehmen Bereich, damit es beweglich bleibt. Kühlen mit in ein Tuch gewickeltem Eis und Hochlagern können die Schwellung lindern. Lass es heute noch abklären, wenn das Knie blockiert und sich nicht strecken lässt, du keine 4 Schritte darauf schaffst oder es innerhalb von ein, zwei Stunden stark und prall angeschwollen ist.",
+      avoid:
+        "Verzichte auf Drehbewegungen, Richtungswechsel und Gehen auf unebenem Gelände, bis das Knie untersucht ist, denn jedes Wegknicken kann Meniskus oder Knorpel zusätzlich schädigen.",
+    },
+    exits: [
+      {
+        to: "patellar-dislocation-refer",
+        en: "Did your kneecap slip out of place when it happened, even if it popped straight back?",
+        de: "Ist dir dabei die Kniescheibe herausgesprungen, auch wenn sie gleich zurückgerutscht ist?",
+      },
+    ],
+    sources: ["logerstedt2017", "filbay2019"],
+  },
+  {
+    id: "tubercle-avulsion-refer",
+    kind: "refer",
+    urgency: "today",
+    youth: true,
+    en: {
+      title: "Sudden pop below the kneecap on a jump, now hard to straighten",
+      desc: "You're under 18 and felt a sudden pop and sharp pain at the bony bump below your kneecap while taking off for a jump, landing or sprinting. The knee swells quickly, and straightening it, lifting the straight leg or walking is hard, unlike Osgood-Schlatter, which builds up slowly and lets you keep walking.",
+      name: "Tibial tubercle avulsion fracture (growth area below the kneecap pulled off)",
+      about:
+        "Near the end of your growth spurt, the growth area at the top of the shin where the kneecap tendon attaches can be weaker than the tendon, and one very hard pull of the thigh muscle can tear off a piece of bone there. It's rare, mostly affects teenage boys during sport, especially jumping, and can happen with or without earlier Osgood-Schlatter pain. It needs an X-ray today, and the piece usually has to be fixed back in place with an operation, but the outlook is good: in one large review almost every bone healed and nearly all teens in the studies that checked got back to sport, although some needed a second operation later.",
+      meanwhile:
+        "Stop sport straight away, don't try to walk it off, and get to an emergency department today with a parent. Keep the leg as still as you can, straight or slightly bent, whichever is more comfortable, and use crutches or get help to move. Ice wrapped in a cloth can ease the pain. If the shin below the knee swells up tight, the pain keeps getting worse even when you keep still, or your foot tingles, goes numb or turns pale or cold, tell the staff at once or call emergency services.",
+      avoid:
+        "Don't force the knee straight, kneel on it or test it with jumps until an X-ray has checked the bone.",
+    },
+    de: {
+      title:
+        "Knall unter der Kniescheibe beim Absprung, Knie kaum noch zu strecken",
+      desc: "Du bist unter 18 und hast beim Absprung, bei der Landung oder beim Sprinten plötzlich einen Knall und einen scharfen Schmerz an der Knochenbeule unter der Kniescheibe gespürt. Das Knie schwillt schnell an, und es fällt dir schwer, es zu strecken, das gestreckte Bein anzuheben oder zu gehen, anders als bei Osgood-Schlatter, das sich langsam aufbaut und bei dem du weiter gehen kannst.",
+      name: "Ausrissfraktur der Tuberositas tibiae (Wachstumszone unter der Kniescheibe abgerissen)",
+      about:
+        "Gegen Ende des Wachstumsschubs kann die Wachstumszone oben am Schienbein, an der die Kniescheibensehne ansetzt, schwächer sein als die Sehne selbst, und ein einziger sehr kräftiger Zug des Oberschenkelmuskels kann dort ein Knochenstück abreißen. Das ist selten, betrifft vor allem Jungen im Teenageralter beim Sport, besonders beim Springen, und kann mit oder ohne frühere Osgood-Schlatter-Beschwerden auftreten. Es braucht heute noch ein Röntgenbild, und meist muss das Knochenstück operativ wieder befestigt werden, die Aussichten sind aber gut: In einer großen Übersichtsarbeit heilte fast jeder Knochen, und fast alle Jugendlichen in den Studien, die das erfasst hatten, kehrten zum Sport zurück, manche brauchten allerdings später eine zweite Operation.",
+      meanwhile:
+        "Hör sofort mit dem Sport auf, lauf nicht weiter und lass dich heute noch von einem Elternteil in die Notaufnahme bringen. Halte das Bein möglichst ruhig, gestreckt oder leicht gebeugt, je nachdem, was angenehmer ist, und nimm Unterarmgehstützen oder lass dir helfen. Kühlen mit in ein Tuch gewickeltem Eis kann den Schmerz lindern. Schwillt das Schienbein unter dem Knie prall an, wird der Schmerz auch in Ruhe immer stärker oder kribbelt dein Fuß, wird er taub, blass oder kalt, sag sofort dem Personal Bescheid oder wähl den Notruf 112.",
+      avoid:
+        "Zwing das Knie nicht in die Streckung, knie nicht darauf und teste es nicht mit Sprüngen, bis ein Röntgenbild den Knochen geprüft hat.",
+    },
+    sources: ["kalifis2023", "delosreyes2023"],
+  },
+  {
+    id: "plateau-bsi-refer",
+    kind: "refer",
+    urgency: "soon",
+    en: {
+      title:
+        "Ache on the bone just below the inner knee that builds run by run",
+      desc: "The bone just below the inner side of the knee joint is sore to press, hopping on that leg hurts there, and the ache builds during each run and then with walking too, often after more running or a new training block. Unlike knee arthritis it doesn't loosen up once you're moving, and unlike tendon pain in the same spot it gets worse from run to run and can ache at rest or at night.",
+      name: "Bone stress injury of the proximal tibia or medial tibial plateau (stress fracture just below the knee)",
+      about:
+        "This pattern can mean the top of the shinbone, just below the knee joint, has been loaded faster than it could rebuild, ranging from a stress reaction to a small crack. In older runners or those with thinner bones a crack can also form under fairly normal loads (an insufficiency fracture), and because early X-rays often look normal, it can be mistaken for a meniscus, tendon or arthritis problem until an MRI shows it. Caught early, it usually heals with less impact and a gradual return over weeks to a few months, and a doctor should also check your bone health and whether you eat enough for your training.",
+      meanwhile:
+        "Stop running and avoid hopping and jumping until a doctor or physio has seen you, ideally within a few days. Walking is fine if it doesn't hurt, and cycling or swimming keep you fit if they're pain-free. If even normal walking hurts or the knee aches at rest, see a doctor within a day or two and use crutches until then. Tell them about any recent jump in training, earlier stress fractures, low bone density, eating too little or missed periods.",
+      avoid:
+        "Skip deep squats, lunges and hopping until it has been checked, because they put a lot of load on the top of the shinbone.",
+    },
+    de: {
+      title: "Knochenschmerz innen unter dem Knie, der mit jedem Lauf zunimmt",
+      desc: "Der Knochen knapp unterhalb der Innenseite des Kniegelenks ist druckempfindlich, Hüpfen auf dem Bein tut dort weh, und der Schmerz nimmt bei jedem Lauf zu und später auch beim Gehen, oft nach mehr Laufen oder einem neuen Trainingsblock. Anders als bei einer Kniearthrose lässt er nicht nach, wenn du in Bewegung bist, und anders als ein Sehnenschmerz an derselben Stelle wird er von Lauf zu Lauf stärker und kann auch in Ruhe oder nachts wehtun.",
+      name: "Knochenstressverletzung am Tibiakopf oder medialen Tibiaplateau (Ermüdungsbruch knapp unter dem Knie)",
+      about:
+        "Dieses Muster kann bedeuten, dass das obere Schienbein knapp unter dem Kniegelenk schneller belastet wurde, als es sich umbauen konnte, von einer Stressreaktion bis zu einem feinen Riss. Bei älteren Laufenden oder geringerer Knochendichte kann ein solcher Riss auch schon bei üblicher Belastung entstehen (Insuffizienzfraktur), und weil frühe Röntgenbilder oft unauffällig sind, kann er für ein Meniskus-, Sehnen- oder Arthroseproblem gehalten werden, bis ein MRT ihn zeigt. Früh erkannt heilt es meist mit weniger Stoßbelastung und einem schrittweisen Wiedereinstieg über Wochen bis wenige Monate, und dabei sollte auch ärztlich geprüft werden, wie es um deine Knochen steht und ob du genug für dein Training isst.",
+      meanwhile:
+        "Hör mit dem Laufen auf und verzichte auf Hüpfen und Springen, bis du ärztlich oder physiotherapeutisch untersucht wurdest, am besten innerhalb weniger Tage. Gehen ist in Ordnung, solange es nicht wehtut, und Radfahren oder Schwimmen halten dich fit, wenn sie schmerzfrei sind. Tut schon normales Gehen weh oder schmerzt das Knie in Ruhe, lass dich innerhalb von ein bis zwei Tagen ärztlich untersuchen und nimm bis dahin Unterarmgehstützen. Erzähl in der Praxis von kürzlichen Trainingssteigerungen, früheren Ermüdungsbrüchen, geringer Knochendichte, zu knapper Ernährung oder ausbleibender Periode.",
+      avoid:
+        "Verzichte auf tiefe Kniebeugen, Ausfallschritte und Hüpfen, bis es abgeklärt ist, denn sie belasten das obere Schienbein stark.",
+    },
+    warn: ["fuel"],
+    rtr: "bone",
+    sources: ["warden2014", "hoenig2022", "mountjoy2023", "eldesouky2025"],
   },
 ];

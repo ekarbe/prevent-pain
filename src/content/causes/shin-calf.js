@@ -231,6 +231,11 @@ export default [
     ],
     exits: [
       {
+        to: "achilles-rupture-refer",
+        en: "Did it feel like a kick just above the heel, and now you can't rise onto your toes on that leg at all?",
+        de: "War es wie ein Tritt knapp über der Ferse, und kannst du dich auf dem Bein gar nicht auf die Zehen stellen?",
+      },
+      {
         to: "paes-refer",
         en: "Does the 'strain' keep coming back at the same point in runs, sometimes with a cold or numb foot?",
         de: "Kommt die „Zerrung“ immer wieder zur gleichen Zeit im Lauf, manchmal mit kaltem oder taubem Fuß?",
@@ -358,6 +363,11 @@ export default [
       ],
     ],
     exits: [
+      {
+        to: "achilles-rupture-refer",
+        en: "Did the kick or snap hit low, just above the heel, and now you can't rise onto your toes on that leg at all?",
+        de: "Traf dich der Schlag knapp über der Ferse, und kannst du dich auf dem Bein gar nicht auf die Zehen stellen?",
+      },
       {
         to: "bakers-cyst-refer",
         en: "Is the whole calf swollen or warm, or did you notice a lump behind the knee before the calf pain?",

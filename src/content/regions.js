@@ -266,6 +266,7 @@ export const regions = [
           "knee-oa",
           "medial-plica",
           "patellar-dislocation-refer",
+          "acl-refer",
         ],
       },
       {
@@ -276,7 +277,13 @@ export const regions = [
         de: {
           name: "Direkt unter der Kniescheibe",
         },
-        causes: ["patellar-tendon", "hoffa", "pfp", "osgood-schlatter"],
+        causes: [
+          "patellar-tendon",
+          "hoffa",
+          "pfp",
+          "osgood-schlatter",
+          "tubercle-avulsion-refer",
+        ],
       },
       {
         id: "inner-knee",
@@ -292,6 +299,8 @@ export const regions = [
           "medial-plica",
           "knee-oa",
           "meniscus-refer",
+          "acl-refer",
+          "plateau-bsi-refer",
         ],
         warn: "twist",
       },
@@ -379,6 +388,7 @@ export const regions = [
           "cramps",
           "paes-refer",
           "bakers-cyst-refer",
+          "achilles-rupture-refer",
         ],
         warn: "clot",
       },
@@ -390,7 +400,11 @@ export const regions = [
         de: {
           name: "Achillessehne, über der Ferse",
         },
-        causes: ["achilles-mid", "achilles-insertional"],
+        causes: [
+          "achilles-mid",
+          "achilles-insertional",
+          "achilles-rupture-refer",
+        ],
         warn: "rupture",
       },
     ],
@@ -414,7 +428,11 @@ export const regions = [
         de: {
           name: "Achillessehne",
         },
-        causes: ["achilles-mid", "achilles-insertional"],
+        causes: [
+          "achilles-mid",
+          "achilles-insertional",
+          "achilles-rupture-refer",
+        ],
         warn: "rupture",
       },
       {
@@ -430,6 +448,7 @@ export const regions = [
           "posterior-impingement",
           "calcaneal-bsi-refer",
           "severs",
+          "achilles-rupture-refer",
         ],
       },
       {

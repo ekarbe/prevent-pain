@@ -60,6 +60,13 @@ export default [
         },
       ],
     ],
+    exits: [
+      {
+        to: "achilles-rupture-refer",
+        en: "Did you suddenly feel a kick or snap at the back of the ankle, and now can't rise onto your toes on that leg?",
+        de: "War es plötzlich wie ein Tritt gegen die Ferse, und kannst du dich jetzt auf dem Bein nicht auf die Zehen stellen?",
+      },
+    ],
     sources: [
       "chimenti2024",
       "beyer2015",
@@ -113,6 +120,11 @@ export default [
       ],
     ],
     exits: [
+      {
+        to: "achilles-rupture-refer",
+        en: "Did you suddenly feel a kick or snap at the back of the ankle, and now can't rise onto your toes on that leg?",
+        de: "War es plötzlich wie ein Tritt gegen die Ferse, und kannst du dich jetzt auf dem Bein nicht auf die Zehen stellen?",
+      },
       {
         to: "severs",
         en: "Are you between 8 and 14 and still growing?",
@@ -1244,5 +1256,35 @@ export default [
       },
     ],
     sources: ["mcsweeney2015", "koc2023"],
+  },
+  {
+    id: "achilles-rupture-refer",
+    kind: "refer",
+    urgency: "today",
+    en: {
+      title:
+        "Felt like a kick to the back of the ankle, now you can't push off",
+      desc: "It happened in one moment, often pushing off, sprinting, jumping, running uphill or stepping down hard, and felt like being kicked or hit at the back of the ankle just above the heel, sometimes with a snap. Now push-off is weak and you can't stand on tiptoe on that leg, and there may be a dent you can feel, even though walking flat-footed may still work.",
+      name: "Achilles tendon rupture (torn Achilles)",
+      about:
+        "This pattern can mean the Achilles tendon has torn. You may still be able to walk because other muscles can move the foot, so it can be mistaken for a strain or a bruise, but a doctor can check it with simple tests, such as squeezing your calf while you lie face down or kneel: normally the foot points, and with a rupture it barely moves. Surgery and treatment without surgery in a cast or special boot both work well: in a large review, the tendon tore again in only a few in 100 people either way, slightly fewer after surgery, while surgery brought a few more other problems such as wound infections, so the choice is made together with you.",
+      meanwhile:
+        "Stop running and get seen today, at an emergency department or urgent care clinic, and say you might have torn your Achilles. Keep weight off the leg as much as you can, with crutches if you have them, and rest with the leg raised. Ice wrapped in a cloth can ease the swelling. Let the foot rest relaxed with the toes pointing slightly down, and don't pull your toes up towards you.",
+      avoid:
+        "Don't keep testing it with hops, toe raises or calf stretches, because that can make the tear worse.",
+    },
+    de: {
+      title:
+        "Wie ein Tritt gegen die Ferse, seitdem kein kräftiger Abdruck mehr",
+      desc: "Es passierte in einem Moment, oft beim Abdrücken, Sprinten, Springen, Bergauflaufen oder einem harten Schritt nach unten, und fühlte sich an wie ein Tritt oder Schlag hinten knapp über der Ferse, manchmal mit einem Knall. Jetzt ist der Abdruck schwach, du kannst dich auf dem Bein nicht auf die Zehen stellen, und vielleicht ist eine Delle tastbar, auch wenn Gehen mit flachem Fuß noch klappen kann.",
+      name: "Achillessehnenruptur (Achillessehnenriss)",
+      about:
+        "Dieses Muster kann bedeuten, dass die Achillessehne gerissen ist. Weil andere Muskeln den Fuß noch bewegen können, kannst du oft noch gehen, und deshalb kann es für eine Zerrung oder Prellung gehalten werden. Ärztlich lässt es sich aber mit einfachen Tests prüfen, etwa indem die Wade zusammengedrückt wird, während du auf dem Bauch liegst oder kniest: Normalerweise streckt sich dabei der Fuß, bei einem Riss bewegt er sich kaum. Eine Operation und eine Behandlung ohne Operation in Gips oder einem speziellen Stiefel wirken beide gut: In einer großen Übersichtsarbeit riss die Sehne nur bei wenigen von 100 Menschen erneut, nach einer Operation etwas seltener, dafür gab es dort etwas mehr andere Komplikationen wie Wundinfektionen, deshalb wird gemeinsam mit dir entschieden.",
+      meanwhile:
+        "Hör mit dem Laufen auf und lass es heute noch abklären, in der Notaufnahme oder einer Notfallpraxis, und sag dazu, dass die Achillessehne gerissen sein könnte. Belaste das Bein so wenig wie möglich, am besten mit Unterarmgehstützen, und lagere es hoch. Kühlen mit in ein Tuch gewickeltem Eis kann die Schwellung lindern. Lass den Fuß locker mit leicht nach unten zeigenden Zehen ruhen und zieh die Zehen nicht zu dir heran.",
+      avoid:
+        "Teste es nicht immer wieder mit Hüpfen, Zehenstand oder Wadendehnen, denn das kann den Riss verschlimmern.",
+    },
+    sources: ["chiodo2010", "ochen2019"],
   },
 ];

@@ -1443,6 +1443,52 @@ export const sources = {
     where: "Br J Sports Med 56(12):676–682",
     url: "https://bjsm.bmj.com/content/56/12/676",
   },
+  filbay2019: {
+    who: "Filbay SR, Grindem H",
+    year: 2019,
+    title:
+      "Evidence-based recommendations for the management of anterior cruciate ligament (ACL) rupture",
+    where: "Best Pract Res Clin Rheumatol 33(1):33–47",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6723618",
+  },
+  kalifis2023: {
+    who: "Kalifis G et al.",
+    year: 2023,
+    title:
+      "Tibial tubercle fractures are sports injuries in male adolescents with a considerable risk of complications and reoperations",
+    where: "Knee Surg Sports Traumatol Arthrosc 31(7):2624–2634",
+    url: "https://pubmed.ncbi.nlm.nih.gov/36702926/",
+  },
+  delosreyes2023: {
+    who: "Delos Reyes C, Wu W, Pandya NK",
+    year: 2023,
+    title:
+      "Adolescent Tibial Tubercle Fracture: Review of Outcomes and Complications",
+    where: "Curr Rev Musculoskelet Med 16(9):392–397",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10427568",
+  },
+  eldesouky2025: {
+    who: "Eldesouky ME et al.",
+    year: 2025,
+    title: "Bilateral Medial Tibial Plateau Stress Fractures: A Case Report",
+    where: "Cureus e82755",
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12098780/",
+  },
+  chiodo2010: {
+    who: "Chiodo CP et al.",
+    year: 2010,
+    title: "Diagnosis and treatment of acute Achilles tendon rupture",
+    where: "J Am Acad Orthop Surg 18(8):503–510",
+    url: "https://pubmed.ncbi.nlm.nih.gov/20675643/",
+  },
+  ochen2019: {
+    who: "Ochen Y et al.",
+    year: 2019,
+    title:
+      "Operative treatment versus nonoperative treatment of Achilles tendon ruptures: systematic review and meta-analysis",
+    where: "BMJ 364:k5120",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6322065",
+  },
 };
 
 export const sourceUrl = (s) =>
