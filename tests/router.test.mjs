@@ -22,6 +22,12 @@ test("parses every screen", () => {
   assert.equal(at("en/check/").screen, "stop");
   assert.equal(at("en/where/").screen, "region");
   assert.equal(at("en/topics/").screen, "topics");
+  assert.equal(at("de/prevent/").screen, "prevent");
+  assert.equal(at("en/back-to-running/").screen, "return");
+  assert.equal(
+    formatPath({ lang: "de", screen: "return" }, BASE),
+    "/prevent-pain/de/back-to-running/",
+  );
   assert.equal(at("en/knee/").screen, "spot");
   assert.equal(at("en/knee/index.html").screen, "spot");
   assert.deepEqual(
@@ -107,4 +113,13 @@ test("ids that are built-in object properties don't resolve to them", () => {
       "causes",
     );
   }
+});
+
+test("causeAt keeps the spot when it offers the cause, else finds one", () => {
+  const route = { ...at("en/knee/below-kneecap/pfp/"), tests: {} };
+  assert.equal(content.causeAt(route, "patellar-tendon").spot, "below-kneecap");
+  const away = content.causeAt(route, "itbs");
+  assert.equal(away.region, "knee");
+  assert.equal(away.spot, "outer-knee");
+  assert.equal(content.causeAt(route, "nope"), null);
 });

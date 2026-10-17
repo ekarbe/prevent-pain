@@ -92,6 +92,13 @@
   button:disabled {
     cursor: default;
   }
+  summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
 }
 
 @layer components {

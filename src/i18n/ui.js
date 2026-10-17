@@ -155,6 +155,8 @@ export const ui = {
       stop: "Get this checked first",
       region: "Where does it hurt?",
       topics: "All topics",
+      prevent: "Stay injury-free",
+      return: "Back to running after an injury",
     },
 
     // Search engine titles and descriptions, one per page.
@@ -166,6 +168,10 @@ export const ui = {
         "Tap where running hurts on a body map: lower back, hip, thigh, knee, shin and calf, ankle and foot.",
       topics:
         "Every running ache and injury Prevent Pain covers, by body region, each with exercises and self-tests for the weak links.",
+      prevent:
+        "How to stay injury-free as a runner: the single-run rule, two short strength sessions a week, and a quick risk check. Based on published research.",
+      return:
+        "Coming back to running after an injury: checks to pass first, then a walk-run ladder, with versions for bone stress injuries, calf strains and after having a baby.",
       spot: (region) => `${region} pain from running`,
       spotDesc: (region, spots) =>
         `${region} pain from running: ${spots}. Tap the spot, pick what it feels like and get a plan.`,
@@ -178,6 +184,39 @@ export const ui = {
     topicsLead:
       "Every ache and injury Prevent Pain covers, by body region. Not sure which one you have? Start with where it hurts.",
     topicsStart: "Start with where it hurts",
+    topicsGuides: "Guides",
+    youthMark: "under 18",
+
+    referRoutine: "Book a check in the next few weeks",
+    youthTitle: "Under 18?",
+    youthBadge: "For under-18s",
+    youthLead:
+      "Growing bones have injuries of their own. These descriptions are for children and teenagers.",
+    exitsTitle: "Check this first",
+    exitsLead: "If you answer yes to any of these, open that card instead.",
+    avoidLabel: "Skip for now",
+    stage: {
+      1: "Stage 1 · Hold",
+      2: "Stage 2 · Heavy and slow",
+      3: "Stage 3 · Springy",
+    },
+    ladder:
+      "Tendons recover in stages: holds, then heavy and slow, then springy work, then running. Move up a stage once the current one has stayed within the pain rule for about a week.",
+    rtrTitle: "Back to running",
+    rtrPlanLead:
+      "Still running within the pain rule? Carry on. If you had to stop, come back step by step:",
+    rtrReferLead: "Once you've been checked and cleared to run:",
+    rtrShow: "Show the steps",
+    rtrHide: "Hide the steps",
+    gatesTitle: "Pass these checks first",
+    phasesTitle: "Then build up",
+    phaseNext: "Move on when",
+    rtrMore: "More about coming back to running",
+    preventNext: "Once it has settled: how to stay injury-free",
+    startPrevent: "Not hurting right now? How to stay injury-free",
+    ifYes: "If yes",
+    blocksTitle: "Your two sessions",
+    preventStart: "Something hurts already? Start with where",
   },
   de: {
     back: "Zurück",
@@ -343,6 +382,8 @@ export const ui = {
       stop: "Lass das zuerst abklären",
       region: "Wo tut es weh?",
       topics: "Alle Themen",
+      prevent: "Verletzungen vorbeugen",
+      return: "Nach einer Verletzung zurück zum Laufen",
     },
 
     meta: {
@@ -353,6 +394,10 @@ export const ui = {
         "Tippe auf der Körperkarte an, wo das Laufen schmerzt: unterer Rücken, Hüfte, Oberschenkel, Knie, Schienbein und Wade, Sprunggelenk und Fuß.",
       topics:
         "Alle Laufbeschwerden und Verletzungen in Prevent Pain, nach Körperregion, jeweils mit Übungen und Selbsttests für die Schwachstellen.",
+      prevent:
+        "So bleibst du beim Laufen verletzungsfrei: die Regel für einzelne Läufe, zwei kurze Krafteinheiten pro Woche und ein schneller Risiko-Check. Auf Basis veröffentlichter Forschung.",
+      return:
+        "Nach einer Verletzung zurück zum Laufen: erst ein paar Tests bestehen, dann Schritt für Schritt vom Gehen zum Laufen, mit eigenen Wegen nach Ermüdungsbrüchen, Wadenzerrungen und nach der Geburt.",
       spot: (region) => `${region}: Schmerzen beim Laufen`,
       spotDesc: (region, spots) =>
         `${region}: Schmerzen beim Laufen. Stellen: ${spots}. Tippe die Stelle an, wähle, wie es sich anfühlt, und hol dir einen Plan.`,
@@ -365,5 +410,39 @@ export const ui = {
     topicsLead:
       "Alle Beschwerden und Verletzungen, die Prevent Pain abdeckt, nach Körperregion. Du weißt nicht, was du hast? Fang damit an, wo es wehtut.",
     topicsStart: "Damit anfangen, wo es wehtut",
+    topicsGuides: "Ratgeber",
+    youthMark: "unter 18",
+
+    referRoutine: "In den nächsten Wochen abklären lassen",
+    youthTitle: "Unter 18?",
+    youthBadge: "Für unter 18-Jährige",
+    youthLead:
+      "Wachsende Knochen haben eigene Verletzungen. Diese Beschreibungen sind für Kinder und Jugendliche.",
+    exitsTitle: "Erst das prüfen",
+    exitsLead:
+      "Wenn du eine dieser Fragen mit Ja beantwortest, öffne lieber diese Karte.",
+    avoidLabel: "Vorerst weglassen",
+    stage: {
+      1: "Stufe 1 · Halten",
+      2: "Stufe 2 · Schwer und langsam",
+      3: "Stufe 3 · Federnd",
+    },
+    ladder:
+      "Sehnen erholen sich in Stufen: erst Halteübungen, dann schwer und langsam, dann federnde Übungen, dann Laufen. Geh eine Stufe weiter, wenn die aktuelle etwa eine Woche lang innerhalb der Schmerzregel geblieben ist.",
+    rtrTitle: "Zurück zum Laufen",
+    rtrPlanLead:
+      "Du läufst innerhalb der Schmerzregel weiter? Dann bleib dabei. Musstest du pausieren, steig Schritt für Schritt wieder ein:",
+    rtrReferLead: "Sobald du untersucht wurdest und wieder laufen darfst:",
+    rtrShow: "Schritte zeigen",
+    rtrHide: "Schritte ausblenden",
+    gatesTitle: "Erst diese Tests bestehen",
+    phasesTitle: "Dann steigern",
+    phaseNext: "Weiter, wenn",
+    rtrMore: "Mehr zum Wiedereinstieg ins Laufen",
+    preventNext: "Wenn es abgeklungen ist: so beugst du Verletzungen vor",
+    startPrevent: "Gerade schmerzfrei? So beugst du Verletzungen vor",
+    ifYes: "Wenn ja",
+    blocksTitle: "Deine zwei Einheiten",
+    preventStart: "Es tut schon etwas weh? Fang damit an, wo",
   },
 };

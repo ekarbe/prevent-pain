@@ -1,7 +1,9 @@
+import { ArrowRight } from "lucide-react";
 import { useT } from "../i18n/lang.js";
+import Link from "../components/Link.jsx";
 
 // The ticked flags live in App, so "Change my answers" reopens them as they were.
-export default function Start({ go, ticked, setTicked }) {
+export default function Start({ route, go, ticked, setTicked }) {
   const t = useT();
   const toggle = (i) =>
     setTicked(
@@ -40,6 +42,13 @@ export default function Start({ go, ticked, setTicked }) {
         {n ? t.startSome(n) : t.startNone}
       </button>
       <p className="fine">{t.startFine}</p>
+      <Link
+        to={{ ...route, screen: "prevent" }}
+        className="card flex min-h-14 items-center justify-between gap-3 p-3.5 text-[15px] font-bold text-accent"
+      >
+        {t.startPrevent}
+        <ArrowRight className="size-5 flex-none" aria-hidden="true" />
+      </Link>
     </div>
   );
 }

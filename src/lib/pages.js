@@ -6,7 +6,14 @@ const blank = { region: null, spot: null, cause: null, tests: {} };
 export function allRoutes({ regions, causes }) {
   const out = [];
   for (const lang of LANGS) {
-    for (const screen of ["start", "stop", "region", "topics"])
+    for (const screen of [
+      "start",
+      "stop",
+      "region",
+      "topics",
+      "prevent",
+      "return",
+    ])
       out.push({ ...blank, lang, screen });
     for (const region of regions) {
       out.push({ ...blank, lang, screen: "spot", region: region.id });

@@ -3,14 +3,24 @@
 //   /en/check/         "get this checked first"
 //   /en/where/         region picker
 //   /en/topics/        everything the app covers, as links
+//   /en/prevent/       how to stay injury-free
+//   /en/back-to-running/   returning to running after an injury
 //   /en/knee/          spot picker for a region
 //   /en/knee/below-kneecap/                   cause cards
 //   /en/knee/below-kneecap/patellar-tendon/?t=ktw1.sls0   plan, with self-test results
 // Version 1 used the same routes after a hash (#/en/knee/…); parseHash still reads those old links.
 export const LANGS = ["en", "de"];
 
-const SCREEN_AT = { check: "stop", where: "region", topics: "topics" };
-const SEGMENT = { stop: "check", region: "where", topics: "topics" };
+const SCREEN_AT = {
+  check: "stop",
+  where: "region",
+  topics: "topics",
+  prevent: "prevent",
+  "back-to-running": "return",
+};
+const SEGMENT = Object.fromEntries(
+  Object.entries(SCREEN_AT).map(([segment, screen]) => [screen, segment]),
+);
 
 export function parseTests(value) {
   const out = {};

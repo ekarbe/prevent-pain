@@ -74,6 +74,9 @@ export default function ExerciseCard({ id, later = false }) {
     <article className="card flex flex-col gap-2.5 p-3.5 text-[15px]">
       <header className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
         <h3 className="flex-auto font-display text-[19px] leading-tight">
+          {exercise.stage ? (
+            <span className="label">{t.stage[exercise.stage]}</span>
+          ) : null}
           {x.name}
         </h3>
         <span className="rounded-full bg-accent-soft px-2.5 py-0.5 text-[13px] font-bold text-accent tabular-nums">

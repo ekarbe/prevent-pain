@@ -19,6 +19,8 @@ import Spots from "./screens/Spots.jsx";
 import Causes from "./screens/Causes.jsx";
 import Plan from "./screens/Plan.jsx";
 import Topics from "./screens/Topics.jsx";
+import Prevent from "./screens/Prevent.jsx";
+import Return from "./screens/Return.jsx";
 
 const STEP = { region: 1, spot: 2, causes: 3, plan: 4 };
 const PARENT = {
@@ -97,6 +99,12 @@ export default function App() {
     case "topics":
       screen = <Topics route={valid} />;
       break;
+    case "prevent":
+      screen = <Prevent route={valid} />;
+      break;
+    case "return":
+      screen = <Return />;
+      break;
     case "spot":
       screen = <Spots key={valid.region} route={valid} go={go} />;
       break;
@@ -113,7 +121,9 @@ export default function App() {
       );
       break;
     default:
-      screen = <Start go={go} ticked={flags} setTicked={setFlags} />;
+      screen = (
+        <Start route={valid} go={go} ticked={flags} setTicked={setFlags} />
+      );
   }
 
   return (
@@ -136,12 +146,20 @@ export default function App() {
           </ErrorBoundary>
         </main>
         <footer className="mx-auto w-full max-w-3xl border-t border-line py-5 text-[13px] leading-normal text-ink-2">
-          <Link
-            to={{ ...valid, screen: "topics" }}
-            className="inline-flex min-h-11 items-center text-[15px] font-bold text-accent underline underline-offset-2"
+          <nav
+            aria-label={ui[lang].topicsGuides}
+            className="flex flex-wrap gap-x-5"
           >
-            {ui[lang].titles.topics}
-          </Link>
+            {["topics", "prevent", "return"].map((s) => (
+              <Link
+                key={s}
+                to={{ ...valid, screen: s }}
+                className="inline-flex min-h-11 items-center text-[15px] font-bold text-accent underline underline-offset-2"
+              >
+                {ui[lang].titles[s]}
+              </Link>
+            ))}
+          </nav>
           <p className="mt-1 max-w-xl">{ui[lang].footer}</p>
           <p className="mt-3">
             © {__BUILD_YEAR__} {site.author}

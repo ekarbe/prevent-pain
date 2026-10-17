@@ -1,14 +1,21 @@
 import { useState } from "react";
-import { Share2, TriangleAlert } from "lucide-react";
 import {
+  ArrowRight,
+  ChevronDown,
+  ChevronRight,
+  Share2,
+  TriangleAlert,
+} from "lucide-react";
+import {
+  causeAt,
   causes,
   exercises,
   findSpot,
   links,
   regionById,
-  sources,
-  sourceUrl,
+  returnToRun,
   tests,
+  warnings,
 } from "../content/index.js";
 import { pick, useLang, useT } from "../i18n/lang.js";
 import { rankChain, weekPlan } from "../lib/rank.js";
@@ -17,6 +24,8 @@ import PainScale from "../components/PainScale.jsx";
 import ExerciseCard from "../components/ExerciseCard.jsx";
 import { ChainStrip, SuspectCard, TestAnswer } from "../components/Chain.jsx";
 import Link from "../components/Link.jsx";
+import ReturnSteps from "../components/ReturnSteps.jsx";
+import Sources from "../components/Sources.jsx";
 
 function SectionTitle({ n, children }) {
   return (
@@ -27,46 +36,146 @@ function SectionTitle({ n, children }) {
   );
 }
 
-function Sources({ ids }) {
+function YouthBadge() {
   const t = useT();
   return (
-    <section className="sec">
-      <h2 className="sec-title text-[19px]">{t.sources}</h2>
-      <ol className="flex list-decimal flex-col gap-2 pl-5 text-[13px] leading-[1.45] text-ink-2">
-        {ids.map((id) => {
-          const s = sources[id];
-          return (
-            <li key={id} lang={s.lang ?? "en"}>
-              <a
-                href={sourceUrl(s)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent underline decoration-1 underline-offset-2"
-              >
-                {s.who} ({s.year}). {s.title}.
-              </a>{" "}
-              <i>{s.where}</i>
-            </li>
-          );
-        })}
-      </ol>
+    <span className="self-start rounded-full bg-surface-2 px-2.5 py-0.5 text-[13px] font-bold text-ink-2">
+      {t.youthBadge}
+    </span>
+  );
+}
+
+// Yes/no questions that send the runner to a referral card when a serious look-alike is possible.
+function Exits({ cause, route }) {
+  const t = useT();
+  const lang = useLang();
+  const exits = (cause.exits || []).filter((x) => causes[x.to]);
+  if (!exits.length) return null;
+  return (
+    <section
+      aria-labelledby="exits-title"
+      className="flex flex-col gap-2 rounded-[var(--radius-card)] bg-stop-soft p-3.5 text-[15px]"
+    >
+      <h2
+        id="exits-title"
+        className="flex items-center gap-2 font-display text-lg leading-tight"
+      >
+        <TriangleAlert
+          className="size-5 flex-none text-stop"
+          aria-hidden="true"
+        />
+        {t.exitsTitle}
+      </h2>
+      <p>{t.exitsLead}</p>
+      <ul className="flex flex-col divide-y divide-stop/20">
+        {exits.map((x) => (
+          <li key={x.to} className="flex flex-col gap-0.5 py-2">
+            <span>{pick(x, lang)}</span>
+            <Link
+              to={causeAt(route, x.to)}
+              className="inline-flex min-h-11 items-center gap-1 font-bold text-stop underline underline-offset-2"
+            >
+              {pick(causes[x.to], lang).name}
+              <ChevronRight className="size-4 flex-none" aria-hidden="true" />
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
+
+function CauseWarnings({ cause }) {
+  const lang = useLang();
+  return (cause.warn || [])
+    .filter((id) => warnings[id])
+    .map((id) => (
+      <Note key={id} tone={warnings[id].level}>
+        {pick(warnings[id], lang)}
+      </Note>
+    ));
+}
+
+function Avoid({ text }) {
+  const t = useT();
+  if (!text) return null;
+  return (
+    <Note tone="warn">
+      <span className="label">{t.avoidLabel}</span> {text}
+    </Note>
+  );
+}
+
+// Back to running: collapsed by default, so the plan stays about calming and loading the sore spot.
+function ReturnSection({ variant, lead, n, route }) {
+  const t = useT();
+  const lang = useLang();
+  const steps = returnToRun[variant] ? pick(returnToRun[variant], lang) : null;
+  if (!steps) return null;
+  return (
+    <section className="sec">
+      <SectionTitle n={n}>{t.rtrTitle}</SectionTitle>
+      <p className="lead">{lead}</p>
+      <details className="group">
+        <summary className="btn btn-ghost">
+          <span className="group-open:hidden">{t.rtrShow}</span>
+          <span className="hidden group-open:inline">{t.rtrHide}</span>
+          <ChevronDown
+            className="size-[18px] flex-none transition-transform group-open:rotate-180 motion-reduce:transition-none"
+            aria-hidden="true"
+          />
+        </summary>
+        <div className="mt-3 flex flex-col gap-3">
+          <p className="text-[15px]">{steps.lead}</p>
+          <ReturnSteps steps={steps} />
+          <Link
+            to={{ ...route, screen: "return" }}
+            className="inline-flex min-h-11 items-center gap-1 text-[15px] text-accent underline underline-offset-2"
+          >
+            {t.rtrMore}
+          </Link>
+        </div>
+      </details>
+    </section>
+  );
+}
+
+function PreventLink({ route }) {
+  const t = useT();
+  return (
+    <Link
+      to={{ ...route, screen: "prevent" }}
+      className="card flex min-h-14 items-center justify-between gap-3 p-3.5 text-[15px] font-bold text-accent"
+    >
+      {t.preventNext}
+      <ArrowRight className="size-5 flex-none" aria-hidden="true" />
+    </Link>
+  );
+}
+
+const REFER = {
+  today: { title: "referToday", tone: "stop" },
+  soon: { title: "referSoon", tone: "stop" },
+  routine: { title: "referRoutine", tone: "warn" },
+};
 
 function Refer({ cause, eyebrow, route }) {
   const t = useT();
   const lang = useLang();
   const c = pick(cause, lang);
-  const today = cause.urgency === "today";
+  const level = REFER[cause.urgency] ?? REFER.soon;
+  const tone = cause.urgency === "today" ? "stop" : "warn";
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col gap-4">
       <p className="eyebrow">{eyebrow}</p>
-      <div className="grid size-[52px] place-items-center rounded-full bg-stop-soft text-stop">
+      <div
+        className={`grid size-[52px] place-items-center rounded-full ${level.tone === "stop" ? "bg-stop-soft text-stop" : "bg-warn-soft text-warn"}`}
+      >
         <TriangleAlert className="size-7" aria-hidden="true" />
       </div>
+      {cause.youth ? <YouthBadge /> : null}
       <h1 tabIndex={-1} className="page-title">
-        {today ? t.referToday : t.referSoon}
+        {t[level.title]}
       </h1>
       <p className="lead">{t.referLead}</p>
       <div className="card flex flex-col gap-2 p-4 text-[15px]">
@@ -77,15 +186,25 @@ function Refer({ cause, eyebrow, route }) {
         </p>
         <p>{c.about}</p>
       </div>
-      <Note tone={today ? "stop" : "warn"}>
+      <Exits cause={cause} route={route} />
+      <CauseWarnings cause={cause} />
+      <Note tone={tone}>
         <span className="label">{t.meanwhile}</span> {c.meanwhile}
       </Note>
+      <Avoid text={c.avoid} />
       <Link
         to={{ ...route, screen: "causes", cause: null }}
         className="btn btn-ghost"
       >
         {t.referBack}
       </Link>
+      {cause.rtr && cause.rtr !== "none" ? (
+        <ReturnSection
+          variant={cause.rtr}
+          lead={t.rtrReferLead}
+          route={route}
+        />
+      ) : null}
       <Sources ids={cause.sources} />
     </div>
   );
@@ -122,6 +241,11 @@ export default function Plan({ route, go, notify }) {
     .reduce((sum, it) => sum + exercises[it.id].min, 0);
   const anyWeak = cause.chain.some(([id]) => results[links[id].test] === "pos");
   const anyOpen = cause.chain.some(([id]) => !results[links[id].test]);
+  const hasChain = cause.chain.length > 0;
+  const ladder =
+    new Set(cause.local.map((id) => exercises[id].stage).filter(Boolean)).size >
+    1;
+  const rtr = cause.rtr || "standard";
 
   const share = async () => {
     const url = window.location.href;
@@ -140,6 +264,7 @@ export default function Plan({ route, go, notify }) {
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col gap-4">
       <p className="eyebrow">{eyebrow}</p>
+      {cause.youth ? <YouthBadge /> : null}
       <h1 tabIndex={-1} className="page-title">
         {c.name}
       </h1>
@@ -147,6 +272,8 @@ export default function Plan({ route, go, notify }) {
         {announce}
       </p>
       <p className="lead">{c.about}</p>
+      <Exits cause={cause} route={route} />
+      <CauseWarnings cause={cause} />
 
       <section className="sec">
         <SectionTitle n={1}>{t.calm}</SectionTitle>
@@ -158,6 +285,7 @@ export default function Plan({ route, go, notify }) {
           <PainScale />
           <p className="text-ink-2">{c.load}</p>
         </div>
+        <Avoid text={c.avoid} />
         <TestAnswer
           testId="load"
           result={results.load ?? null}
@@ -165,6 +293,7 @@ export default function Plan({ route, go, notify }) {
           posText={t.loadYes}
           negText={t.loadNo}
         />
+        {ladder ? <p className="text-[15px] text-ink-2">{t.ladder}</p> : null}
         {cause.local.length ? (
           cause.local.map((id) => (
             <ExerciseCard
@@ -178,27 +307,29 @@ export default function Plan({ route, go, notify }) {
         )}
       </section>
 
-      <section className="sec">
-        <SectionTitle n={2}>{t.chainTitle}</SectionTitle>
-        <p className="lead">{t.chainLead}</p>
-        <ChainStrip
-          chain={cause.chain}
-          regionId={region.id}
-          results={results}
-        />
-        {ranked.map((item, i) => (
-          <SuspectCard
-            key={item.id}
-            item={item}
-            rank={i + 1}
-            onAnswer={answer}
-            added={week.filter((w) => w.from === item.id).length}
+      {hasChain ? (
+        <section className="sec">
+          <SectionTitle n={2}>{t.chainTitle}</SectionTitle>
+          <p className="lead">{t.chainLead}</p>
+          <ChainStrip
+            chain={cause.chain}
+            regionId={region.id}
+            results={results}
           />
-        ))}
-      </section>
+          {ranked.map((item, i) => (
+            <SuspectCard
+              key={item.id}
+              item={item}
+              rank={i + 1}
+              onAnswer={answer}
+              added={week.filter((w) => w.from === item.id).length}
+            />
+          ))}
+        </section>
+      ) : null}
 
       <section className="sec">
-        <SectionTitle n={3}>{t.weekTitle}</SectionTitle>
+        <SectionTitle n={hasChain ? 3 : 2}>{t.weekTitle}</SectionTitle>
         {week.length ? (
           <>
             <p className="lead">
@@ -228,7 +359,9 @@ export default function Plan({ route, go, notify }) {
             </ul>
           </>
         ) : null}
-        {anyWeak ? null : <Note>{anyOpen ? t.weekEmpty : t.weekAllFine}</Note>}
+        {anyWeak || !hasChain ? null : (
+          <Note>{anyOpen ? t.weekEmpty : t.weekAllFine}</Note>
+        )}
         {week
           .filter((it) => it.from)
           .map((it) => (
@@ -240,6 +373,15 @@ export default function Plan({ route, go, notify }) {
         </button>
       </section>
 
+      {rtr === "none" ? null : (
+        <ReturnSection
+          variant={rtr}
+          lead={t.rtrPlanLead}
+          n={hasChain ? 4 : 3}
+          route={route}
+        />
+      )}
+
       <section className="sec">
         <h2 className="sec-title text-[19px]">{t.physioTitle}</h2>
         <ul className="flex list-disc flex-col gap-1.5 pl-5 text-[15px]">
@@ -247,6 +389,7 @@ export default function Plan({ route, go, notify }) {
             <li key={p}>{p}</li>
           ))}
         </ul>
+        <PreventLink route={route} />
       </section>
 
       <Sources ids={cause.sources} />
